@@ -44,7 +44,7 @@
 - [ ] LED Light Control
 - [ ] COORDCTRL: End Point Coordinate Control
 - [ ] JSON Command System
-- [ ] Leader-Follower Mode (Priority)
+- [x] Leader-Follower Mode (Priority)
 
 ## Software Components
 - [ ] Web Interface
