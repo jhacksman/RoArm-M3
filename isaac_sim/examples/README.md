@@ -107,3 +107,14 @@ If you encounter issues with the examples:
 ## Contributing
 
 If you develop new examples or improve existing ones, consider contributing them back to the community. Your contributions can help others learn and build with the RoArm-M3 Pro and Isaac Sim.
+
+## Additional Examples
+
+This repository includes additional examples from NVIDIA Isaac Sim in the `isaac_sim/downloads/examples` directory:
+
+- **CuRobo Examples**: Robot arm manipulation examples using CuRobo, a CUDA-accelerated robot motion planning library
+- **Domain Randomization Examples**: Examples for implementing domain randomization techniques
+- **Calibration Examples**: Examples for calibrating simulation parameters
+- **System Identification Examples**: Examples for identifying system parameters
+
+These examples provide practical code that you can use to implement various aspects of the sim-to-real self-improvement loop for the RoArm-M3 Pro.

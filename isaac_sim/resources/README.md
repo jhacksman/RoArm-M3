@@ -42,3 +42,13 @@ The [External Resources](./external_resources.md) document provides links to add
 ## Contributing
 
 If you discover additional resources or develop solutions to common problems, consider contributing them back to this repository to help others working with the RoArm-M3 Pro and Isaac Sim.
+
+## Additional Resources
+
+This repository includes additional resources from NVIDIA Isaac Sim in the `isaac_sim/downloads` directory:
+
+- **Documentation Screenshots**: Screenshots of NVIDIA Isaac Sim documentation that requires authentication to access
+- **GitHub Repositories**: Cloned repositories for ROS integration, reinforcement learning, and motion planning
+- **Example Code**: Examples for various aspects of Isaac Sim integration
+
+For a complete list of the downloaded resources, see the [MANIFEST.md](../downloads/MANIFEST.md) file.

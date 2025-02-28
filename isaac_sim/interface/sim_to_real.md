@@ -118,3 +118,13 @@ For a practical example of sim-to-real transfer learning with the RoArm-M3 Pro, 
 - [NVIDIA Isaac Sim Documentation](https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/overview.html)
 - [Sim-to-Real Transfer Learning Papers](https://paperswithcode.com/task/sim-to-real-transfer)
 - [Domain Randomization Techniques](https://lilianweng.github.io/posts/2019-05-05-domain-randomization/)
+
+## Local Resources for Sim-to-Real Transfer
+
+This repository includes downloaded resources for sim-to-real transfer learning in the `isaac_sim/downloads/sim_to_real` directory:
+
+- **Domain Randomization**: Examples and utilities for implementing domain randomization techniques
+- **Calibration**: Tools for calibrating simulation parameters to match the physical robot
+- **System Identification**: Methods for identifying system parameters of the physical robot
+
+These resources provide practical examples and code that you can use to implement sim-to-real transfer learning for the RoArm-M3 Pro.

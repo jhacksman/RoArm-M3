@@ -69,3 +69,14 @@ NVIDIA Isaac Sim is subject to the [NVIDIA Omniverse license agreement](https://
 ## Contributing
 
 Contributions to this documentation are welcome. Please submit pull requests with improvements, corrections, or additional examples.
+
+## Downloaded Resources
+
+This repository includes downloaded resources from NVIDIA Isaac Sim that require authentication to access. These resources are organized in the `isaac_sim/downloads` directory and include:
+
+- GitHub repositories for ROS integration, reinforcement learning, and motion planning
+- Example code for sim-to-real integration
+- Custom examples for domain randomization, calibration, and system identification
+- Documentation screenshots and references
+
+For a complete list of the downloaded resources, see the [MANIFEST.md](./downloads/MANIFEST.md) file.
