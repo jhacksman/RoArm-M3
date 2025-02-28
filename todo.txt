@@ -1,0 +1,53 @@
+# RoArm-M3 Pro Component Documentation Todo List
+
+## Main Control Components
+- [ ] ESP32-WROOM-32 Main Control Module
+- [ ] General Driver Board for Robots
+
+## Servo Motors
+- [ ] ST3235 Metal Shell Servo (Pro Version)
+- [ ] ST3215 Plastic Shell Servo (Gripper)
+
+## Sensors and Chips
+- [ ] INA219 Voltage/Current Monitoring Chip
+- [ ] TB6612FNG Motor Control Chip
+- [ ] AK09918C 3-axis Electronic Compass
+- [ ] QMI8658 6-axis Motion Sensor
+- [ ] CP2102 Serial-to-USB Chip (Radar Data)
+- [ ] CP2102 Serial-to-USB Chip (ESP32 Communication)
+
+## Communication Interfaces
+- [ ] IPEX Gen 1 WIFI Interface
+- [ ] Lidar Interface
+- [ ] IIC Peripheral Expansion Interface
+- [ ] Type-C Port (LIDAR)
+- [ ] Type-C Port (USB)
+- [ ] 40PIN Expansion Interface (Raspberry Pi/Jetson)
+- [ ] 40PIN Expansion Interface (Host Computer)
+- [ ] TF Card Slot
+
+## Power Components
+- [ ] XH2.54 Power Connector
+- [ ] DC-DC 5V Regulator Circuit
+- [ ] Power Switch
+
+## Motor Interfaces
+- [ ] Motor Interface PH2.0 6P (Group A - with encoder)
+- [ ] Motor Interface PH2.0 6P (Group B - with encoder)
+- [ ] Motor Interface PH2.0 2P (Group A - without encoder)
+- [ ] Motor Interface PH2.0 2P (Group B - without encoder)
+
+## Control Features
+- [ ] AngleCtrl: Servo Angle Control
+- [ ] Torque Lock Control
+- [ ] DEFA: Dynamic External Force Adaptive Control
+- [ ] LED Light Control
+- [ ] COORDCTRL: End Point Coordinate Control
+- [ ] JSON Command System
+- [ ] Leader-Follower Mode (Priority)
+
+## Software Components
+- [ ] Web Interface
+- [ ] Python API
+- [ ] ROS2 Integration
+- [ ] LeRobot AI Project Integration

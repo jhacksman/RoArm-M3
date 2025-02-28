@@ -1,0 +1,20 @@
+40PIN Expansion Interface (Host Computer)
+TF Card Slot
+XH2.54 Power Connector
+DC-DC 5V Regulator Circuit
+Power Switch
+Motor Interface PH2.0 6P (Group A)
+Motor Interface PH2.0 6P (Group B)
+Motor Interface PH2.0 2P (Group A)
+Motor Interface PH2.0 2P (Group B)
+Web Interface
+JSON Command System
+Python API
+ROS2 Integration
+LeRobot AI Project Integration
+AngleCtrl: Servo Angle Control
+Torque Lock Control
+DEFA: Dynamic External Force Adaptive Control
+LED Light Control
+COORDCTRL: End Point Coordinate Control
+Leader-Follower Mode
