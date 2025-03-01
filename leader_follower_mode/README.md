@@ -34,51 +34,104 @@ The Leader-Follower Mode relies on several key components of the RoArm-M3 Pro:
 - Power supply for each arm (12V 5A power adapter or 3S lithium battery)
 - Clear line of sight between arms for optimal wireless communication
 
-### Leader Configuration
+### ESP-NOW Configuration
 
-To configure a RoArm-M3 Pro as the Leader:
+The RoArm-M3 Pro uses specific JSON commands for ESP-NOW configuration. These commands are accessible through the web interface at 192.168.4.1 after connecting to the arm's WiFi (SSID: RoArm-M3, Password: 12345678).
 
-1. Power on the RoArm-M3 Pro
-2. Connect to the arm's WiFi (SSID: RoArm-M3, Password: 12345678)
-3. Navigate to 192.168.4.1 in a web browser
-4. Go to the Advanced Settings section
-5. Select "ESP-NOW Control" from the menu
-6. Choose "Leader Mode" from the dropdown
-7. Click "Apply" to save the settings
-8. The arm will restart and enter Leader mode
+#### Getting the MAC Address
 
-Alternatively, use the following JSON command:
+Before setting up Leader-Follower mode, you need to know the MAC address of each arm:
 
 ```json
-{
-  "type": "ESPNowConfig",
-  "mode": "leader"
-}
+{"T":302}  // CMD_GET_MAC_ADDRESS
 ```
 
-### Follower Configuration
+This command returns the MAC address of the arm, which you'll need for configuring the Leader-Follower relationship.
 
-To configure a RoArm-M3 Pro as a Follower:
+#### Setting Up a Leader
 
-1. Power on the RoArm-M3 Pro
-2. Connect to the arm's WiFi (SSID: RoArm-M3, Password: 12345678)
-3. Navigate to 192.168.4.1 in a web browser
-4. Go to the Advanced Settings section
-5. Select "ESP-NOW Control" from the menu
-6. Choose "Follower Mode" from the dropdown
-7. Enter the MAC address of the Leader arm (displayed on the Leader's OLED screen)
-8. Click "Apply" to save the settings
-9. The arm will restart and enter Follower mode
-
-Alternatively, use the following JSON command:
+To configure an arm as a Leader, use the ESP-NOW configuration command with the appropriate mode parameter:
 
 ```json
-{
-  "type": "ESPNowConfig",
-  "mode": "follower",
-  "leaderMac": "XX:XX:XX:XX:XX:XX"  // Replace with the Leader's MAC address
-}
+{"T":301,"mode":1,"dev":0,"cmd":0,"megs":0}  // CMD_ESP_NOW_CONFIG
 ```
+
+The `mode` parameter determines the role:
+- `mode=1`: Leader mode
+- `mode=0`: Disabled (normal operation)
+
+#### Setting Up a Follower
+
+To configure an arm as a Follower, first add the Leader's MAC address to the Follower's list:
+
+```json
+{"T":303,"mac":"XX:XX:XX:XX:XX:XX"}  // CMD_ESP_NOW_ADD_FOLLOWER
+```
+
+Replace `XX:XX:XX:XX:XX:XX` with the actual MAC address of the Leader arm.
+
+Then, enable Follower mode:
+
+```json
+{"T":301,"mode":2,"dev":0,"cmd":0,"megs":0}  // CMD_ESP_NOW_CONFIG
+```
+
+#### Broadcasting to Followers
+
+Once configured, the Leader can broadcast commands to all Followers:
+
+```json
+{"T":300,"mode":1,"mac":"FF:FF:FF:FF:FF:FF"}  // CMD_BROADCAST_FOLLOWER
+```
+
+The `mode` parameter controls the broadcast state:
+- `mode=1`: Enable broadcasting
+- `mode=0`: Disable broadcasting
+
+#### Controlling Multiple Followers
+
+To control multiple Followers simultaneously:
+
+```json
+{"T":305,"dev":0,"b":0,"s":0,"e":1.57,"t":0,"r":0,"h":1.57,"cmd":0,"megs":"hello!"}  // CMD_ESP_NOW_MANY_CTRL
+```
+
+This command sends joint position data to all connected Followers, where:
+- `b`, `s`, `e`, `t`, `r`, `h`: Joint positions for base, shoulder, elbow, wrist, roll, and hand
+- `cmd`: Additional control command
+- `megs`: Optional message
+
+#### Controlling a Specific Follower
+
+To control a specific Follower:
+
+```json
+{"T":306,"mac":"XX:XX:XX:XX:XX:XX","dev":0,"b":0,"s":0,"e":1.57,"t":0,"r":0,"h":1.57,"cmd":0,"megs":"hello!"}  // CMD_ESP_NOW_SINGLE
+```
+
+Replace `XX:XX:XX:XX:XX:XX` with the MAC address of the specific Follower arm.
+
+#### Removing a Follower
+
+To remove a Follower from the Leader's list:
+
+```json
+{"T":304,"mac":"XX:XX:XX:XX:XX:XX"}  // CMD_ESP_NOW_REMOVE_FOLLOWER
+```
+
+### Security Considerations
+
+The ESP-NOW protocol used by the RoArm-M3 Pro relies on MAC addresses for device identification, which presents some security considerations:
+
+1. **MAC Address Authentication**: The system uses MAC addresses for authentication, which can potentially be spoofed
+2. **No Encryption**: By default, ESP-NOW does not encrypt the data transmitted between devices
+3. **Physical Access Control**: Ensure that only authorized personnel have physical access to the arms
+4. **Isolated Network**: Consider operating the arms on an isolated network to prevent unauthorized access
+
+For enhanced security:
+- Regularly update the firmware to the latest version
+- Use the arms in a controlled environment
+- Consider implementing additional authentication mechanisms if using in sensitive applications
 
 ## Usage Examples
 
@@ -86,74 +139,129 @@ Alternatively, use the following JSON command:
 
 1. Power on the Leader arm first
 2. Power on the Follower arm(s)
-3. Wait for the Follower(s) to connect to the Leader (indicated on the OLED display)
-4. Control the Leader arm using any standard method (web interface, JSON commands, etc.)
-5. The Follower arm(s) will automatically mimic the movements of the Leader
+3. Configure the Leader using the ESP-NOW configuration commands
+4. Configure the Follower(s) with the Leader's MAC address
+5. Enable broadcasting from the Leader
+6. Control the Leader arm using any standard method (web interface, JSON commands, etc.)
+7. The Follower arm(s) will automatically mimic the movements of the Leader
 
 ### Teaching by Demonstration
 
-1. Configure one arm as the Leader and others as Followers
-2. On the Leader arm, disable torque using the "Torque OFF" command
+1. Configure one arm as the Leader and others as Followers using the ESP-NOW commands
+2. On the Leader arm, disable torque using the Torque Control command: `{"T":210,"cmd":0}`
 3. Manually position the Leader arm through a sequence of movements
 4. The Follower arms will replicate these movements in real-time
 5. To record the sequence for later playback, use a computer to capture the joint positions
 
 ### Synchronized Operations
 
-1. Configure one arm as the Leader and others as Followers
+1. Configure one arm as the Leader and others as Followers using the ESP-NOW commands
 2. Program or control the Leader arm to perform the desired sequence
 3. All Follower arms will execute the same sequence simultaneously
 4. This is particularly useful for production lines or educational demonstrations
 
 ## Python Example
 
-The following Python script demonstrates how to configure and use the Leader-Follower Mode:
+The following Python script demonstrates how to configure and use the Leader-Follower Mode with the correct JSON commands:
 
 ```python
 import requests
 import json
 import time
 
+def get_mac_address(ip_address):
+    """Get the MAC address of the arm."""
+    cmd = {"T":302}  # CMD_GET_MAC_ADDRESS
+    url = f"http://{ip_address}/js?json={json.dumps(cmd)}"
+    response = requests.get(url)
+    data = json.loads(response.text)
+    mac_address = data.get("mac", "")
+    print(f"MAC Address: {mac_address}")
+    return mac_address
+
 def configure_leader_mode(ip_address):
     """Configure the arm as a Leader for ESP-NOW communication."""
-    cmd = {
-        "type": "ESPNowConfig",
-        "mode": "leader"
-    }
+    cmd = {"T":301,"mode":1,"dev":0,"cmd":0,"megs":0}  # CMD_ESP_NOW_CONFIG with mode=1 for Leader
     url = f"http://{ip_address}/js?json={json.dumps(cmd)}"
     response = requests.get(url)
     print(f"Leader configuration response: {response.text}")
-    time.sleep(5)  # Allow time for restart
+    
+    # Enable broadcasting to followers
+    broadcast_cmd = {"T":300,"mode":1,"mac":"FF:FF:FF:FF:FF:FF"}  # CMD_BROADCAST_FOLLOWER
+    url = f"http://{ip_address}/js?json={json.dumps(broadcast_cmd)}"
+    response = requests.get(url)
+    print(f"Broadcast enable response: {response.text}")
+    
+    time.sleep(2)  # Allow time for configuration to apply
+
+def add_follower_to_leader(leader_ip, follower_mac):
+    """Add a follower to the leader's list."""
+    cmd = {"T":303,"mac":follower_mac}  # CMD_ESP_NOW_ADD_FOLLOWER
+    url = f"http://{leader_ip}/js?json={json.dumps(cmd)}"
+    response = requests.get(url)
+    print(f"Add follower response: {response.text}")
 
 def configure_follower_mode(ip_address, leader_mac):
     """Configure the arm as a Follower for ESP-NOW communication."""
-    cmd = {
-        "type": "ESPNowConfig",
-        "mode": "follower",
-        "leaderMac": leader_mac
-    }
+    # First add the leader's MAC address
+    add_cmd = {"T":303,"mac":leader_mac}  # CMD_ESP_NOW_ADD_FOLLOWER
+    url = f"http://{ip_address}/js?json={json.dumps(add_cmd)}"
+    response = requests.get(url)
+    print(f"Add leader response: {response.text}")
+    
+    # Then set follower mode
+    cmd = {"T":301,"mode":2,"dev":0,"cmd":0,"megs":0}  # CMD_ESP_NOW_CONFIG with mode=2 for Follower
     url = f"http://{ip_address}/js?json={json.dumps(cmd)}"
     response = requests.get(url)
     print(f"Follower configuration response: {response.text}")
-    time.sleep(5)  # Allow time for restart
+    
+    time.sleep(2)  # Allow time for configuration to apply
 
-def get_mac_address(ip_address):
-    """Get the MAC address of the arm."""
+def control_all_followers(leader_ip, joint_positions):
+    """Control all followers with the specified joint positions."""
     cmd = {
-        "type": "GetStatus"
+        "T": 305,  # CMD_ESP_NOW_MANY_CTRL
+        "dev": 0,
+        "b": joint_positions["base"],
+        "s": joint_positions["shoulder"],
+        "e": joint_positions["elbow"],
+        "t": joint_positions["wrist"],
+        "r": joint_positions["roll"],
+        "h": joint_positions["hand"],
+        "cmd": 0,
+        "megs": "position update"
     }
-    url = f"http://{ip_address}/js?json={json.dumps(cmd)}"
+    url = f"http://{leader_ip}/js?json={json.dumps(cmd)}"
     response = requests.get(url)
-    status = json.loads(response.text)
-    return status.get("mac", "")
+    print(f"Control all followers response: {response.text}")
+
+def control_specific_follower(leader_ip, follower_mac, joint_positions):
+    """Control a specific follower with the specified joint positions."""
+    cmd = {
+        "T": 306,  # CMD_ESP_NOW_SINGLE
+        "mac": follower_mac,
+        "dev": 0,
+        "b": joint_positions["base"],
+        "s": joint_positions["shoulder"],
+        "e": joint_positions["elbow"],
+        "t": joint_positions["wrist"],
+        "r": joint_positions["roll"],
+        "h": joint_positions["hand"],
+        "cmd": 0,
+        "megs": "position update"
+    }
+    url = f"http://{leader_ip}/js?json={json.dumps(cmd)}"
+    response = requests.get(url)
+    print(f"Control specific follower response: {response.text}")
 
 def move_leader_arm(ip_address, joint_id, angle, speed):
     """Move a specific joint on the Leader arm."""
     cmd = {
-        "type": "AngleCtrl",
-        "id": joint_id,
-        "angle": angle,
-        "speed": speed
+        "T": 101,  # CMD_SINGLE_JOINT_CTRL
+        "joint": joint_id,
+        "rad": angle,
+        "spd": speed,
+        "acc": 10
     }
     url = f"http://{ip_address}/js?json={json.dumps(cmd)}"
     response = requests.get(url)
@@ -165,22 +273,36 @@ if __name__ == "__main__":
     leader_ip = "192.168.4.1"
     follower_ip = "192.168.4.1"
     
-    # Step 1: Get the Leader's MAC address
+    # Step 1: Get the MAC addresses
     leader_mac = get_mac_address(leader_ip)
-    print(f"Leader MAC address: {leader_mac}")
+    follower_mac = get_mac_address(follower_ip)
     
     # Step 2: Configure the Leader
     configure_leader_mode(leader_ip)
     
-    # Step 3: Configure the Follower
+    # Step 3: Add the Follower to the Leader's list
+    add_follower_to_leader(leader_ip, follower_mac)
+    
+    # Step 4: Configure the Follower
     configure_follower_mode(follower_ip, leader_mac)
     
-    # Step 4: Move the Leader arm (Follower will automatically follow)
-    move_leader_arm(leader_ip, 1, 1.57, 50)  # Move base joint to 90 degrees
+    # Step 5: Move the Leader arm (Follower will automatically follow)
+    move_leader_arm(leader_ip, 0, 1.57, 50)  # Move base joint to 90 degrees
     time.sleep(2)
-    move_leader_arm(leader_ip, 2, 0.78, 30)  # Move shoulder joint to 45 degrees
+    move_leader_arm(leader_ip, 1, 0.78, 30)  # Move shoulder joint to 45 degrees
     time.sleep(2)
-    move_leader_arm(leader_ip, 3, 1.57, 40)  # Move elbow joint to 90 degrees
+    move_leader_arm(leader_ip, 2, 1.57, 40)  # Move elbow joint to 90 degrees
+    
+    # Step 6: Directly control all followers
+    joint_positions = {
+        "base": 0.0,
+        "shoulder": 0.5,
+        "elbow": 1.0,
+        "wrist": 0.0,
+        "roll": 0.0,
+        "hand": 1.57
+    }
+    control_all_followers(leader_ip, joint_positions)
 ```
 
 ## Troubleshooting
@@ -188,7 +310,8 @@ if __name__ == "__main__":
 ### Common Issues
 
 1. **Follower Not Connecting**
-   - Verify the Leader's MAC address is correctly entered
+   - Verify the Leader's MAC address is correctly entered in the CMD_ESP_NOW_ADD_FOLLOWER command
+   - Ensure the Leader is in mode 1 and the Follower is in mode 2 in the CMD_ESP_NOW_CONFIG command
    - Move the arms closer together
    - Restart both arms
    - Check for sources of interference
@@ -198,12 +321,20 @@ if __name__ == "__main__":
    - Move away from sources of interference
    - Slow down the Leader's movements
    - Check for mechanical issues in the Follower arm
+   - Verify the broadcasting is enabled with CMD_BROADCAST_FOLLOWER
 
 3. **Connection Lost During Operation**
    - Move arms closer together
    - Check power supplies
    - Restart both arms
-   - Reconfigure the connection
+   - Reconfigure the connection using the ESP-NOW commands
+   - Check if the MAC addresses are still correctly configured
+
+4. **Security Concerns**
+   - The ESP-NOW protocol relies on MAC addresses for authentication, which can be spoofed
+   - Consider operating in a controlled environment
+   - Implement additional security measures for sensitive applications
+   - Regularly update firmware to the latest version
 
 ## Performance Considerations
 
@@ -211,6 +342,19 @@ if __name__ == "__main__":
 - **Latency**: Total system latency is typically 20-50ms
 - **Power Consumption**: Higher than standard operation due to wireless communication
 - **Interference**: Other 2.4GHz devices can affect performance
+- **Security**: MAC address-based authentication has limitations
+
+## ESP-NOW Command Reference
+
+| Command | JSON Format | Description |
+|---------|-------------|-------------|
+| Get MAC Address | `{"T":302}` | Retrieves the MAC address of the arm |
+| ESP-NOW Config | `{"T":301,"mode":X,"dev":0,"cmd":0,"megs":0}` | Configures ESP-NOW mode (0=Disabled, 1=Leader, 2=Follower) |
+| Add Follower | `{"T":303,"mac":"XX:XX:XX:XX:XX:XX"}` | Adds a Follower to the Leader's list |
+| Remove Follower | `{"T":304,"mac":"XX:XX:XX:XX:XX:XX"}` | Removes a Follower from the Leader's list |
+| Broadcast Control | `{"T":300,"mode":X,"mac":"FF:FF:FF:FF:FF:FF"}` | Enables/disables broadcasting (0=Disabled, 1=Enabled) |
+| Control All Followers | `{"T":305,"dev":0,"b":0,"s":0,"e":1.57,"t":0,"r":0,"h":1.57,"cmd":0,"megs":""}` | Controls all connected Followers |
+| Control Specific Follower | `{"T":306,"mac":"XX:XX:XX:XX:XX:XX","dev":0,"b":0,"s":0,"e":1.57,"t":0,"r":0,"h":1.57,"cmd":0,"megs":""}` | Controls a specific Follower |
 
 ## Additional Resources
 
