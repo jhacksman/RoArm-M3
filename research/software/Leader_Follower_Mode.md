@@ -81,11 +81,18 @@ This command returns the MAC address of the arm, which you'll need for configuri
 To configure an arm as a Leader, use the ESP-NOW configuration command with the appropriate mode parameter:
 
 ```json
-{"T":301,"mode":1,"dev":0,"cmd":0,"megs":0}  // CMD_ESP_NOW_CONFIG
+{"T":301,"mode":1,"dev":0,"cmd":0,"megs":0}  // CMD_ESP_NOW_CONFIG for F-LEADER-B (Broadcast) mode
+```
+
+or
+
+```json
+{"T":301,"mode":2,"dev":0,"cmd":0,"megs":0}  // CMD_ESP_NOW_CONFIG for F-LEADER-S (Single Follower) mode
 ```
 
 The `mode` parameter determines the role:
-- `mode=1`: Leader mode
+- `mode=1`: F-LEADER-B (Flow-Leader Broadcast) mode - for controlling multiple Followers
+- `mode=2`: F-LEADER-S (Flow-Leader Single) mode - for controlling a single Follower
 - `mode=0`: Disabled (normal operation)
 
 Once configured as a Leader, you need to enable broadcasting to Followers:
@@ -111,7 +118,7 @@ Replace `XX:XX:XX:XX:XX:XX` with the actual MAC address of the Leader arm.
 Then, enable Follower mode:
 
 ```json
-{"T":301,"mode":2,"dev":0,"cmd":0,"megs":0}  // CMD_ESP_NOW_CONFIG
+{"T":301,"mode":3,"dev":0,"cmd":0,"megs":0}  // CMD_ESP_NOW_CONFIG for FOLLOWER mode
 ```
 
 #### Security Considerations
@@ -286,7 +293,7 @@ If you need to reset an arm from Leader or Follower mode to standard operation:
 | Command | JSON Format | Description |
 |---------|-------------|-------------|
 | Get MAC Address | `{"T":302}` | Retrieves the MAC address of the arm |
-| ESP-NOW Config | `{"T":301,"mode":X,"dev":0,"cmd":0,"megs":0}` | Configures ESP-NOW mode (0=Disabled, 1=Leader, 2=Follower) |
+| ESP-NOW Config | `{"T":301,"mode":X,"dev":0,"cmd":0,"megs":0}` | Configures ESP-NOW mode (0=Disabled, 1=F-LEADER-B (Broadcast), 2=F-LEADER-S (Single), 3=FOLLOWER) |
 | Add Follower | `{"T":303,"mac":"XX:XX:XX:XX:XX:XX"}` | Adds a Follower to the Leader's list |
 | Remove Follower | `{"T":304,"mac":"XX:XX:XX:XX:XX:XX"}` | Removes a Follower from the Leader's list |
 | Broadcast Control | `{"T":300,"mode":X,"mac":"FF:FF:FF:FF:FF:FF"}` | Enables/disables broadcasting (0=Disabled, 1=Enabled) |
@@ -372,9 +379,14 @@ def get_mac_address(ip_address):
     print(f"MAC Address: {mac_address}")
     return mac_address
 
-def configure_leader_mode(ip_address):
-    """Configure the arm as a Leader for ESP-NOW communication."""
-    cmd = {"T":301,"mode":1,"dev":0,"cmd":0,"megs":0}  # CMD_ESP_NOW_CONFIG with mode=1 for Leader
+def configure_leader_mode(ip_address, mode=1):
+    """Configure the arm as a Leader for ESP-NOW communication.
+    
+    Args:
+        ip_address: IP address of the arm
+        mode: 1 for F-LEADER-B (Broadcast) mode, 2 for F-LEADER-S (Single) mode
+    """
+    cmd = {"T":301,"mode":mode,"dev":0,"cmd":0,"megs":0}  # CMD_ESP_NOW_CONFIG with mode=1 for F-LEADER-B or mode=2 for F-LEADER-S
     url = f"http://{ip_address}/js?json={json.dumps(cmd)}"
     response = requests.get(url)
     print(f"Leader configuration response: {response.text}")
@@ -403,7 +415,7 @@ def configure_follower_mode(ip_address, leader_mac):
     print(f"Add leader response: {response.text}")
     
     # Then set follower mode
-    cmd = {"T":301,"mode":2,"dev":0,"cmd":0,"megs":0}  # CMD_ESP_NOW_CONFIG with mode=2 for Follower
+    cmd = {"T":301,"mode":3,"dev":0,"cmd":0,"megs":0}  # CMD_ESP_NOW_CONFIG with mode=3 for Follower
     url = f"http://{ip_address}/js?json={json.dumps(cmd)}"
     response = requests.get(url)
     print(f"Follower configuration response: {response.text}")
@@ -470,8 +482,8 @@ if __name__ == "__main__":
     leader_mac = get_mac_address(leader_ip)
     follower_mac = get_mac_address(follower_ip)
     
-    # Step 2: Configure the Leader
-    configure_leader_mode(leader_ip)
+    # Step 2: Configure the Leader (using F-LEADER-B mode by default)
+    configure_leader_mode(leader_ip, mode=1)  # mode=1 for F-LEADER-B (Broadcast) or mode=2 for F-LEADER-S (Single)
     
     # Step 3: Add the Follower to the Leader's list
     add_follower_to_leader(leader_ip, follower_mac)
