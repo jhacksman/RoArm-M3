@@ -786,6 +786,20 @@ This documentation on the JSON Command System is based on information from the f
 
 The goal of this enhanced documentation is to provide a more comprehensive and user-friendly reference for the JSON Command System, making it easier to understand and utilize the full capabilities of the RoArm-M3 Pro robotic arm.
 
+## Configuration Persistence Commands
+
+The following commands are used to save configurations persistently so they remain after power cycling:
+
+| Command | T Value | Description | Example |
+|---------|---------|-------------|---------|
+| CMD_WIFI_CONFIG_CREATE_BY_STATUS | 406 | Creates a wifiConfig.json file from current settings | `{"T":406}` |
+| CMD_WIFI_CONFIG_CREATE_BY_INPUT | 407 | Creates a wifiConfig.json file from provided parameters | `{"T":407,"mode":3,"ap_ssid":"RoArm-M3","ap_password":"12345678","sta_ssid":"YourWifi","sta_password":"YourPassword"}` |
+| CMD_WIFI_ON_BOOT | 401 | Sets the WiFi mode on boot (0=OFF, 1=AP, 2=STA, 3=AP+STA) | `{"T":401,"cmd":3}` |
+| CMD_NVS_CLEAR | 604 | Clears the NVS (Non-Volatile Storage) | `{"T":604}` |
+| CMD_REBOOT | 600 | Reboots the device | `{"T":600}` |
+
+**Important**: After changing settings, you must explicitly save them using `{"T":406}` or `{"T":407,...}` for the changes to persist after power cycling.
+
 ## Conclusion
 
 The JSON Command System provides a powerful and flexible interface for controlling the RoArm-M3 Pro robotic arm. By using standardized JSON commands, it enables seamless integration with various programming languages and control systems. Whether controlling the arm through the web interface, HTTP requests, or serial communication, the JSON Command System offers a consistent and comprehensive method for accessing all arm functions and features. Understanding the command structure, parameter requirements, and best practices outlined in this documentation will enable effective utilization of the RoArm-M3 Pro's capabilities for a wide range of applications.
