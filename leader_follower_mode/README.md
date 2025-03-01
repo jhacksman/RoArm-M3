@@ -356,6 +356,22 @@ if __name__ == "__main__":
 | Control All Followers | `{"T":305,"dev":0,"b":0,"s":0,"e":1.57,"t":0,"r":0,"h":1.57,"cmd":0,"megs":""}` | Controls all connected Followers |
 | Control Specific Follower | `{"T":306,"mac":"XX:XX:XX:XX:XX:XX","dev":0,"b":0,"s":0,"e":1.57,"t":0,"r":0,"h":1.57,"cmd":0,"megs":""}` | Controls a specific Follower |
 
+## Configuration Persistence
+
+To ensure that your Leader-Follower mode settings persist after power cycling:
+
+1. Configure the Leader and Follower modes as described above
+2. Save the configuration using the following JSON command:
+   ```json
+   {"T":406}
+   ```
+3. Reboot the device to verify that settings persist:
+   ```json
+   {"T":600}
+   ```
+
+For more detailed information on configuration persistence, see the [Configuration Persistence Guide](../research/software/configuration/Configuration_Persistence.md).
+
 ## Additional Resources
 
 - [Detailed Leader-Follower Mode Documentation](../research/software/Leader_Follower_Mode.md)
