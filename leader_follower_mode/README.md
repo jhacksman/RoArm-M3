@@ -358,19 +358,45 @@ if __name__ == "__main__":
 
 ## Configuration Persistence
 
-To ensure that your Leader-Follower mode settings persist after power cycling:
+After extensive investigation of the firmware, it has been determined that ESP-NOW settings (used for Leader-Follower mode) do not persist after power cycling by default. The `{"T":406}` command is specifically for WiFi configuration persistence only and does not save ESP-NOW settings.
 
-1. Configure the Leader and Follower modes as described above
-2. Save the configuration using the following JSON command:
+### Boot Mission Workaround
+
+The RoArm-M3 Pro provides a "Boot Mission" feature that can be used as a workaround to automatically reconfigure ESP-NOW settings after each power cycle:
+
+1. Reset the boot mission:
    ```json
-   {"T":406}
+   {"T":603}
    ```
-3. Reboot the device to verify that settings persist:
+
+2. Add ESP-NOW configuration commands to the boot mission:
+
+   **For a Leader Arm:**
+   ```json
+   {"T":222,"name":"boot","step":"{\"T\":301,\"mode\":1,\"dev\":0,\"cmd\":0,\"megs\":0}"}
+   {"T":222,"name":"boot","step":"{\"T\":300,\"mode\":1,\"mac\":\"FF:FF:FF:FF:FF:FF\"}"}
+   {"T":222,"name":"boot","step":"{\"T\":303,\"mac\":\"XX:XX:XX:XX:XX:XX\"}"}
+   ```
+
+   **For a Follower Arm:**
+   ```json
+   {"T":222,"name":"boot","step":"{\"T\":301,\"mode\":2,\"dev\":0,\"cmd\":0,\"megs\":0}"}
+   {"T":222,"name":"boot","step":"{\"T\":303,\"mac\":\"YY:YY:YY:YY:YY:YY\"}"}
+   ```
+
+3. Verify the boot mission:
+   ```json
+   {"T":602}
+   ```
+
+4. Reboot the device to test the boot mission:
    ```json
    {"T":600}
    ```
 
-For more detailed information on configuration persistence, see the [Configuration Persistence Guide](../research/software/configuration/Configuration_Persistence.md).
+For detailed information on using the Boot Mission System for ESP-NOW configuration persistence, see the [Boot Mission System Guide](../research/software/boot_mission/Boot_Mission_System.md).
+
+For information on WiFi configuration persistence, see the [Configuration Persistence Guide](../research/software/configuration/Configuration_Persistence.md).
 
 ## Additional Resources
 
