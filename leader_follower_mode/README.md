@@ -367,7 +367,34 @@ if __name__ == "__main__":
 
 After extensive investigation of the firmware, it has been determined that ESP-NOW settings (used for Leader-Follower mode) do not persist after power cycling by default. The `{"T":406}` command is specifically for WiFi configuration persistence only and does not save ESP-NOW settings.
 
-### Boot Mission Workaround
+### ESP-NOW Configuration Methods
+
+There are two ways to configure ESP-NOW settings for Leader-Follower mode:
+
+#### Method 1: Direct Commands (Recommended for Testing)
+
+These commands can be entered directly into the web interface or sent via HTTP requests. They take effect immediately but will not persist after power cycling:
+
+**For a Leader Arm (F-LEADER-B mode):**
+```json
+{"T":301,"mode":1,"dev":0,"cmd":0,"megs":0}  // Set F-LEADER-B (Broadcast) mode
+{"T":300,"mode":1,"mac":"FF:FF:FF:FF:FF:FF"}  // Enable broadcasting
+{"T":303,"mac":"XX:XX:XX:XX:XX:XX"}  // Add a Follower (replace with actual MAC)
+```
+
+**For a Leader Arm (F-LEADER-S mode):**
+```json
+{"T":301,"mode":2,"dev":0,"cmd":0,"megs":0}  // Set F-LEADER-S (Single) mode
+{"T":303,"mac":"XX:XX:XX:XX:XX:XX"}  // Add a Follower (replace with actual MAC)
+```
+
+**For a Follower Arm:**
+```json
+{"T":301,"mode":3,"dev":0,"cmd":0,"megs":0}  // Set FOLLOWER mode
+{"T":303,"mac":"YY:YY:YY:YY:YY:YY"}  // Add the Leader (replace with actual MAC)
+```
+
+#### Method 2: Boot Mission Workaround (For Persistent Configuration)
 
 The RoArm-M3 Pro provides a "Boot Mission" feature that can be used as a workaround to automatically reconfigure ESP-NOW settings after each power cycle:
 
@@ -376,30 +403,43 @@ The RoArm-M3 Pro provides a "Boot Mission" feature that can be used as a workaro
    {"T":603}
    ```
 
-2. Add ESP-NOW configuration commands to the boot mission:
+2. Create a new boot mission:
+   ```json
+   {"T":220,"name":"boot","intro":"boot mission"}
+   ```
 
-   **For a Leader Arm:**
+3. Add ESP-NOW configuration commands to the boot mission:
+
+   **For a Leader Arm (F-LEADER-B mode):**
    ```json
    {"T":222,"name":"boot","step":"{\"T\":301,\"mode\":1,\"dev\":0,\"cmd\":0,\"megs\":0}"}
    {"T":222,"name":"boot","step":"{\"T\":300,\"mode\":1,\"mac\":\"FF:FF:FF:FF:FF:FF\"}"}
    {"T":222,"name":"boot","step":"{\"T\":303,\"mac\":\"XX:XX:XX:XX:XX:XX\"}"}
    ```
 
-   **For a Follower Arm:**
+   **For a Leader Arm (F-LEADER-S mode):**
    ```json
    {"T":222,"name":"boot","step":"{\"T\":301,\"mode\":2,\"dev\":0,\"cmd\":0,\"megs\":0}"}
+   {"T":222,"name":"boot","step":"{\"T\":303,\"mac\":\"XX:XX:XX:XX:XX:XX\"}"}
+   ```
+
+   **For a Follower Arm:**
+   ```json
+   {"T":222,"name":"boot","step":"{\"T\":301,\"mode\":3,\"dev\":0,\"cmd\":0,\"megs\":0}"}
    {"T":222,"name":"boot","step":"{\"T\":303,\"mac\":\"YY:YY:YY:YY:YY:YY\"}"}
    ```
 
-3. Verify the boot mission:
+4. Verify the boot mission:
    ```json
    {"T":602}
    ```
 
-4. Reboot the device to test the boot mission:
+5. Reboot the device to test the boot mission:
    ```json
    {"T":600}
    ```
+
+**Note:** If you encounter issues with the boot mission method, try the direct commands first to verify your configuration works correctly, then attempt the boot mission method again.
 
 For detailed information on using the Boot Mission System for ESP-NOW configuration persistence, see the [Boot Mission System Guide](../research/software/boot_mission/Boot_Mission_System.md).
 
