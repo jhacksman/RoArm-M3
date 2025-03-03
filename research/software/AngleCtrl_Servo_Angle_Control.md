@@ -301,11 +301,11 @@ The AngleCtrl system integrates with other RoArm-M3 Pro control features:
 ### Hardware Resources
 - [ST3235 Metal Shell Servo Datasheet](https://www.waveshare.com/st3235-servo.htm)
 - [ST3215 Plastic Shell Servo Datasheet](https://www.waveshare.com/st3215-servo.htm)
-- [General Driver Board for Robots Schematic](https://files.waveshare.com/wiki/common/General_Driver_for_Robots_SCH.pdf)
+- [General Driver Board for Robots Schematic](https://files.waveshare.com/wiki/common/General_Driver_for_Robots_SCH.pdf) ([Local Copy](../hardware/main_control/ESP32-WROOM-32/datasheets/General_Driver_for_Robots_SCH.pdf))
 
 ### Software Resources
-- [RoArm-M3 Python Demo](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_Python.zip)
-- [RoArm-M3 Open Source Program](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_Open_Source_Program.zip)
+- [RoArm-M3 Python Demo](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_Python.zip) ([Local Copy](../hardware/misc/misc/drivers/RoArm-M3_Python.zip))
+- [RoArm-M3 Open Source Program](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_Open_Source_Program.zip) ([Local Copy](../hardware/misc/misc/drivers/RoArm-M3_Open_Source_Program.zip))
 
 ## Conclusion
 
