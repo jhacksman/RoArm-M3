@@ -1,0 +1,41 @@
+# ESP32 Antenna Selection Configuration
+
+The ESP32 module in the RoArm-M3 Pro can be configured to use either its internal PCB antenna or an external antenna connected to the IPEX connector. This document provides information on how to configure the antenna selection.
+
+## Hardware Configuration
+
+The ESP32-WROOM-32 module used in the RoArm-M3 Pro has an RF switch that allows selecting between the internal PCB antenna and an external antenna connected to the IPEX connector. The selection is typically controlled by a GPIO pin.
+
+## Software Configuration
+
+To select the external antenna in your ESP32 code:
+
+```c
+// Configure GPIO pin for antenna selection
+#define ANTENNA_SELECT_PIN 5  // Example GPIO pin, check actual pin used in RoArm-M3 Pro
+
+void setup() {
+  // Set antenna selection pin as output
+  pinMode(ANTENNA_SELECT_PIN, OUTPUT);
+  
+  // Select external antenna (logic level depends on hardware design)
+  // Check RoArm-M3 Pro schematics for correct logic level
+  digitalWrite(ANTENNA_SELECT_PIN, HIGH);  // Example: HIGH selects external antenna
+}
+```
+
+## Verification
+
+To verify that the external antenna is working correctly:
+
+1. Run a WiFi scan before and after connecting the external antenna
+2. Compare signal strength (RSSI) values
+3. Test connectivity at various distances
+
+## Notes
+
+- The actual GPIO pin used for antenna selection may vary; check the RoArm-M3 Pro schematics
+- Some ESP32 modules may have different antenna selection mechanisms
+- Always refer to the specific ESP32 module documentation for accurate information
+
+This file serves as a reference for configuring the ESP32 to use an external antenna connected to the IPEX connector on the RoArm-M3 Pro.

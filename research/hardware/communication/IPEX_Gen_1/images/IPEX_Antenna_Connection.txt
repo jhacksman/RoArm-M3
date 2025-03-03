@@ -1,0 +1,15 @@
+IPEX/MHF/U.FL Antenna Connection:
+
+Proper connection of an antenna to the IPEX connector involves:
+
+1. Alignment: The antenna connector (male) should be held perpendicular to the board connector (female)
+2. Connection: Gentle downward pressure should be applied until a slight "click" is felt
+3. Verification: The connection should be firm but not require excessive force to maintain
+
+Common mistakes include:
+- Applying connection at an angle
+- Using excessive force
+- Twisting the connector during installation
+- Pulling on the cable instead of the connector when disconnecting
+
+This text file serves as a placeholder for an image showing proper antenna connection to an IPEX connector.
