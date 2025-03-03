@@ -1,0 +1,31 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>404</title>
+</head>
+
+<body>
+                <div>
+                    <style type="text/css">
+A {text-decoration: NONE} 
+body{
+	text-align:center;
+	background-color: #e9e9e9;
+}
+h1{font-family:"微软雅黑"}
+.STYLE1 {color: #999999}
+.STYLE2 {
+	color: #939398;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+}
+.STYLE4 {color: #000000; }
+</style>
+                    <p><img src="/404/images/m1.jpg" width="1000" height="495" /></p>
+<p class="STYLE2"><a href="/" class="STYLE2">Go Back!</a></p>
+                </div>
+</body>
+</html>

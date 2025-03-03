@@ -1,41 +1,10 @@
-# ST3235 Memory Table
-
-This is a placeholder for the ST3235 Memory Table documentation. The original file could not be downloaded from Waveshare's website.
-
-## Memory Map Overview
-
-The ST3235 servo uses a memory-mapped architecture for configuration and control. Below is a simplified memory map based on available information.
-
-| Address | Name | Access | Default | Description |
-|---------|------|--------|---------|-------------|
-| 0x00 | ID | R/W | 1 | Servo ID (1-253) |
-| 0x01 | Baud Rate | R/W | 3 | Communication baud rate |
-| 0x02 | Return Delay | R/W | 0 | Return delay time |
-| 0x03 | Min Angle Limit (L) | R/W | 0 | Lower byte of min angle limit |
-| 0x04 | Min Angle Limit (H) | R/W | 0 | Upper byte of min angle limit |
-| 0x05 | Max Angle Limit (L) | R/W | 0xFF | Lower byte of max angle limit |
-| 0x06 | Max Angle Limit (H) | R/W | 0x0F | Upper byte of max angle limit |
-| 0x07 | Max Temperature | R/W | 80 | Maximum temperature limit (°C) |
-| 0x08 | Max Input Voltage | R/W | 140 | Maximum input voltage (0.1V) |
-| 0x09 | Min Input Voltage | R/W | 60 | Minimum input voltage (0.1V) |
-| 0x0A | Max Torque (L) | R/W | 0xFF | Lower byte of max torque |
-| 0x0B | Max Torque (H) | R/W | 0x03 | Upper byte of max torque |
-| ... | ... | ... | ... | ... |
-| 0x38 | Present Position (L) | R | - | Lower byte of current position |
-| 0x39 | Present Position (H) | R | - | Upper byte of current position |
-| 0x3A | Present Speed (L) | R | - | Lower byte of current speed |
-| 0x3B | Present Speed (H) | R | - | Upper byte of current speed |
-| 0x3C | Present Load (L) | R | - | Lower byte of current load |
-| 0x3D | Present Load (H) | R | - | Upper byte of current load |
-| 0x3E | Present Voltage | R | - | Current voltage (0.1V) |
-| 0x3F | Present Temperature | R | - | Current temperature (°C) |
-| 0x40 | Registered | R | 0 | Instruction registered |
-| 0x41 | Moving | R | 0 | Servo moving status |
-| 0x42 | Lock | R/W | 0 | EEPROM lock |
-| 0x43 | Punch (L) | R/W | 0 | Lower byte of punch |
-| 0x44 | Punch (H) | R/W | 0 | Upper byte of punch |
-
-## Original Source
-
-This information was compiled from the Waveshare product page and available documentation.
-
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>NoSuchKey</Code>
+  <Message>The specified key does not exist.</Message>
+  <RequestId>67C5ED8291795F33365A0B50</RequestId>
+  <HostId>files.waveshare.com</HostId>
+  <Key>wiki/ST3235/ST3235_Memory_Table.pdf</Key>
+  <EC>0026-00000001</EC>
+  <RecommendDoc>https://api.alibabacloud.com/troubleshoot?q=0026-00000001</RecommendDoc>
+</Error>

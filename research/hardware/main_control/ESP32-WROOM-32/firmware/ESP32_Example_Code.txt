@@ -1,0 +1,189 @@
+# ESP32 Example Code for RoArm-M3 Pro
+
+This file contains example code for programming the ESP32-WROOM-32 microcontroller in the RoArm-M3 Pro.
+
+## Basic ESP32 Setup with Arduino Framework
+
+```cpp
+#include <Arduino.h>
+#include <WiFi.h>
+#include <ESPmDNS.h>
+#include <WebServer.h>
+
+const char* ssid = "RoArm-M3";
+const char* password = "12345678";
+
+WebServer server(80);
+
+// LED pin
+const int ledPin = 2;  // Built-in LED on most ESP32 dev boards
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(ledPin, OUTPUT);
+  
+  // Set up WiFi Access Point
+  Serial.println("Setting up Access Point...");
+  WiFi.softAP(ssid, password);
+  
+  IPAddress IP = WiFi.softAPIP();
+  Serial.print("AP IP address: ");
+  Serial.println(IP);
+  
+  // Set up mDNS responder
+  if (MDNS.begin("roarm")) {
+    Serial.println("mDNS responder started");
+  }
+  
+  // Define server routes
+  server.on("/", HTTP_GET, []() {
+    server.send(200, "text/html", "<h1>RoArm-M3 Pro Web Server</h1>");
+  });
+  
+  server.on("/led/on", HTTP_GET, []() {
+    digitalWrite(ledPin, HIGH);
+    server.send(200, "text/plain", "LED ON");
+  });
+  
+  server.on("/led/off", HTTP_GET, []() {
+    digitalWrite(ledPin, LOW);
+    server.send(200, "text/plain", "LED OFF");
+  });
+  
+  // Start server
+  server.begin();
+  Serial.println("HTTP server started");
+}
+
+void loop() {
+  server.handleClient();
+}
+```
+
+## ESP-IDF Example (FreeRTOS)
+
+```c
+#include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_system.h"
+#include "esp_spi_flash.h"
+#include "driver/gpio.h"
+
+#define LED_PIN GPIO_NUM_2
+
+void led_task(void *pvParameter) {
+    gpio_pad_select_gpio(LED_PIN);
+    gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
+    
+    while(1) {
+        gpio_set_level(LED_PIN, 1);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        gpio_set_level(LED_PIN, 0);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+    }
+}
+
+void app_main() {
+    printf("ESP32 Application Starting\n");
+    
+    // Print chip information
+    esp_chip_info_t chip_info;
+    esp_chip_info(&chip_info);
+    printf("ESP32 chip with %d CPU cores, WiFi%s%s, ",
+            chip_info.cores,
+            (chip_info.features & CHIP_FEATURE_BT) ? "/BT" : "",
+            (chip_info.features & CHIP_FEATURE_BLE) ? "/BLE" : "");
+    
+    printf("silicon revision %d, ", chip_info.revision);
+    
+    printf("%dMB %s flash\n", spi_flash_get_chip_size() / (1024 * 1024),
+            (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
+    
+    // Create LED blinking task
+    xTaskCreate(&led_task, "led_task", 2048, NULL, 5, NULL);
+}
+```
+
+## ESP-NOW Example for Leader-Follower Mode
+
+```cpp
+#include <Arduino.h>
+#include <esp_now.h>
+#include <WiFi.h>
+
+// MAC Address of the receiver (follower)
+uint8_t followerMacAddress[] = {0x24, 0x6F, 0x28, 0x95, 0x7A, 0xC8};
+
+// Structure to send data
+typedef struct servo_message {
+  int servo1;
+  int servo2;
+  int servo3;
+  int servo4;
+  int servo5;
+  int servo6;
+} servo_message;
+
+// Create a servo message
+servo_message myData;
+
+// Callback when data is sent
+void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
+  Serial.print("Last Packet Send Status: ");
+  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
+}
+
+void setup() {
+  Serial.begin(115200);
+  
+  // Set device as a Wi-Fi Station
+  WiFi.mode(WIFI_STA);
+  
+  // Init ESP-NOW
+  if (esp_now_init() != ESP_OK) {
+    Serial.println("Error initializing ESP-NOW");
+    return;
+  }
+  
+  // Register peer
+  esp_now_peer_info_t peerInfo;
+  memcpy(peerInfo.peer_addr, followerMacAddress, 6);
+  peerInfo.channel = 0;  
+  peerInfo.encrypt = false;
+  
+  // Add peer        
+  if (esp_now_add_peer(&peerInfo) != ESP_OK){
+    Serial.println("Failed to add peer");
+    return;
+  }
+  
+  // Register callback function
+  esp_now_register_send_cb(OnDataSent);
+}
+
+void loop() {
+  // Set servo values (example values)
+  myData.servo1 = 90;
+  myData.servo2 = 45;
+  myData.servo3 = 120;
+  myData.servo4 = 60;
+  myData.servo5 = 150;
+  myData.servo6 = 30;
+  
+  // Send message via ESP-NOW
+  esp_err_t result = esp_now_send(followerMacAddress, (uint8_t *) &myData, sizeof(myData));
+  
+  if (result == ESP_OK) {
+    Serial.println("Sent with success");
+  } else {
+    Serial.println("Error sending the data");
+  }
+  
+  delay(2000);
+}
+```
+
+## Notes
+
+These examples demonstrate basic ESP32 programming for the RoArm-M3 Pro. For the actual implementation, you may need to adjust the pin assignments and control logic based on the specific hardware configuration.
