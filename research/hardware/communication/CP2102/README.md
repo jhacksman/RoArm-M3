@@ -36,7 +36,7 @@ These files are local copies of resources originally provided by Waveshare and S
 
 ## Original Sources
 
-- [Waveshare Wiki CP2102 Drivers](https://files.waveshare.com/wiki/common/CP210x_Windows_Drivers.zip)
+- [Waveshare Wiki CP2102 Drivers](https://files.waveshare.com/wiki/common/CP210x_Windows_Drivers.zip) ([Local Copy](drivers/CP210x_Windows_Drivers.zip))
 - [Silicon Labs CP2102 Documentation](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
 - [CP2102 Datasheet (Silicon Labs)](https://www.silabs.com/documents/public/data-sheets/CP2102-9.pdf)
 

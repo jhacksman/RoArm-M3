@@ -94,11 +94,11 @@ To use the Type-C Port (LIDAR) on the RoArm-M3 Pro:
 
 2. **Driver Installation**:
    - Install the CP2102 driver on the host computer if not already installed
-   - The driver can be downloaded from [Waveshare's website](https://files.waveshare.com/upload/6/62/CP210x_Windows_Drivers.zip)
+   - The driver can be downloaded from [Waveshare's website](https://files.waveshare.com/upload/6/62/CP210x_Windows_Drivers.zip) ([Local Copy](CP2102/drivers/CP210x_Windows_Drivers.zip))
    - After installation, the device should appear as a virtual COM port
 
 3. **Basic Testing (Windows)**:
-   - Download and install the [Lidar Test Software](https://files.waveshare.com/upload/a/a5/Ld_desktop.zip)
+   - Download and install the [Lidar Test Software](https://files.waveshare.com/upload/a/a5/Ld_desktop.zip) ([Local Copy](../misc/misc/drivers/Ld_desktop.zip))
    - Open the software and select the appropriate Lidar model (e.g., LDS19)
    - Select the correct COM port (the new port that appears after connecting the USB cable)
    - Click "Start" to begin receiving and visualizing Lidar data
@@ -267,16 +267,16 @@ def generate_launch_description():
 - [General Driver for Robots Wiki Page](https://www.waveshare.com/wiki/General_Driver_for_Robots)
 - [Tutorial XI: Lidar and Publishing Lidar Topics in ROS2](https://www.waveshare.com/wiki/Tutorial_IX_Lidar_and_Publishing_Lidar_Topics_in_ROS2)
 - [LD19 DTOF Lidar Product Page](https://www.waveshare.com/dtof-lidar-ld19.htm)
-- [CP2102 Driver Download](https://files.waveshare.com/upload/6/62/CP210x_Windows_Drivers.zip)
+- [CP2102 Driver Download](https://files.waveshare.com/upload/6/62/CP210x_Windows_Drivers.zip) ([Local Copy](CP2102/drivers/CP210x_Windows_Drivers.zip))
 
 ### Software
-- [Lidar Test Software for Windows](https://files.waveshare.com/upload/a/a5/Ld_desktop.zip)
+- [Lidar Test Software for Windows](https://files.waveshare.com/upload/a/a5/Ld_desktop.zip) ([Local Copy](../misc/misc/drivers/Ld_desktop.zip))
 - [LDROBOT Lidar ROS2 Package (GitHub)](https://github.com/ldrobotSensorTeam/ldlidar_stl_ros2)
 - [LDROBOT Lidar ROS2 Package (Gitee)](https://gitee.com/ldrobotSensorTeam/ldlidar_stl_ros2)
 
 ### Hardware Resources
-- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf)
-- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip)
+- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf) ([Local Copy](../main_control/ESP32-WROOM-32/datasheets/General_Driver_for_Robots_SCH.pdf))
+- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip) ([Local Copy](../main_control/ESP32-WROOM-32/drivers/General_Driver_for_Robots_STEP.zip))
 - [USB-A to USB-C Cable](https://www.waveshare.com/product/raspberry-pi/accessories/cables/usb-a-to-type-c-cable-1m.htm)
 - [PH2.0 to ZH1.5 4P Adapter Cable](https://www.waveshare.com/dtof-lidar-ld19.htm) (Included with LD19 Lidar)
 

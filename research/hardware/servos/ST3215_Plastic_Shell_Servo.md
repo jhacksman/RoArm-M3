@@ -76,24 +76,24 @@ The ST3215 servo supports various commands for control and feedback:
 ### Documentation
 - [ST3215 Servo Wiki Page](https://www.waveshare.com/wiki/ST3215_Servo)
 - [Bus Servo Drive Circuit Schematic](https://www.waveshare.com/w/upload/d/d3/Bus_servo_drive_circuit_schematic.pdf)
-- [User Manual](https://files.waveshare.com/upload/f/f4/ST3215_Servo_User_Manual.pdf)
-- [Communication Protocol User Manual](https://files.waveshare.com/upload/2/27/Communication_Protocol_User_Manual.pdf)
-- [Bus Servo Communication Protocol](https://files.waveshare.com/wiki/common/Smart%20Bus%20Servo%20Communication%20Protocol.pdf)
-- [Memory Table](https://files.waveshare.com/upload/2/27/ST3215%20memory%20table.pdf)
+- [User Manual](https://files.waveshare.com/upload/f/f4/ST3215_Servo_User_Manual.pdf) ([Local Copy](ST3215/datasheets/ST3215_Servo_User_Manual.pdf))
+- [Communication Protocol User Manual](https://files.waveshare.com/upload/2/27/Communication_Protocol_User_Manual.pdf) ([Local Copy](ST3215/datasheets/Communication_Protocol_User_Manual.pdf))
+- [Bus Servo Communication Protocol](https://files.waveshare.com/wiki/common/Smart%20Bus%20Servo%20Communication%20Protocol.pdf) ([Local Copy](ST3215/datasheets/Smart%20Bus%20Servo%20Communication%20Protocol.pdf))
+- [Memory Table](https://files.waveshare.com/upload/2/27/ST3215%20memory%20table.pdf) ([Local Copy](ST3215/datasheets/ST3215%20memory%20table.pdf))
 
 ### Software
-- [ServoDriverST Open Source Program (Arduino)](https://files.waveshare.com/upload/d/d8/ST_Servo.zip)
-- [ESP32 Flash Download Tool](https://files.waveshare.com/upload/8/8b/SERVO_DOWNLOAD_TOOL.zip)
+- [ServoDriverST Open Source Program (Arduino)](https://files.waveshare.com/upload/d/d8/ST_Servo.zip) ([Local Copy](ST3215/drivers/ST_Servo.zip))
+- [ESP32 Flash Download Tool](https://files.waveshare.com/upload/8/8b/SERVO_DOWNLOAD_TOOL.zip) ([Local Copy](ST3215/drivers/SERVO_DOWNLOAD_TOOL.zip))
 - [Arduino IDE](https://www.arduino.cc/en/Main/Software)
 
 ### 3D Models
-- [ST3215 Servo STEP Module](https://files.waveshare.com/upload/5/59/ST3215-3D.zip)
-- [12DOF Robotic Dog STEP Model](https://files.waveshare.com/upload/b/b5/ROBOTIC_DOG_STEP.zip) (Example application)
-- [12DOF Robotic Dog Fusion360 Project](https://files.waveshare.com/upload/1/1d/ROBOTIC_DOG_F360.zip) (Example application)
-- [12DOF Robotic Dog Creo5.0 Project](https://files.waveshare.com/upload/1/1a/ROBOTIC_DOG_CREO.zip) (Example application)
+- [ST3215 Servo STEP Module](https://files.waveshare.com/upload/5/59/ST3215-3D.zip) ([Local Copy](ST3215/drivers/ST3215-3D.zip))
+- [12DOF Robotic Dog STEP Model](https://files.waveshare.com/upload/b/b5/ROBOTIC_DOG_STEP.zip) ([Local Copy](ST3215/drivers/ROBOTIC_DOG_STEP.zip)) (Example application)
+- [12DOF Robotic Dog Fusion360 Project](https://files.waveshare.com/upload/1/1d/ROBOTIC_DOG_F360.zip) ([Local Copy](ST3215/drivers/ROBOTIC_DOG_F360.zip)) (Example application)
+- [12DOF Robotic Dog Creo5.0 Project](https://files.waveshare.com/upload/1/1a/ROBOTIC_DOG_CREO.zip) ([Local Copy](ST3215/drivers/ROBOTIC_DOG_CREO.zip)) (Example application)
 
 ### 2D Drawings
-- [2D Drawing](https://files.waveshare.com/upload/0/08/ST3215-2D.zip)
+- [2D Drawing](https://files.waveshare.com/upload/0/08/ST3215-2D.zip) ([Local Copy](ST3215/drivers/ST3215-2D.zip))
 
 ## Programming Examples
 

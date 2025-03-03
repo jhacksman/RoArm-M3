@@ -92,13 +92,13 @@ To control a motor using the TB6612FNG:
 - [Tutorial I: Motor With Encoder Control Demo](https://www.waveshare.com/wiki/Tutorial_I:_Motor_With_Encoder_Control_Demo)
 
 ### Software
-- [UGV01 Open-source Demo](https://files.waveshare.com/upload/0/0c/UGV01_Basic_Demo.zip) (Contains TB6612FNG control examples)
+- [UGV01 Open-source Demo](https://files.waveshare.com/upload/0/0c/UGV01_Basic_Demo.zip) ([Local Copy](TB6612FNG/drivers/UGV01_Basic_Demo.zip)) (Contains TB6612FNG control examples)
 - [Arduino TB6612FNG Library by SparkFun](https://github.com/sparkfun/SparkFun_TB6612FNG_Arduino_Library)
 - [Adafruit TB6612 Library](https://github.com/adafruit/Adafruit_TB6612)
 
 ### Hardware Resources
-- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf)
-- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip)
+- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf) ([Local Copy](../main_control/ESP32-WROOM-32/datasheets/General_Driver_for_Robots_SCH.pdf))
+- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip) ([Local Copy](../main_control/ESP32-WROOM-32/drivers/General_Driver_for_Robots_STEP.zip))
 
 ## Programming Examples
 

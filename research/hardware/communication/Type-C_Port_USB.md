@@ -71,7 +71,7 @@ To use the Type-C Port (USB) on the RoArm-M3 Pro:
 
 1. **Driver Installation**:
    - Install the CP2102 driver on the host computer if not already installed
-   - The driver can be downloaded from [Waveshare's website](https://files.waveshare.com/upload/6/62/CP210x_Windows_Drivers.zip)
+   - The driver can be downloaded from [Waveshare's website](https://files.waveshare.com/upload/6/62/CP210x_Windows_Drivers.zip) ([Local Copy](CP2102/drivers/CP210x_Windows_Drivers.zip))
    - After installation, the device should appear as a virtual COM port
 
 2. **Hardware Connection**:
@@ -257,18 +257,18 @@ void app_main(void)
 - [ESP32 Technical Reference Manual](https://www.espressif.com/sites/default/files/documentation/esp32_technical_reference_manual_en.pdf)
 
 ### Software
-- [CP2102 Driver Download](https://files.waveshare.com/upload/6/62/CP210x_Windows_Drivers.zip)
+- [CP2102 Driver Download](https://files.waveshare.com/upload/6/62/CP210x_Windows_Drivers.zip) ([Local Copy](CP2102/drivers/CP210x_Windows_Drivers.zip))
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [ESP32 Arduino Core](https://github.com/espressif/arduino-esp32)
 - [ESP-IDF (Espressif IoT Development Framework)](https://github.com/espressif/esp-idf)
 
 ### Hardware Resources
-- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf)
-- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip)
+- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf) ([Local Copy](../main_control/ESP32-WROOM-32/datasheets/General_Driver_for_Robots_SCH.pdf))
+- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip) ([Local Copy](../main_control/ESP32-WROOM-32/drivers/General_Driver_for_Robots_STEP.zip))
 - [USB-A to USB-C Cable](https://www.waveshare.com/product/raspberry-pi/accessories/cables/usb-a-to-type-c-cable-1m.htm)
 
 ### Example Code
-- [UGV01 Open-source Demo](https://files.waveshare.com/upload/0/0c/UGV01_BASIC_DEMO.zip)
+- [UGV01 Open-source Demo](https://files.waveshare.com/upload/0/0c/UGV01_BASIC_DEMO.zip) ([Local Copy](../misc/misc/drivers/UGV01_BASIC_DEMO.zip))
 - [Motor Control Examples](https://www.waveshare.com/wiki/Tutorial_I:_Motor_With_Encoder_Control_Demo)
 - [Servo Control Examples](https://www.waveshare.com/wiki/Tutorial_III:_ST3215_Serial_Bus_Servo_Control_Demo)
 - [Sensor Reading Examples](https://www.waveshare.com/wiki/Tutorial_V:_IMU_Data_Reading_Demo)
