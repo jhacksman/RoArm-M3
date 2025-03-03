@@ -1,0 +1,10 @@
+# TB6612FNG Motor Driver IC
+
+This is a placeholder for the TB6612FNG Motor Driver IC datasheet.
+
+## Key Specifications
+
+- Operating Voltage: 2.5V-13.5V (motor), 2.7V-5.5V (logic)
+- Output Current: 1.2A (peak) per channel
+- Channels: 2 (can drive two DC motors)
+- PWM Control: Up to 100kHz

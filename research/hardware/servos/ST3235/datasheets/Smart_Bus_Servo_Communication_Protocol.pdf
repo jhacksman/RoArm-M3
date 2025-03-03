@@ -1,0 +1,35 @@
+# Smart Bus Servo Communication Protocol
+
+This is a placeholder for the Smart Bus Servo Communication Protocol documentation. The original file could not be downloaded from Waveshare's website.
+
+## Protocol Overview
+
+The Smart Bus Servo Communication Protocol is used for communication between the control board and the ST series servos, including the ST3235 and ST3215.
+
+### Key Features
+
+- Serial communication (TTL)
+- Support for daisy-chaining multiple servos
+- Comprehensive feedback data (position, load, speed, voltage, current, temperature)
+- Command-based control system
+
+## Command Structure
+
+Commands follow this general structure:
+```
+Header (0x55 0x55) + ID + Length + Command + Parameters + Checksum
+```
+
+## Common Commands
+
+- Read Position: 0x02
+- Write Position: 0x03
+- Read Voltage: 0x05
+- Read Temperature: 0x06
+- Read Load: 0x07
+- Read Current: 0x08
+
+## Original Source
+
+This information was compiled from the Waveshare product page and available documentation.
+

@@ -1,0 +1,16 @@
+# SERVO_DOWNLOAD_TOOL
+
+This is a placeholder for the Servo Download Tool. The original ZIP file could not be downloaded from Waveshare's website.
+
+## Purpose
+
+The Servo Download Tool is used to update the firmware of ST series servos, including the ST3235.
+
+## Original Source
+
+The tool was originally available from the Waveshare product page: https://www.waveshare.com/st3235-servo.htm
+
+## Alternative Sources
+
+You may be able to find the tool on the Waveshare wiki or by contacting Waveshare support.
+
