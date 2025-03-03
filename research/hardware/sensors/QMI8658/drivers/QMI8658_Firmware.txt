@@ -1,0 +1,32 @@
+# QMI8658 Firmware Information
+
+This file serves as a placeholder for the QMI8658 firmware. The actual firmware would be a binary file that contains the program code for the QMI8658 6-axis motion sensor.
+
+## Firmware Features
+
+The QMI8658 firmware typically provides:
+
+1. Sensor initialization and configuration
+2. Data acquisition and processing
+3. Motion detection algorithms
+4. Power management
+5. Communication protocol handling
+
+## Firmware Update Process
+
+To update the QMI8658 firmware (when an actual firmware file is available):
+
+1. Connect the RoArm-M3 Pro to your computer
+2. Use the appropriate firmware update tool
+3. Select the firmware file
+4. Initiate the update process
+5. Wait for the update to complete
+6. Verify successful update
+
+## Original Source
+
+The original firmware would typically be provided by QST Corporation, the manufacturer of the QMI8658 sensor.
+
+## Notes
+
+This placeholder file is included to document the firmware requirements. If you require the actual firmware, please contact QST Corporation or Waveshare for the appropriate firmware package.

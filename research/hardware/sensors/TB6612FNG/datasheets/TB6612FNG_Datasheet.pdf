@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+
+
+    <meta charset="UTF-8"/>
+    <title>Not Found | TOSHIBA Semiconductor &amp; Storage Products</title>
+
+
+    <meta name="template" content="toshiba-ss-v3-default-template"/>
+<link rel="stylesheet" href="/apps/toshiba-ss-v3/clientlibs/clientlib-base.css" type="text/css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex"/>
+
+<script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/jquery.js"></script>
+<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-KHT85D8');</script>
+<!-- End Google Tag Manager -->
+
+
+</head>
+	<body class="page basicpage">
+        <!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHT85D8"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+		<div class="root responsivegrid">
+			<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+				<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+					<div class="comp_v3_0010 aem-GridColumn aem-GridColumn--default--12">
+						<header class="comp_v3_0010__frame">
+							<div class="comp_v3_0010__logo">
+								<a href="https://www.global.toshiba/jp/top.html" title="東芝トップページ">
+									<picture class="comp_v3_0010__logo__toshiba">
+										<source media="(max-width: 768px)" srcset="/etc.clientlibs/toshiba-ss-v3/clientlibs/clientlib-site/resources/logo_sp.svg"/>
+										<img src="/etc.clientlibs/toshiba-ss-v3/clientlibs/clientlib-site/resources/logo_pc.svg" alt="Toshiba"/>
+									</picture>
+								</a>
+							<div class="comp_v3_0010__logo__corporation">
+								<img src="/etc.clientlibs/toshiba-ss-v3/clientlibs/clientlib-site/resources/identifier_en.svg" alt="東芝デバイス＆ストレージ株式会社"/>
+							</div>
+						</header>
+					</div>
+					<div class="comp_v3_0880 aem-GridColumn aem-GridColumn--default--12">
+						<div class="comp_v3_0880__frame">
+							<div class="comp_v3_0880__frame__canvas--gray">
+								<div class="comp_v3_0140">
+									<div class="comp_v3_0140__frame">
+										<nav class="comp_v3_0140__scroll">
+										</nav>
+									</div>
+								</div>
+								<div class="comp_v3_0620">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="comp_v3_0880 aem-GridColumn aem-GridColumn--default--12">
+						<div class="comp_v3_0880__frame">
+							<div class="comp_v3_0880__frame__canvas--blue02">
+								<div class="comp_v3_0060">
+									<div class="comp_v3_0060__frame--small">
+										<p style="text-align: center;">
+											<font size="7">Not Found</font><br>
+											<font size="5">Sorry, the page you are looking for has not been found.</font><br>
+											<font size="4">誠に申し訳ございません。ご指定いただいたページが見つかりません。</font><br>
+											<font size="4">抱歉，未找到您要找的网页。</font>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="comp_v3_0060 aem-GridColumn aem-GridColumn--default--12">
+						<div class="comp_v3_0060__frame--small">
+							<p style="text-align: center;">
+								<font size="5"><br>Please check the URL again or select your area from below, then go to the top page.</font><br>
+								<font size="4">URLをご確認の上再度お試しいただくか、以下より目的の地域を選択いただき、トップページに移動してください。</font><br>
+								<font size="4">感谢您访问我们的网站。请尝试再次检查一下网址或选择以下您所在的区域，返回至东芝存储&电子元器件解决方案公司网站的首页。</font>
+								<br>
+							</p>
+						</div>
+						<div class="comp_v3_0900 aem-GridColumn aem-GridColumn--default--12">
+							<div class="comp_v3_0900__frame">
+								<div class="comp_v3_0900__container">
+									<div class="comp_v3_0900__container__item--ratio1">
+									</div>
+									<div class="comp_v3_0900__container__item--ratio1">
+										<div class="comp_v3_0060">
+											<div class="comp_v3_0060__frame--small">
+												<p style="text-align: center;">
+													<font size="4"> 
+														<a href="https://toshiba.semicon-storage.com/ap-en/top.html">Asia-Pacific	English</a><br>
+														<a href="https://toshiba.semicon-storage.com/jp/top.html">日本語</a><br>
+														<a href="https://toshiba.semicon-storage.com/cn/top.html">简体中文</a><br>
+														<a href="https://toshiba.semicon-storage.com/tw/top.html">繁體中文</a><br>
+														<a href="https://toshiba.semicon-storage.com/kr/top.html">한국어</a><br>
+														<a href="https://toshiba.semicon-storage.com/us/top.html">Americas English</a><br>
+														<a href="https://toshiba.semicon-storage.com/eu/top.html">Europe (EMEA) English</a>
+													</font>
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="comp_v3_0900__container__item--ratio1">
+									</div>
+								</div>
+							</div>
+							<div class="comp_v3_0900 aem-GridColumn aem-GridColumn--default--12">
+								<div class="comp_v3_0900__frame">
+									<div class="comp_v3_0900__container">
+										<div class="comp_v3_0900__container__item--ratio1">
+										</div>
+										<div class="comp_v3_0900__container__item--ratio1">
+											<div class="comp_v3_0240">
+												<div class="comp_v3_0240__frame">
+													<figure>
+														<img src="/content/dam/toshiba-ss-v3/master/en/shared/404-icon.png" alt/>
+													</figure>
+												</div>
+											</div>
+										</div>
+										<div class="comp_v3_0900__container__item--ratio1">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                    <div class="comp_v3_0130 aem-GridColumn aem-GridColumn--default--12">
+                        <footer class="comp_v3_0130__frame">
+                            <div class="comp_v3_0130__inner">
+                                <div class="comp_v3_0130__information">
+                                    <div class="comp_v3_0130__information__legal">
+                                        <ul>
+                                            <li><a href="https://webprvt.itsd.tdsc.toshiba.co.jp/ap-en/privacy-policy.html">PRIVACY POLICY</a></li>
+                                            <li><a href="https://webprvt.itsd.tdsc.toshiba.co.jp/ap-en/terms.html">TERMS AND CONDITIONS</a></li>
+                                            <li><a href="javascript:void(0);" class="optanon-toggle-display">COOKIE SETTINGS</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="comp_v3_0130__information__identity">
+                                        <img src="/etc.clientlibs/toshiba-ss-v3/clientlibs/clientlib-site/resources/identifier_en.svg" alt=""/>
+                                    </div>
+                                    <div class="comp_v3_0130__information__copyright">
+                                        <small>Copyright © 2024 TOSHIBA ELECTRONIC DEVICES &amp; STORAGE CORPORATION, All Rights Reserved.</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+    			</div>
+			</div>
+		</div>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/page-loading.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/perfect-scrollbar.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/ResizeObserver.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/swipeImage.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/imageModal.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/web-animations.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/muuri.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/stickyfill.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/slick.js"></script>
+        <script src="/etc.clientlibs/clientlibs/granite/jquery/granite/csrf.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/modal-dalog.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/datatables.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/intersection-observer.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/nouislider.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/libraries/select2.js"></script>
+        <script src="/etc.clientlibs/toshiba-ss-v3/clientlibs/clientlib-base.js"></script>
+    </body>
+</html>
+

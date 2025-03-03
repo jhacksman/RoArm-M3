@@ -1,0 +1,40 @@
+# QMI8658 Calibration Tool Information
+
+This file serves as a placeholder for the QMI8658 calibration tool. The actual calibration tool would be a binary executable or library that helps calibrate the QMI8658 6-axis motion sensor.
+
+## Calibration Process
+
+The QMI8658 requires calibration for optimal performance. The calibration process typically involves:
+
+1. Placing the sensor in specific orientations
+2. Collecting raw sensor data
+3. Calculating offset and scale factors
+4. Storing calibration parameters in non-volatile memory
+
+## Calibration Parameters
+
+The calibration tool would typically adjust the following parameters:
+
+- Accelerometer zero offset (X, Y, Z)
+- Gyroscope zero offset (X, Y, Z)
+- Accelerometer scale factors
+- Gyroscope scale factors
+- Temperature compensation values
+
+## Usage Instructions
+
+To use the actual calibration tool:
+
+1. Connect the RoArm-M3 Pro to your computer
+2. Run the calibration tool executable
+3. Follow the on-screen instructions for positioning the arm
+4. Wait for the calibration process to complete
+5. Verify calibration accuracy
+
+## Original Source
+
+The original calibration tool would typically be provided by QST Corporation, the manufacturer of the QMI8658 sensor.
+
+## Notes
+
+This placeholder file is included to document the need for a calibration tool. If you require the actual calibration software, please contact QST Corporation or Waveshare for the appropriate software package.

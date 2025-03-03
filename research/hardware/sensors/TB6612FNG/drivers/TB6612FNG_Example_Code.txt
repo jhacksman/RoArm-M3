@@ -1,0 +1,268 @@
+# TB6612FNG Example Code for RoArm-M3 Pro
+
+This file contains example code for controlling motors using the TB6612FNG motor driver chip in the RoArm-M3 Pro.
+
+## Arduino/ESP32 Example
+
+```cpp
+#include <Arduino.h>
+
+// TB6612FNG pin definitions
+#define STBY_PIN 23  // Standby pin
+#define AIN1_PIN 22  // Motor A input 1
+#define AIN2_PIN 21  // Motor A input 2
+#define PWMA_PIN 19  // Motor A PWM input
+#define BIN1_PIN 18  // Motor B input 1
+#define BIN2_PIN 5   // Motor B input 2
+#define PWMB_PIN 17  // Motor B PWM input
+
+// PWM properties
+#define PWM_FREQ 1000     // 1 kHz
+#define PWM_RESOLUTION 8  // 8-bit resolution (0-255)
+#define PWM_CHANNEL_A 0   // PWM channel for motor A
+#define PWM_CHANNEL_B 1   // PWM channel for motor B
+
+void setup() {
+  Serial.begin(115200);
+  
+  // Configure pins
+  pinMode(STBY_PIN, OUTPUT);
+  pinMode(AIN1_PIN, OUTPUT);
+  pinMode(AIN2_PIN, OUTPUT);
+  pinMode(BIN1_PIN, OUTPUT);
+  pinMode(BIN2_PIN, OUTPUT);
+  
+  // Configure PWM
+  ledcSetup(PWM_CHANNEL_A, PWM_FREQ, PWM_RESOLUTION);
+  ledcSetup(PWM_CHANNEL_B, PWM_FREQ, PWM_RESOLUTION);
+  ledcAttachPin(PWMA_PIN, PWM_CHANNEL_A);
+  ledcAttachPin(PWMB_PIN, PWM_CHANNEL_B);
+  
+  // Enable the driver
+  digitalWrite(STBY_PIN, HIGH);
+  
+  Serial.println("TB6612FNG Motor Driver Initialized");
+}
+
+// Function to control Motor A
+void driveMotorA(int speed) {
+  // speed: -255 to 255, negative for reverse
+  if (speed > 0) {
+    digitalWrite(AIN1_PIN, HIGH);
+    digitalWrite(AIN2_PIN, LOW);
+    ledcWrite(PWM_CHANNEL_A, speed);
+  } else if (speed < 0) {
+    digitalWrite(AIN1_PIN, LOW);
+    digitalWrite(AIN2_PIN, HIGH);
+    ledcWrite(PWM_CHANNEL_A, -speed);
+  } else {
+    // Brake
+    digitalWrite(AIN1_PIN, LOW);
+    digitalWrite(AIN2_PIN, LOW);
+    ledcWrite(PWM_CHANNEL_A, 0);
+  }
+}
+
+// Function to control Motor B
+void driveMotorB(int speed) {
+  // speed: -255 to 255, negative for reverse
+  if (speed > 0) {
+    digitalWrite(BIN1_PIN, HIGH);
+    digitalWrite(BIN2_PIN, LOW);
+    ledcWrite(PWM_CHANNEL_B, speed);
+  } else if (speed < 0) {
+    digitalWrite(BIN1_PIN, LOW);
+    digitalWrite(BIN2_PIN, HIGH);
+    ledcWrite(PWM_CHANNEL_B, -speed);
+  } else {
+    // Brake
+    digitalWrite(BIN1_PIN, LOW);
+    digitalWrite(BIN2_PIN, LOW);
+    ledcWrite(PWM_CHANNEL_B, 0);
+  }
+}
+
+// Function to put the driver in standby mode
+void standby(bool enable) {
+  digitalWrite(STBY_PIN, enable ? LOW : HIGH);
+}
+
+void loop() {
+  Serial.println("Motor A forward");
+  driveMotorA(128);  // 50% speed
+  delay(2000);
+  
+  Serial.println("Motor A brake");
+  driveMotorA(0);
+  delay(1000);
+  
+  Serial.println("Motor A reverse");
+  driveMotorA(-128);  // 50% speed reverse
+  delay(2000);
+  
+  Serial.println("Motor A brake");
+  driveMotorA(0);
+  delay(1000);
+  
+  Serial.println("Motor B forward");
+  driveMotorB(128);  // 50% speed
+  delay(2000);
+  
+  Serial.println("Motor B brake");
+  driveMotorB(0);
+  delay(1000);
+  
+  Serial.println("Motor B reverse");
+  driveMotorB(-128);  // 50% speed reverse
+  delay(2000);
+  
+  Serial.println("Motor B brake");
+  driveMotorB(0);
+  delay(1000);
+  
+  Serial.println("Standby mode");
+  standby(true);
+  delay(2000);
+  
+  Serial.println("Resume operation");
+  standby(false);
+  delay(1000);
+}
+```
+
+## Python Example (using RPi.GPIO)
+
+```python
+import RPi.GPIO as GPIO
+import time
+
+# TB6612FNG pin definitions
+STBY_PIN = 23  # Standby pin
+AIN1_PIN = 22  # Motor A input 1
+AIN2_PIN = 21  # Motor A input 2
+PWMA_PIN = 19  # Motor A PWM input
+BIN1_PIN = 18  # Motor B input 1
+BIN2_PIN = 5   # Motor B input 2
+PWMB_PIN = 17  # Motor B PWM input
+
+# Setup GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(STBY_PIN, GPIO.OUT)
+GPIO.setup(AIN1_PIN, GPIO.OUT)
+GPIO.setup(AIN2_PIN, GPIO.OUT)
+GPIO.setup(BIN1_PIN, GPIO.OUT)
+GPIO.setup(BIN2_PIN, GPIO.OUT)
+GPIO.setup(PWMA_PIN, GPIO.OUT)
+GPIO.setup(PWMB_PIN, GPIO.OUT)
+
+# Setup PWM
+pwm_a = GPIO.PWM(PWMA_PIN, 1000)  # 1 kHz
+pwm_b = GPIO.PWM(PWMB_PIN, 1000)  # 1 kHz
+pwm_a.start(0)  # Start with 0% duty cycle
+pwm_b.start(0)  # Start with 0% duty cycle
+
+# Enable the driver
+GPIO.output(STBY_PIN, GPIO.HIGH)
+
+def drive_motor_a(speed):
+    """Control Motor A
+    
+    Args:
+        speed: -100 to 100, negative for reverse
+    """
+    if speed > 0:
+        GPIO.output(AIN1_PIN, GPIO.HIGH)
+        GPIO.output(AIN2_PIN, GPIO.LOW)
+        pwm_a.ChangeDutyCycle(speed)
+    elif speed < 0:
+        GPIO.output(AIN1_PIN, GPIO.LOW)
+        GPIO.output(AIN2_PIN, GPIO.HIGH)
+        pwm_a.ChangeDutyCycle(-speed)
+    else:
+        # Brake
+        GPIO.output(AIN1_PIN, GPIO.LOW)
+        GPIO.output(AIN2_PIN, GPIO.LOW)
+        pwm_a.ChangeDutyCycle(0)
+
+def drive_motor_b(speed):
+    """Control Motor B
+    
+    Args:
+        speed: -100 to 100, negative for reverse
+    """
+    if speed > 0:
+        GPIO.output(BIN1_PIN, GPIO.HIGH)
+        GPIO.output(BIN2_PIN, GPIO.LOW)
+        pwm_b.ChangeDutyCycle(speed)
+    elif speed < 0:
+        GPIO.output(BIN1_PIN, GPIO.LOW)
+        GPIO.output(BIN2_PIN, GPIO.HIGH)
+        pwm_b.ChangeDutyCycle(-speed)
+    else:
+        # Brake
+        GPIO.output(BIN1_PIN, GPIO.LOW)
+        GPIO.output(BIN2_PIN, GPIO.LOW)
+        pwm_b.ChangeDutyCycle(0)
+
+def standby(enable):
+    """Put the driver in standby mode
+    
+    Args:
+        enable: True to enable standby, False to disable
+    """
+    GPIO.output(STBY_PIN, GPIO.LOW if enable else GPIO.HIGH)
+
+try:
+    print("Motor A forward")
+    drive_motor_a(50)  # 50% speed
+    time.sleep(2)
+    
+    print("Motor A brake")
+    drive_motor_a(0)
+    time.sleep(1)
+    
+    print("Motor A reverse")
+    drive_motor_a(-50)  # 50% speed reverse
+    time.sleep(2)
+    
+    print("Motor A brake")
+    drive_motor_a(0)
+    time.sleep(1)
+    
+    print("Motor B forward")
+    drive_motor_b(50)  # 50% speed
+    time.sleep(2)
+    
+    print("Motor B brake")
+    drive_motor_b(0)
+    time.sleep(1)
+    
+    print("Motor B reverse")
+    drive_motor_b(-50)  # 50% speed reverse
+    time.sleep(2)
+    
+    print("Motor B brake")
+    drive_motor_b(0)
+    time.sleep(1)
+    
+    print("Standby mode")
+    standby(True)
+    time.sleep(2)
+    
+    print("Resume operation")
+    standby(False)
+    time.sleep(1)
+
+except KeyboardInterrupt:
+    pass
+
+finally:
+    # Clean up
+    pwm_a.stop()
+    pwm_b.stop()
+    GPIO.cleanup()
+```
+
+## Notes
+
+These examples demonstrate basic motor control using the TB6612FNG driver. For the RoArm-M3 Pro, you may need to adjust the pin assignments and control logic based on the specific hardware configuration.

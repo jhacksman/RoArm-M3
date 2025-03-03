@@ -1,0 +1,38 @@
+# AK09918C Calibration Software Information
+
+This file serves as a placeholder for the AK09918C calibration software. The actual calibration software would be a binary executable or library that helps calibrate the AK09918C 3-axis electronic compass.
+
+## Calibration Process
+
+The AK09918C requires calibration for optimal performance. The calibration process typically involves:
+
+1. Rotating the sensor in a figure-eight pattern
+2. Collecting raw magnetic field data
+3. Calculating hard-iron and soft-iron compensation parameters
+4. Storing calibration parameters in non-volatile memory
+
+## Calibration Parameters
+
+The calibration software would typically adjust the following parameters:
+
+- Hard-iron offset (X, Y, Z)
+- Soft-iron transformation matrix
+- Scale factors
+
+## Usage Instructions
+
+To use the actual calibration software:
+
+1. Connect the RoArm-M3 Pro to your computer
+2. Run the calibration software executable
+3. Follow the on-screen instructions for rotating the arm
+4. Wait for the calibration process to complete
+5. Verify calibration accuracy by checking heading values
+
+## Original Source
+
+The original calibration software would typically be provided by AKM Semiconductor, the manufacturer of the AK09918C sensor.
+
+## Notes
+
+This placeholder file is included to document the need for calibration software. If you require the actual calibration software, please contact AKM Semiconductor or Waveshare for the appropriate software package.

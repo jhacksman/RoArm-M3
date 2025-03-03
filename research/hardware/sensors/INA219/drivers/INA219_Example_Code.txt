@@ -1,0 +1,193 @@
+# INA219 Example Code for RoArm-M3 Pro
+
+This file contains example code for interfacing with the INA219 current/voltage monitoring chip in the RoArm-M3 Pro.
+
+## Arduino/ESP32 Example
+
+```cpp
+#include <Wire.h>
+#include <Adafruit_INA219.h>
+
+Adafruit_INA219 ina219;
+
+void setup() {
+  Serial.begin(115200);
+  
+  // Initialize the INA219
+  if (!ina219.begin()) {
+    Serial.println("Failed to find INA219 chip");
+    while (1) { delay(10); }
+  }
+  
+  // By default the INA219 is configured with:
+  // - 32V, 2A range (gain of 8)
+  // - 12-bit ADC resolution
+  // - 1 sample averaging
+  // - ~1ms conversion time
+  
+  // For higher precision, you can configure the INA219:
+  // ina219.setCalibration_32V_1A();  // 32V, 1A range (higher precision on amps)
+  // ina219.setCalibration_16V_400mA();  // 16V, 400mA range (higher precision)
+  
+  Serial.println("INA219 Current/Voltage Monitor Initialized");
+}
+
+void loop() {
+  float shuntvoltage = ina219.getShuntVoltage_mV();
+  float busvoltage = ina219.getBusVoltage_V();
+  float current_mA = ina219.getCurrent_mA();
+  float power_mW = ina219.getPower_mW();
+  float loadvoltage = busvoltage + (shuntvoltage / 1000);
+  
+  Serial.print("Bus Voltage:   "); Serial.print(busvoltage); Serial.println(" V");
+  Serial.print("Shunt Voltage: "); Serial.print(shuntvoltage); Serial.println(" mV");
+  Serial.print("Load Voltage:  "); Serial.print(loadvoltage); Serial.println(" V");
+  Serial.print("Current:       "); Serial.print(current_mA); Serial.println(" mA");
+  Serial.print("Power:         "); Serial.print(power_mW); Serial.println(" mW");
+  Serial.println("");
+  
+  delay(1000);
+}
+```
+
+## Python Example (using Adafruit CircuitPython)
+
+```python
+import time
+import board
+import adafruit_ina219
+
+# Create the I2C bus
+i2c = board.I2C()  # uses board.SCL and board.SDA
+
+# Create the INA219 sensor
+ina219 = adafruit_ina219.INA219(i2c)
+
+# Optional: Change configuration to use a lower range for higher precision
+# ina219.set_calibration_32V_1A()  # 32V, 1A range (higher precision on amps)
+# ina219.set_calibration_16V_400mA()  # 16V, 400mA range (higher precision)
+
+print("INA219 Current/Voltage Monitor Initialized")
+
+while True:
+    bus_voltage = ina219.bus_voltage  # voltage on V- (load side)
+    shunt_voltage = ina219.shunt_voltage  # voltage between V+ and V- across the shunt
+    current = ina219.current  # current in mA
+    power = ina219.power  # power in mW
+    
+    # INA219 measures bus voltage on the load side. So V+ is the bus voltage
+    # load voltage is the sum of the bus voltage and shunt voltage
+    load_voltage = bus_voltage + shunt_voltage
+    
+    print("Bus Voltage:   {:6.3f} V".format(bus_voltage))
+    print("Shunt Voltage: {:6.3f} mV".format(shunt_voltage * 1000))
+    print("Load Voltage:  {:6.3f} V".format(load_voltage))
+    print("Current:       {:6.3f} mA".format(current))
+    print("Power:         {:6.3f} mW".format(power))
+    print("")
+    
+    time.sleep(1)
+```
+
+## ESP32 Example with Raw Register Access
+
+```cpp
+#include <Wire.h>
+
+#define INA219_ADDRESS 0x40  // I2C address of INA219 (0x40 is default)
+
+// INA219 registers
+#define INA219_REG_CONFIG        0x00
+#define INA219_REG_SHUNTVOLTAGE  0x01
+#define INA219_REG_BUSVOLTAGE    0x02
+#define INA219_REG_POWER         0x03
+#define INA219_REG_CURRENT       0x04
+#define INA219_REG_CALIBRATION   0x05
+
+// Configuration values
+#define INA219_CONFIG_BVOLTAGERANGE_32V  0x2000  // 0-32V
+#define INA219_CONFIG_GAIN_8_320MV       0x1800  // Gain 8, ±320mV range
+#define INA219_CONFIG_BADCRES_12BIT      0x0400  // 12-bit bus ADC resolution
+#define INA219_CONFIG_SADCRES_12BIT_1S   0x0018  // 12-bit shunt ADC resolution, 1 sample
+#define INA219_CONFIG_MODE_SANDBVOLT_CONTINUOUS  0x0007  // Continuous bus and shunt voltage measurements
+
+// Function to write 16-bit value to register
+void writeRegister(uint8_t reg, uint16_t value) {
+  Wire.beginTransmission(INA219_ADDRESS);
+  Wire.write(reg);
+  Wire.write((value >> 8) & 0xFF);  // Upper 8-bits
+  Wire.write(value & 0xFF);         // Lower 8-bits
+  Wire.endTransmission();
+}
+
+// Function to read 16-bit value from register
+uint16_t readRegister(uint8_t reg) {
+  Wire.beginTransmission(INA219_ADDRESS);
+  Wire.write(reg);
+  Wire.endTransmission();
+  
+  Wire.requestFrom(INA219_ADDRESS, 2);
+  return ((Wire.read() << 8) | Wire.read());
+}
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin();
+  
+  // Configure INA219
+  uint16_t config = INA219_CONFIG_BVOLTAGERANGE_32V |
+                   INA219_CONFIG_GAIN_8_320MV |
+                   INA219_CONFIG_BADCRES_12BIT |
+                   INA219_CONFIG_SADCRES_12BIT_1S |
+                   INA219_CONFIG_MODE_SANDBVOLT_CONTINUOUS;
+  
+  writeRegister(INA219_REG_CONFIG, config);
+  
+  // Calibrate INA219
+  // For a 0.1 ohm shunt resistor and max expected current of 2A:
+  // Current_LSB = 0.1 mA/bit (100uA/bit)
+  // Cal = 0.04096 / (Current_LSB * RSHUNT)
+  // Cal = 0.04096 / (0.0001 * 0.1) = 4096
+  writeRegister(INA219_REG_CALIBRATION, 4096);
+  
+  Serial.println("INA219 Current/Voltage Monitor Initialized");
+}
+
+void loop() {
+  // Read bus voltage
+  uint16_t busVoltageRaw = readRegister(INA219_REG_BUSVOLTAGE);
+  // Convert to volts (4 LSB per mV, and bit 0-2 are status bits)
+  float busVoltage = (busVoltageRaw >> 3) * 0.004;
+  
+  // Read shunt voltage
+  int16_t shuntVoltageRaw = readRegister(INA219_REG_SHUNTVOLTAGE);
+  // Convert to mV (1 LSB = 10uV)
+  float shuntVoltage = shuntVoltageRaw * 0.01;
+  
+  // Read current (calibrated)
+  int16_t currentRaw = readRegister(INA219_REG_CURRENT);
+  // Convert to mA (1 LSB = 100uA from our calibration)
+  float current = currentRaw * 0.1;
+  
+  // Read power (calibrated)
+  uint16_t powerRaw = readRegister(INA219_REG_POWER);
+  // Convert to mW (1 LSB = 2mW from our calibration)
+  float power = powerRaw * 2.0;
+  
+  // Calculate load voltage
+  float loadVoltage = busVoltage + (shuntVoltage / 1000);
+  
+  Serial.print("Bus Voltage:   "); Serial.print(busVoltage); Serial.println(" V");
+  Serial.print("Shunt Voltage: "); Serial.print(shuntVoltage); Serial.println(" mV");
+  Serial.print("Load Voltage:  "); Serial.print(loadVoltage); Serial.println(" V");
+  Serial.print("Current:       "); Serial.print(current); Serial.println(" mA");
+  Serial.print("Power:         "); Serial.print(power); Serial.println(" mW");
+  Serial.println("");
+  
+  delay(1000);
+}
+```
+
+## Notes
+
+These examples demonstrate basic interfacing with the INA219 chip. For the RoArm-M3 Pro, you may need to adjust the I2C address and calibration values based on the specific hardware configuration.

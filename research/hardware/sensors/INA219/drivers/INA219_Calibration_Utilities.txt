@@ -1,0 +1,41 @@
+# INA219 Calibration Utilities Information
+
+This file serves as a placeholder for the INA219 calibration utilities. The actual calibration utilities would be software tools that help calibrate the INA219 current/voltage monitoring chip for accurate measurements.
+
+## Calibration Process
+
+The INA219 requires calibration for optimal performance. The calibration process typically involves:
+
+1. Setting the calibration register with appropriate values
+2. Adjusting for shunt resistor tolerance
+3. Configuring the bus and shunt voltage ranges
+4. Setting the conversion time and averaging
+
+## Calibration Parameters
+
+The calibration utilities would typically adjust the following parameters:
+
+- Shunt resistor value (typically 0.1 ohm)
+- Current LSB (least significant bit) value
+- Maximum expected current
+- Bus voltage range (16V or 32V)
+- Shunt voltage range (±40mV, ±80mV, ±160mV, or ±320mV)
+- ADC resolution and averaging
+
+## Usage Instructions
+
+To use the actual calibration utilities:
+
+1. Connect the INA219 to your microcontroller
+2. Run the calibration utility software
+3. Configure the parameters based on your specific application
+4. Write the calibration values to the INA219 registers
+5. Verify calibration accuracy with known loads
+
+## Original Source
+
+The original calibration utilities would typically be provided by Texas Instruments or third-party developers for the INA219 chip.
+
+## Notes
+
+This placeholder file is included to document the need for calibration utilities. If you require the actual calibration software, please refer to Texas Instruments' documentation or third-party libraries for the INA219.
