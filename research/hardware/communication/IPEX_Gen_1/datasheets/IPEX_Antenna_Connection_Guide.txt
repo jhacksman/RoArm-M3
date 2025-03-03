@@ -1,0 +1,50 @@
+# IPEX/U.FL Antenna Connection Guide
+
+## Proper Connection Technique
+
+1. **Inspection**: Ensure both the connector on the board and the antenna connector are clean and undamaged.
+
+2. **Alignment**: Hold the antenna connector perpendicular to the board connector. The center pin of the antenna connector should align with the center receptacle of the board connector.
+
+3. **Connection**:
+   - Do not apply connection at an angle
+   - Use your fingertip or a flat, non-metallic tool to press directly down
+   - Apply gentle, even pressure until you feel a slight "click" or snap
+   - Do not twist or rock the connector during installation
+
+4. **Verification**: Gently tug on the cable to ensure it's securely connected. The connection should feel firm but not require excessive force to maintain.
+
+5. **Disconnection**:
+   - Use a proper U.FL removal tool if available
+   - If no tool is available, carefully lift the connector straight up
+   - Never pull on the cable itself
+   - Do not use metal tools that could damage the connector
+
+## Common Mistakes to Avoid
+
+- Applying too much force
+- Connecting at an angle
+- Twisting the connector
+- Pulling on the cable instead of the connector
+- Using metal tools that can damage the connector
+- Exceeding the rated mating cycles (typically 30)
+
+## Antenna Selection for RoArm-M3 Pro
+
+When selecting an external antenna for the RoArm-M3 Pro:
+
+1. **Frequency Range**: Choose an antenna that supports 2.4GHz (and 5GHz if dual-band WiFi is needed)
+2. **Gain**: 2-5 dBi is typically sufficient for most applications
+3. **Cable Length**: Shorter cables (10-15cm) minimize signal loss
+4. **Connector Type**: Must have IPEX/MHF/U.FL compatible connector
+5. **Mounting Options**: Consider how and where the antenna will be mounted
+
+## ESP32 Antenna Configuration
+
+The ESP32 in the RoArm-M3 Pro may need to be configured to use the external antenna:
+
+1. Check if the ESP32 is configured for automatic antenna selection
+2. If manual selection is required, use the appropriate API calls in your firmware
+3. Verify signal strength improvement after connecting the external antenna
+
+This guide serves as a reference for properly connecting and using external antennas with the IPEX connector on the RoArm-M3 Pro.

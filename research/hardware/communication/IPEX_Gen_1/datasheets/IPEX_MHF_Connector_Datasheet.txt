@@ -1,0 +1,43 @@
+# IPEX/MHF/U.FL Connector Specifications
+
+## Overview
+The IPEX/MHF/U.FL connector is an ultra-miniature coaxial RF connector commonly used in wireless devices where space is limited. It was originally developed by Hirose Electric Group under the name U.FL and is also known as MHF in some contexts.
+
+## Technical Specifications
+
+- **Connector Type**: IPEX/MHF/U.FL (Gen 1)
+- **Impedance**: 50 Ohm
+- **Frequency Range**: DC to 6 GHz
+- **VSWR**: 1.3 max (DC to 3 GHz)
+- **Insertion Loss**: 0.5 dB max (DC to 3 GHz)
+- **Mating Cycles**: 30 cycles
+- **Size**: Approximately 2.5mm × 2.5mm
+- **Height**: 1.2mm (receptacle)
+- **Operating Temperature**: -40°C to +90°C
+- **Contact Resistance**: 20mΩ max
+- **Insulation Resistance**: 500MΩ min
+- **Withstanding Voltage**: 100V AC for 1 minute
+
+## Mechanical Characteristics
+
+- **Retention Force**: 20N min
+- **Disconnection Force**: 0.2N to 1.0N
+- **Weight**: Approximately 0.05g
+
+## Applications
+
+- WiFi antennas
+- Bluetooth modules
+- GPS receivers
+- Cellular devices
+- IoT devices
+- Robotics (including RoArm-M3 Pro)
+
+## Notes
+
+This text file serves as a placeholder for the official IPEX/MHF/U.FL connector datasheet. The specifications provided are based on standard U.FL connector specifications from Hirose Electric Group.
+
+## Original Sources
+
+- Hirose Electric Group: https://www.hirose.com/product/series/U.FL
+- I-PEX Connectors: https://www.i-pex.com/

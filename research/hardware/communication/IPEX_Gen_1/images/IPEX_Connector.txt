@@ -1,0 +1,11 @@
+IPEX/MHF/U.FL Connector Description:
+
+The IPEX (also known as MHF or U.FL) connector is an ultra-miniature coaxial RF connector commonly used in wireless devices where space is limited. The connector on the RoArm-M3 Pro board is the receptacle (female) part, while the antenna cable has the plug (male) part.
+
+Key visual characteristics:
+- Very small form factor (approximately 2.5mm × 2.5mm)
+- Gold-plated center contact
+- Circular contact area surrounded by a small metal housing
+- Located near the ESP32 module on the RoArm-M3 Pro board
+
+This text file serves as a placeholder for an image of the IPEX connector.
