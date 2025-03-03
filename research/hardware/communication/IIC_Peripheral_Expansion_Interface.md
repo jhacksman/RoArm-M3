@@ -369,13 +369,13 @@ except Exception as e:
 - [Wire Library (Arduino)](https://www.arduino.cc/en/reference/wire)
 
 ### Hardware Resources
-- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf)
-- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip)
+- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf) ([Local Copy](../main_control/ESP32-WROOM-32/datasheets/General_Driver_for_Robots_SCH.pdf))
+- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip) ([Local Copy](../main_control/ESP32-WROOM-32/drivers/General_Driver_for_Robots_STEP.zip))
 - [SSD1306 OLED Display Module](https://www.waveshare.com/0.91inch-oled-module.htm)
 - [BME280 Environmental Sensor](https://www.waveshare.com/bme280-environmental-sensor.htm)
 
 ### Example Code
-- [OLED Display Demo](https://files.waveshare.com/upload/0/0a/SSD1306.zip)
+- [OLED Display Demo](https://files.waveshare.com/upload/0/0a/SSD1306.zip) ([Local Copy](../misc/misc/drivers/SSD1306.zip))
 - [I²C Scanner](https://playground.arduino.cc/Main/I2cScanner/)
 - [ESP32 I²C Examples](https://github.com/espressif/arduino-esp32/tree/master/libraries/Wire/examples)
 

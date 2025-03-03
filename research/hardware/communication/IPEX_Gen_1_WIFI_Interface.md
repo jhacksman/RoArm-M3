@@ -220,8 +220,8 @@ void handleRoot() {
 - [IPEX/U.FL Connector Specifications](https://www.hirose.com/product/document?clcode=CL0331-0240-7-00&productname=U.FL-R-SMT-1(10)&series=U.FL&documenttype=Catalog&lang=en&documentid=D49662_en)
 
 ### Hardware Resources
-- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf)
-- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip)
+- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf) ([Local Copy](../main_control/ESP32-WROOM-32/datasheets/General_Driver_for_Robots_SCH.pdf))
+- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip) ([Local Copy](../main_control/ESP32-WROOM-32/drivers/General_Driver_for_Robots_STEP.zip))
 
 ### Compatible Antennas
 - [2.4GHz WiFi Antenna with IPEX Connector](https://www.waveshare.com/2.4g-antenna.htm)

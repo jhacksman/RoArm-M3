@@ -134,19 +134,19 @@ The QMI8658 supports multiple configuration options that can be set via the cont
 ## Available Resources
 
 ### Documentation
-- [QMI8658A Datasheet (Waveshare)](https://files.waveshare.com/upload/e/e7/QMI8658A.pdf)
+- [QMI8658A Datasheet (Waveshare)](https://files.waveshare.com/upload/e/e7/QMI8658A.pdf) ([Local Copy](QMI8658/datasheets/QMI8658A.pdf))
 - [General Driver for Robots Wiki Page](https://www.waveshare.com/wiki/General_Driver_for_Robots)
 - [Tutorial VII: IMU Data Reading Demo](https://www.waveshare.com/wiki/Tutorial_V:_IMU_Data_Reading_Demo)
 
 ### Software
-- [IMU Data Reading Demo](https://files.waveshare.com/wiki/common/9DOF_Demo.zip)
-- [IMU Data Reading Demo v2](https://files.waveshare.com/upload/3/39/9DOF_Demo_v2.zip)
+- [IMU Data Reading Demo](https://files.waveshare.com/wiki/common/9DOF_Demo.zip) ([Local Copy](QMI8658/drivers/9DOF_Demo.zip))
+- [IMU Data Reading Demo v2](https://files.waveshare.com/upload/3/39/9DOF_Demo_v2.zip) ([Local Copy](QMI8658/drivers/9DOF_Demo_v2.zip))
 - [QMI8658 Arduino Library by Seeed Studio](https://github.com/Seeed-Studio/Seeed_Arduino_QMI8658)
-- [UGV01 Open-source Demo](https://files.waveshare.com/upload/0/0c/UGV01_Basic_Demo.zip) (Contains IMU examples)
+- [UGV01 Open-source Demo](https://files.waveshare.com/upload/0/0c/UGV01_Basic_Demo.zip) ([Local Copy](QMI8658/drivers/UGV01_Basic_Demo.zip)) (Contains IMU examples)
 
 ### Hardware Resources
-- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf)
-- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip)
+- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf) ([Local Copy](../main_control/ESP32-WROOM-32/datasheets/General_Driver_for_Robots_SCH.pdf))
+- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip) ([Local Copy](../main_control/ESP32-WROOM-32/drivers/General_Driver_for_Robots_STEP.zip))
 
 ## Programming Examples
 

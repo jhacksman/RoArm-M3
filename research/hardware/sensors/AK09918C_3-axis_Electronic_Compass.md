@@ -107,13 +107,13 @@ The AK09918C supports multiple operation modes that can be set via the CNTL1 reg
 - [Tutorial VII: IMU Data Reading Demo](https://www.waveshare.com/wiki/Tutorial_V:_IMU_Data_Reading_Demo)
 
 ### Software
-- [UGV01 Open-source Demo](https://files.waveshare.com/upload/0/0c/UGV01_Basic_Demo.zip) (Contains IMU examples)
+- [UGV01 Open-source Demo](https://files.waveshare.com/upload/0/0c/UGV01_Basic_Demo.zip) ([Local Copy](AK09918C/drivers/UGV01_Basic_Demo.zip)) (Contains IMU examples)
 - [QMI8658C and AK09918C Arduino Library](https://github.com/Seeed-Studio/Seeed_Arduino_QMI8658)
 - [AK09918 Arduino Library by Creativite](https://github.com/Creativite-Tecnologia/AK09918)
 
 ### Hardware Resources
-- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf)
-- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip)
+- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf) ([Local Copy](../main_control/ESP32-WROOM-32/datasheets/General_Driver_for_Robots_SCH.pdf))
+- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip) ([Local Copy](../main_control/ESP32-WROOM-32/drivers/General_Driver_for_Robots_STEP.zip))
 
 ## Programming Examples
 

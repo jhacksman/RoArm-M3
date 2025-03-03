@@ -1,0 +1,24 @@
+# ST3235 2D Drawings
+
+This is a placeholder for the ST3235 2D drawing files. The original ZIP file could not be downloaded from Waveshare's website.
+
+## Dimensions
+
+- Length: 45.22 mm
+- Width: 35 mm
+- Height: 24.72 mm
+- Shaft Diameter: 6 mm
+- Mounting Hole Pattern: Standard servo mount
+
+## Original Source
+
+The 2D drawings were originally available from the Waveshare product page: https://www.waveshare.com/st3235-servo.htm
+
+## Key Measurements
+
+
+
+## Mounting Holes
+
+The ST3235 uses standard servo mounting holes compatible with most servo brackets and frames.
+

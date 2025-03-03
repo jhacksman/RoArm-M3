@@ -1,0 +1,23 @@
+# ST3215 Servo User Manual
+
+This is a placeholder for the ST3215 Servo User Manual. The original file could not be downloaded from Waveshare's website.
+
+## Key Specifications
+
+- **Dimensions**: 40 × 20 × 40 mm
+- **Weight**: 60g
+- **Torque**: 15 kg·cm (1.47 N.m) at 12V
+- **Speed**: 0.16s/60° (62.5 RPM) at 12V
+- **Operating Voltage**: 6-12.6V
+- **Resolution**: 4096 steps (0.088°)
+- **Rotation**: 360° continuous rotation
+- **Feedback**: Position, Load, Speed, Input Voltage, Current, Temperature
+- **Case Material**: Engineering Plastic
+- **Gears**: Metal
+- **Communication**: Serial (TTL)
+- **Gear Ratio**: 1:345
+
+## Original Source
+
+This information was compiled from the Waveshare product page: https://www.waveshare.com/st3215-servo.htm
+

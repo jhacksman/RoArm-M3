@@ -79,21 +79,21 @@ The ST3235 servo supports various commands for control and feedback:
 ### Documentation
 - [ST3235 Servo Wiki Page](https://www.waveshare.com/wiki/ST3235_Servo)
 - [Bus Servo Control Circuit Schematic](https://www.waveshare.com/w/upload/d/d3/Bus_servo_drive_circuit_schematic.pdf)
-- [User Manual](https://files.waveshare.com/upload/b/b5/ST3215_Servo_User_Manual.pdf)
+- [User Manual](https://files.waveshare.com/upload/b/b5/ST3215_Servo_User_Manual.pdf) ([Local Copy](ST3215/datasheets/ST3215_Servo_User_Manual.pdf))
 
 ### Software
-- [ServoDriverST Open Source Program (Arduino)](https://files.waveshare.com/upload/d/d8/ST_Servo.zip)
-- [ESP32 Flash Download Tool](https://files.waveshare.com/upload/8/8b/SERVO_DOWNLOAD_TOOL.zip)
+- [ServoDriverST Open Source Program (Arduino)](https://files.waveshare.com/upload/d/d8/ST_Servo.zip) ([Local Copy](ST3235/drivers/ST_Servo.zip))
+- [ESP32 Flash Download Tool](https://files.waveshare.com/upload/8/8b/SERVO_DOWNLOAD_TOOL.zip) ([Local Copy](ST3235/drivers/SERVO_DOWNLOAD_TOOL.zip))
 - [Arduino IDE](https://www.arduino.cc/en/Main/Software)
 
 ### 3D Models
-- [ST3215/ST3235 Servo STEP Module](https://files.waveshare.com/upload/b/b5/ST3215-3D.zip)
-- [12DOF Robotic Dog STEP Model](https://files.waveshare.com/upload/b/b5/ROBOTIC_DOG_STEP.zip) (Example application)
-- [12DOF Robotic Dog Fusion360 Project](https://files.waveshare.com/upload/1/1d/ROBOTIC_DOG_F360.zip) (Example application)
-- [12DOF Robotic Dog Creo5.0 Project](https://files.waveshare.com/upload/1/1a/ROBOTIC_DOG_CREO.zip) (Example application)
+- [ST3215/ST3235 Servo STEP Module](https://files.waveshare.com/upload/b/b5/ST3215-3D.zip) ([Local Copy](ST3235/drivers/ST3215-3D.zip))
+- [12DOF Robotic Dog STEP Model](https://files.waveshare.com/upload/b/b5/ROBOTIC_DOG_STEP.zip) ([Local Copy](ST3235/drivers/ROBOTIC_DOG_STEP.zip)) (Example application)
+- [12DOF Robotic Dog Fusion360 Project](https://files.waveshare.com/upload/1/1d/ROBOTIC_DOG_F360.zip) ([Local Copy](ST3235/drivers/ROBOTIC_DOG_F360.zip)) (Example application)
+- [12DOF Robotic Dog Creo5.0 Project](https://files.waveshare.com/upload/1/1a/ROBOTIC_DOG_CREO.zip) ([Local Copy](ST3235/drivers/ROBOTIC_DOG_CREO.zip)) (Example application)
 
 ### 2D Drawings
-- [2D Drawing](https://files.waveshare.com/upload/b/b5/ST3215-2D.zip)
+- [2D Drawing](https://files.waveshare.com/upload/b/b5/ST3215-2D.zip) ([Local Copy](ST3235/drivers/ST3215-2D.zip))
 
 ## Programming Examples
 

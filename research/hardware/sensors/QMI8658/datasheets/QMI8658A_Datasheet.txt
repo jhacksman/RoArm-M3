@@ -1,0 +1,23 @@
+# QMI8658A 6-Axis Motion Sensor
+
+This is a placeholder for the QMI8658A 6-Axis Motion Sensor datasheet.
+
+## Key Specifications
+
+- Accelerometer Range: ±2g/±4g/±8g/±16g
+- Gyroscope Range: ±16/±32/±64/±128/±256/±512/±1024/±2048 dps
+- Interface: I2C/SPI
+- Supply Voltage: 1.71V-3.6V
+- Operating Temperature: -40°C to +85°C
+
+## Features
+
+- 6-axis (3-axis accelerometer + 3-axis gyroscope)
+- 16-bit ADC resolution
+- Programmable digital filters
+- Built-in temperature sensor
+- FIFO buffer
+
+## Original Source
+
+This information was compiled from the QST Corporation product page and available documentation.

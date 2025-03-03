@@ -72,7 +72,7 @@ The CP2102 in the RoArm-M3 Pro is primarily used as a hardware interface and doe
 
 To use the CP2102 chip for ESP32 communication in the RoArm-M3 Pro, you need to install the appropriate drivers on your computer:
 
-1. Download the [CP2102 Serial Driver](https://files.waveshare.com/wiki/common/CP210x_Windows_Drivers.zip) from Waveshare
+1. Download the [CP2102 Serial Driver](https://files.waveshare.com/wiki/common/CP210x_Windows_Drivers.zip) ([Local Copy](CP2102/drivers/CP210x_Windows_Drivers.zip)) from Waveshare
 2. Extract the downloaded ZIP file
 3. Run the installer appropriate for your operating system (32-bit or 64-bit)
 4. Follow the installation instructions
@@ -117,15 +117,15 @@ The CP2102 chip works in conjunction with the automatic download circuit (Item #
 - [ESP32 Programming Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
 
 ### Software and Drivers
-- [CP2102 Serial Driver (Windows)](https://files.waveshare.com/wiki/common/CP210x_Windows_Drivers.zip)
+- [CP2102 Serial Driver (Windows)](https://files.waveshare.com/wiki/common/CP210x_Windows_Drivers.zip) ([Local Copy](CP2102/drivers/CP210x_Windows_Drivers.zip))
 - [CP2102 Serial Driver (macOS)](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
 - [CP2102 Serial Driver (Linux)](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [ESP32 Arduino Core](https://github.com/espressif/arduino-esp32)
 
 ### Hardware Resources
-- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf)
-- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip)
+- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf) ([Local Copy](../main_control/ESP32-WROOM-32/datasheets/General_Driver_for_Robots_SCH.pdf))
+- [General Driver for Robots STEP Model](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip) ([Local Copy](../main_control/ESP32-WROOM-32/drivers/General_Driver_for_Robots_STEP.zip))
 
 ## Programming Examples
 

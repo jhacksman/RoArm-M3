@@ -166,12 +166,12 @@ The General Driver Board for Robots is designed to control various types of robo
 
 ### Documentation
 - [General Driver for Robots Wiki Page](https://www.waveshare.com/wiki/General_Driver_for_Robots)
-- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf)
-- [Dimensions and Drawings](https://files.waveshare.com/upload/5/50/GENERAL-DRIVER-FOR-ROBOTS-STR-DXF.zip)
-- [3D Model (STEP)](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip)
+- [Circuit Diagram](https://files.waveshare.com/upload/3/37/General_Driver_for_Robots_SCH.pdf) ([Local Copy](ESP32-WROOM-32/datasheets/General_Driver_for_Robots_SCH.pdf))
+- [Dimensions and Drawings](https://files.waveshare.com/upload/5/50/GENERAL-DRIVER-FOR-ROBOTS-STR-DXF.zip) ([Local Copy](../misc/misc/drivers/GENERAL-DRIVER-FOR-ROBOTS-STR-DXF.zip))
+- [3D Model (STEP)](https://files.waveshare.com/upload/8/8e/General_Driver_for_Robots_STEP.zip) ([Local Copy](ESP32-WROOM-32/drivers/General_Driver_for_Robots_STEP.zip))
 
 ### Software
-- [Open-source Demo Code](https://files.waveshare.com/upload/0/0c/UGV01_Basic_Demo.zip)
+- [Open-source Demo Code](https://files.waveshare.com/upload/0/0c/UGV01_Basic_Demo.zip) ([Local Copy](../misc/misc/drivers/UGV01_Basic_Demo.zip))
 - [Arduino IDE Setup Guide](https://www.waveshare.com/wiki/How_To_Install_Arduino_IDE)
 
 ### Compatible Components

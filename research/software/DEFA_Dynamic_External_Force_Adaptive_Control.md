@@ -289,14 +289,14 @@ The DEFA system integrates with other RoArm-M3 Pro control features:
 - [Python API Documentation](./Python_API.md)
 
 ### Hardware Resources
-- [QMI8658 6-axis Motion Sensor Datasheet](https://files.waveshare.com/wiki/common/QMI8658_Datasheet.pdf)
-- [AK09918C 3-axis Electronic Compass Datasheet](https://files.waveshare.com/wiki/common/AK09918C_Datasheet.pdf)
+- [QMI8658 6-axis Motion Sensor Datasheet](https://files.waveshare.com/wiki/common/QMI8658_Datasheet.pdf) ([Local Copy](../hardware/misc/misc/datasheets/QMI8658_Datasheet.pdf))
+- [AK09918C 3-axis Electronic Compass Datasheet](https://files.waveshare.com/wiki/common/AK09918C_Datasheet.pdf) ([Local Copy](../hardware/sensors/AK09918C/datasheets/AK09918C_Datasheet.pdf))
 - [ST3235 Metal Shell Servo Datasheet](https://www.waveshare.com/st3235-servo.htm)
 - [ST3215 Plastic Shell Servo Datasheet](https://www.waveshare.com/st3215-servo.htm)
 
 ### Software Resources
-- [RoArm-M3 Python Demo](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_Python.zip)
-- [RoArm-M3 Open Source Program](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_Open_Source_Program.zip)
+- [RoArm-M3 Python Demo](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_Python.zip) ([Local Copy](../hardware/misc/misc/drivers/RoArm-M3_Python.zip))
+- [RoArm-M3 Open Source Program](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_Open_Source_Program.zip) ([Local Copy](../hardware/misc/misc/drivers/RoArm-M3_Open_Source_Program.zip))
 
 ## Conclusion
 

@@ -104,7 +104,7 @@ The ESP32-WROOM-32 module is integrated into the General Driver Board for Robots
 
 ### RoArm-M3 Specific Resources
 - [RoArm-M3 Wiki Page](https://www.waveshare.com/wiki/RoArm-M3)
-- [General Driver Board for Robots Schematic](https://files.waveshare.com/wiki/common/General_Driver_for_Robots_SCH.pdf)
+- [General Driver Board for Robots Schematic](https://files.waveshare.com/wiki/common/General_Driver_for_Robots_SCH.pdf) ([Local Copy](ESP32-WROOM-32/datasheets/General_Driver_for_Robots_SCH.pdf))
 
 ## Programming Examples
 

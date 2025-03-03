@@ -54,7 +54,7 @@ These files are local copies of resources originally provided by Waveshare. They
 
 - [Waveshare ST3235 Product Page](https://www.waveshare.com/st3235-servo.htm)
 - [Waveshare ST3235 Wiki](https://www.waveshare.com/wiki/ST3235_Servo)
-- [ST3235 Servo User Manual](https://files.waveshare.com/wiki/ST3235/ST3235_Servo_User_Manual.pdf)
+- [ST3235 Servo User Manual](https://files.waveshare.com/wiki/ST3235/ST3235_Servo_User_Manual.pdf) ([Local Copy](datasheets/ST3235_Servo_User_Manual.pdf))
 
 ## Download Date
 
