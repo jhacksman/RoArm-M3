@@ -1,12 +1,27 @@
-# RoArm-M3 Pro Documentation
+# RoArm-M3 Isaac Sim Bridge
 
 ## Overview
+
+The RoArm-M3 Isaac Sim Bridge is a software solution that enables integration between the Waveshare RoArm-M3 robotic arm and NVIDIA Isaac Sim. This bridge facilitates data ingestion from the RoArm-M3 at 100Hz into Isaac Sim, with auto-provisioning for device identification and integration with camera feeds for sim2real training.
 
 The RoArm-M3 Pro is a 5+1 DOF (Degrees of Freedom) smart robotic arm designed for innovative applications. It features a lightweight structure with an effective load capacity of 0.2kg when grabbing objects 0.5m away from the mechanical arm's origin. The Pro version differs from the standard M3 model by using metal shell servos (ST3235) for all joints except the gripper, providing reduced backlash that doesn't increase over time.
 
 ![RoArm-M3](https://www.waveshare.com/w/upload/8/8f/360px-RoArm-M3-S-2.jpg)
 
-## Key Features
+## Bridge Features
+
+- **High-Frequency Data Ingestion**: Captures telemetry data from the RoArm-M3 at 100Hz
+- **Auto-Provisioning**: Automatically identifies devices based on MAC address
+- **Camera Integration**: Supports synchronized camera feeds for sim2real training
+- **Device State Detection**: Intelligently detects different device states:
+  - Normal Operation: All servos powered and responding
+  - Unpowered Servos: ESP32 running but servos unpowered
+  - Partial Operation: Some servos working, others not
+  - Communication Failure: No servo communication
+- **Plug-and-Play Compatibility**: Easy setup without manual configuration of COM ports
+- **Extensible Architecture**: Modular design for adding new features and devices
+
+## RoArm-M3 Key Features
 
 - **Omnidirectional Workspace**: 360° all-round rotating base with flexible joint movement creates a working space with a diameter of up to 1m
 - **Joint Direct-Drive Design**: Uses 12-bit high-precision magnetic encoder to obtain joint angle with repositioning accuracy up to 0.088°
@@ -29,70 +44,44 @@ The RoArm-M3 Pro is a 5+1 DOF (Degrees of Freedom) smart robotic arm designed fo
   - Standard version: Engineering plastic shell ST3215 servos
 - **Communication**: WiFi, Serial, I2C, UART
 
-## Control Methods
+## Bridge Architecture
 
-The RoArm-M3 Pro can be controlled through multiple interfaces:
+The RoArm-M3 Isaac Sim Bridge consists of several key components:
 
-1. **Web Interface**: Connect to the arm's WiFi (SSID: RoArm-M3, Password: 12345678) and access the web control panel at 192.168.4.1
-2. **JSON Commands**: Send structured commands via:
-   - Web interface input box
-   - HTTP requests
-   - Serial communication
-3. **Python API**: Control using provided Python libraries via HTTP or Serial communication
-4. **ROS2 Integration**: Compatible with Robot Operating System 2
-
-## Hardware Components
-
-The RoArm-M3 Pro consists of several key components:
-
-1. **Robotic Arm Structure**: 5+1 DOF mechanical arm with metal shell servos
-2. **General Driver Board for Robots**: Main control board with ESP32 MCU
-3. **Servo Motors**: ST3235 metal shell servos (Pro version)
-4. **End Effector**: Gripper with adjustable opening angle
-5. **OLED Display**: Shows WiFi status and device information
-
-## Available Resources
-
-- [Open Source Program for Lower Computer](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3-S_Arduino_Demo.zip)
-- [Python Demo](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3-S_Python_Demo.zip)
-- [3D Model Files](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3-S_3D_Mode.zip)
-- [2D Dimension Diagrams](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3-S_2D_Dimensions.zip)
-- [Driver Board Schematic](https://files.waveshare.com/wiki/common/General_Driver_for_Robots_SCH.pdf)
-- [Initialization Download Tool](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3-S_Init_Tool.zip)
+1. **Device Discovery**: Automatically detects and identifies RoArm-M3 devices
+2. **Data Processor**: Processes telemetry data from the devices
+3. **Camera Capture**: Integrates with camera feeds for synchronized data capture
+4. **Isaac Integration**: Interfaces with NVIDIA Isaac Sim
+5. **Mock Device**: Simulates RoArm-M3 devices for testing purposes
 
 ## Repository Structure
 
-This repository contains comprehensive documentation and resources for the RoArm-M3 Pro:
-
 ```
-roarm-research/
+roarm_isaac_bridge/
 ├── README.md                  # This overview document
-├── hardware_components/       # Documentation for hardware components
-├── software/                  # Software resources and guides
-├── drivers/                   # Driver files and installation guides
-├── 3d_models/                 # 3D model files for the arm
-├── tutorials/                 # Usage tutorials and guides
-├── videos/                    # Video resources
-├── datasheets/                # Component datasheets
-├── leader_follower_mode/      # Documentation for leader-follower functionality
-├── images/                    # Images and diagrams
-└── research/                  # Detailed research documents for components
+├── config.py                  # Configuration settings
+├── main.py                    # Main application entry point
+├── isaac_extension.py         # Isaac Sim extension
+├── src/                       # Source code
+│   ├── device_discovery.py    # Device discovery module
+│   ├── data_processor.py      # Data processing module
+│   ├── camera_capture.py      # Camera capture module
+│   ├── isaac_integration.py   # Isaac Sim integration module
+│   └── mock_device.py         # Mock device for testing
+└── test_integration.py        # Integration tests
 ```
-
-## Safety Precautions
-
-1. The operating voltage range is 7-12.6V. It is recommended to use the standard 12V 5A power supply or 3S lithium battery.
-2. Do not use power supplies that exceed the operating voltage range.
-3. The servos have high torque, which may pose potential risks. Avoid having sensitive areas such as eyes or head within the range of the servo's movement.
-4. Keep away from children to avoid injury.
-5. Avoid subjecting the arm to severe impacts.
 
 ## Getting Started
 
-1. Connect the 12V 5A power cable to the power interface on the robotic arm
-2. Turn on the power switch - the device will start up with all joints automatically moving to the middle position
-3. Connect to the WiFi hotspot named "RoArm-M3" (password: 12345678)
-4. Open a web browser and navigate to 192.168.4.1 to access the web control interface
+1. Connect the RoArm-M3 to your computer via USB
+2. Install the required dependencies:
+   ```
+   pip install pyserial numpy omni-isaac-sim
+   ```
+3. Run the main application:
+   ```
+   python main.py
+   ```
 
 ## Further Documentation
 
