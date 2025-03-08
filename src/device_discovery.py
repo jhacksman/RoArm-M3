@@ -14,6 +14,9 @@ import threading
 import re
 from typing import Dict, List, Optional, Tuple
 
+# Import DeviceState from data_processor
+from src.data_processor import DeviceState
+
 # Command definitions for RoArm-M3 devices
 CMD_REBOOT = 600
 CMD_GET_MAC_ADDRESS = 302
@@ -36,12 +39,13 @@ class DeviceManager:
     """
     Manages the discovery and connection to RoArm-M3 devices
     """
-    def __init__(self, config):
+    def __init__(self, config, telemetry_processor=None):
         """
         Initialize the DeviceManager
         
         Args:
             config: Configuration object with settings
+            telemetry_processor: Optional TelemetryProcessor instance
         """
         self.config = config
         self.devices = {}  # Dictionary to store connected devices
@@ -61,6 +65,59 @@ class DeviceManager:
         
         # Lock for thread-safe access to devices dictionary
         self.devices_lock = threading.Lock()
+        
+        # Dictionary to store device initialization status
+        self.device_init_status = {}
+        
+        # Dictionary to map ports to device IDs
+        self.port_to_device = {}
+        
+        # Telemetry processor for handling device data
+        self.telemetry_processor = telemetry_processor
+        
+    def get_device_mac_address(self, port: str, timeout: float = None) -> Optional[str]:
+        """
+        Get the MAC address of a device using the T:302 command
+        
+        Args:
+            port: Serial port of the device
+            timeout: Timeout for the operation (seconds)
+            
+        Returns:
+            MAC address string or None if not found
+        """
+        if timeout is None:
+            timeout = self.config.MAC_DETECTION_TIMEOUT
+        
+        try:
+            # Open serial connection
+            ser = serial.Serial(port, self.config.SERIAL_BAUDRATE, timeout=self.config.SERIAL_TIMEOUT)
+            
+            # Send T:302 command to get MAC address
+            ser.write(b'{"T":302}\r\n')
+            
+            # Wait for response
+            start_time = time.time()
+            while time.time() - start_time < timeout:
+                if ser.in_waiting:
+                    line = ser.readline().decode('utf-8', errors='ignore').strip()
+                    
+                    # Check if line is a MAC address (format: XX:XX:XX:XX:XX:XX)
+                    if re.match(r'^([0-9A-F]{2}:){5}[0-9A-F]{2}$', line, re.IGNORECASE):
+                        self.logger.info(f"Found MAC address: {line}")
+                        return line
+                
+                time.sleep(0.01)
+            
+            self.logger.warning(f"MAC address not found on port {port} within timeout")
+            return None
+            
+        except Exception as e:
+            self.logger.error(f"Error getting MAC address from port {port}: {str(e)}")
+            return None
+        finally:
+            if 'ser' in locals() and ser.is_open:
+                ser.close()
         
     def reset_device(self, serial_port):
         """
@@ -529,6 +586,97 @@ class DeviceManager:
             A dictionary of connected devices
         """
         return {k: v for k, v in self.devices.items() if v["connected"]}
+    
+    def register_device(self, mac_address: str, port: str) -> None:
+        """
+        Register a new device
+        
+        Args:
+            mac_address: MAC address of the device
+            port: Serial port of the device
+        """
+        device_id = mac_address if self.config.USE_MAC_ADDRESS else port
+        
+        with self.devices_lock:
+            # Check if device already exists
+            if device_id in self.devices:
+                self.logger.info(f"Device {device_id} already registered, updating port to {port}")
+                self.devices[device_id]["port"] = port
+                self.devices[device_id]["connected"] = True
+                self.devices[device_id]["last_seen"] = time.time()
+            else:
+                # Create new device entry
+                self.logger.info(f"Registering new device {device_id} on port {port}")
+                self.devices[device_id] = {
+                    "id": device_id,
+                    "type": "RoArm-M3",
+                    "port": port,
+                    "mac_address": mac_address,
+                    "connected": True,
+                    "last_seen": time.time()
+                }
+            
+            # Update port to device mapping
+            self.port_to_device[port] = device_id
+    
+    def process_device_data(self, port: str, data: str) -> None:
+        """
+        Process data received from a device
+        
+        Args:
+            port: Serial port of the device
+            data: Data received from the device
+        """
+        # Check if this is initialization data
+        if "All bus servos status checked." in data:
+            self.logger.info(f"Device on port {port} initialized successfully")
+            self.device_init_status[port] = "success"
+        elif "Bus servos status check: failed." in data:
+            self.logger.warning(f"Device on port {port} has unpowered servos")
+            self.device_init_status[port] = "unpowered_servos"
+        
+        # Check if this is a MAC address (from T:302 command or initialization)
+        mac_match = re.search(r'MAC Address: ([0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2})', data, re.IGNORECASE)
+        if mac_match:
+            mac_address = mac_match.group(1)
+            self.logger.info(f"Found MAC address {mac_address} on port {port}")
+            
+            # Register device if not already registered
+            if mac_address not in self.devices:
+                self.register_device(mac_address, port)
+        
+        # Try to parse as JSON telemetry data
+        try:
+            json_data = json.loads(data)
+            
+            # Check if this is telemetry data (T=1051)
+            if json_data.get("T") == 1051:
+                # Get device ID (MAC address)
+                device_id = self.port_to_device.get(port)
+                
+                if device_id:
+                    # Process telemetry data
+                    processed_data = self.telemetry_processor.process_telemetry(device_id, data)
+                    
+                    if processed_data:
+                        # Check device state
+                        device_state = self.telemetry_processor.device_states.get(device_id)
+                        
+                        # Update device status based on state
+                        if device_state == DeviceState.UNPOWERED_SERVOS:
+                            self.logger.warning(f"Device {device_id} has unpowered servos")
+                            # No reset needed, just notify
+                        elif device_state == DeviceState.PARTIAL_OPERATION:
+                            self.logger.warning(f"Device {device_id} has partial operation")
+                            # Monitor for persistent issues
+                        elif device_state == DeviceState.COMMUNICATION_FAILURE:
+                            self.logger.error(f"Device {device_id} has communication failure")
+                            # May need reset if persistent
+        except json.JSONDecodeError:
+            # Not JSON data, ignore
+            pass
+        except Exception as e:
+            self.logger.error(f"Error processing data from port {port}: {str(e)}")
     
     def close_all(self):
         """

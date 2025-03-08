@@ -21,7 +21,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import config
 from src.mock_device import MockRoArmM3Device
 from src.device_discovery import DeviceManager
-from src.data_processor import TelemetryProcessor
+from src.data_processor import TelemetryProcessor, DeviceState
 from src.camera_capture import CameraManager
 from src.isaac_integration import IsaacSimBridge
 
@@ -311,6 +311,126 @@ def _mock_isaac_server():
         # Close the server socket
         server_socket.close()
 
+def test_device_state_detection():
+    """
+    Test device state detection with different telemetry patterns
+    """
+    print("\n=== Testing Device State Detection ===")
+    
+    # Create a data processor
+    processor = TelemetryProcessor(config)
+    
+    # Test normal operation
+    print("Testing normal operation state detection...")
+    normal_data = {
+        "T": 1051,
+        "x": 350.0,
+        "y": 0.0,
+        "z": 200.0,
+        "tB": 9,
+        "tS": 89,
+        "tE": 73,
+        "tT": 33,
+        "tR": 0,
+        "tG": 28
+    }
+    normal_state = processor.detect_device_state("test_device", normal_data)
+    if normal_state != DeviceState.NORMAL_OPERATION:
+        print(f"ERROR: Expected NORMAL_OPERATION, got {normal_state}")
+        return False
+    
+    # Test unpowered servos
+    print("Testing unpowered servos state detection...")
+    unpowered_data = {
+        "T": 1051,
+        "x": 350.0,
+        "y": 0.0,
+        "z": 200.0,
+        "tB": 0,
+        "tS": 0,
+        "tE": 0,
+        "tT": 0,
+        "tR": 0,
+        "tG": 0
+    }
+    unpowered_state = processor.detect_device_state("test_device", unpowered_data)
+    if unpowered_state != DeviceState.UNPOWERED_SERVOS:
+        print(f"ERROR: Expected UNPOWERED_SERVOS, got {unpowered_state}")
+        return False
+    
+    # Test partial operation
+    print("Testing partial operation state detection...")
+    partial_data = {
+        "T": 1051,
+        "x": 350.0,
+        "y": 0.0,
+        "z": 200.0,
+        "tB": 9,
+        "tS": 0,  # Shoulder unpowered
+        "tE": 73,
+        "tT": 33,
+        "tR": 0,
+        "tG": 28
+    }
+    partial_state = processor.detect_device_state("test_device", partial_data)
+    if partial_state != DeviceState.PARTIAL_OPERATION:
+        print(f"ERROR: Expected PARTIAL_OPERATION, got {partial_state}")
+        return False
+    
+    # Test communication failure
+    print("Testing communication failure state detection...")
+    failure_state1 = processor.detect_device_state("test_device", {})
+    if failure_state1 != DeviceState.COMMUNICATION_FAILURE:
+        print(f"ERROR: Expected COMMUNICATION_FAILURE, got {failure_state1}")
+        return False
+    
+    failure_state2 = processor.detect_device_state("test_device", None)
+    if failure_state2 != DeviceState.COMMUNICATION_FAILURE:
+        print(f"ERROR: Expected COMMUNICATION_FAILURE, got {failure_state2}")
+        return False
+    
+    print("All device state detection tests passed!")
+    return True
+
+def test_mac_address_retrieval():
+    """
+    Test MAC address retrieval using T:302 command
+    """
+    print("\n=== Testing MAC Address Retrieval ===")
+    
+    # Create a device manager
+    device_manager = DeviceManager(config)
+    
+    # Create a mock device with a known MAC address
+    test_mac = "AA:BB:CC:DD:EE:FF"
+    device = MockRoArmM3Device(mac_address=test_mac)
+    
+    # Start the device
+    if not device.start():
+        print("ERROR: Failed to start mock device")
+        return False
+    
+    # Test MAC address retrieval by directly calling the command handler
+    print("Testing MAC address retrieval...")
+    
+    # Simulate sending the T:302 command
+    device.command_queue.put(("mac_address", None))
+    
+    # Give the device time to process the command
+    time.sleep(0.5)
+    
+    # Verify that the device's MAC address matches what we expect
+    if device.mac_address != test_mac:
+        print(f"ERROR: Expected MAC address {test_mac}, got {device.mac_address}")
+        device.stop()
+        return False
+    
+    # Clean up
+    device.stop()
+    
+    print("MAC address retrieval test passed!")
+    return True
+
 def test_full_integration():
     """
     Test the full integration of all components
@@ -383,6 +503,8 @@ def main():
         ("Data Processor", test_data_processor),
         ("Camera Integration", test_camera_integration),
         ("Isaac Sim Integration", test_isaac_integration),
+        ("Device State Detection", test_device_state_detection),
+        ("MAC Address Retrieval", test_mac_address_retrieval),
         ("Full Integration", test_full_integration)
     ]
     

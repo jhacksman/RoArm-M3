@@ -69,6 +69,9 @@ class MockRoArmM3Device:
         self.time_offset = 0
         self.movement_radius = 50.0
         self.movement_speed = 0.5
+        
+        # Device state
+        self.device_state = "normal"
     
     def connect(self):
         """
@@ -228,6 +231,12 @@ class MockRoArmM3Device:
                 # Update joint angles based on position
                 self.b = math.atan2(self.y, self.x)
                 
+                # Check if we should simulate a communication failure
+                if self.device_state == "failure":
+                    # Don't send any data for a while
+                    time.sleep(0.5)
+                    continue
+                
                 # Create telemetry data
                 telemetry = {
                     "T": 1051,
@@ -267,6 +276,49 @@ class MockRoArmM3Device:
             except Exception as e:
                 self.logger.error(f"Error in telemetry thread: {str(e)}")
                 time.sleep(0.1)  # Sleep longer on error
+    
+    def set_device_state(self, state: str):
+        """
+        Set the device state for simulation
+        
+        Args:
+            state: The state to simulate ("normal", "unpowered", "partial", "failure")
+        """
+        self.logger.info(f"Setting device state to {state}")
+        
+        if state == "normal":
+            # Normal operation
+            self.tB = 9
+            self.tS = 89
+            self.tE = 73
+            self.tT = 33
+            self.tR = 0
+            self.tG = 28
+        elif state == "unpowered":
+            # Unpowered servos
+            self.tB = 0
+            self.tS = 0
+            self.tE = 0
+            self.tT = 0
+            self.tR = 0
+            self.tG = 0
+        elif state == "partial":
+            # Partial operation (some servos unpowered)
+            self.tB = 9
+            self.tS = 0  # Shoulder unpowered
+            self.tE = 73
+            self.tT = 33
+            self.tR = 0
+            self.tG = 28
+        elif state == "failure":
+            # Communication failure
+            self.running = False
+            time.sleep(0.5)
+            self.running = True
+            # Don't send any data for a while
+            time.sleep(2.0)
+        
+        self.device_state = state
     
     def stop(self):
         """

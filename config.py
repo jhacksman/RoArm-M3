@@ -62,6 +62,15 @@ MAC_DETECTION_TIMEOUT = 5.0  # Time to wait for MAC address detection (seconds)
 RETRY_ATTEMPTS = 3      # Number of retry attempts for device operations
 RETRY_DELAY = 1.0       # Delay between retry attempts (seconds)
 
+# Device state detection settings
+MIN_RESET_INTERVAL = 60.0  # Minimum time between resets (seconds)
+MAX_COMMUNICATION_FAILURES = 5  # Maximum number of communication failures before reset
+MAX_PARTIAL_FAILURES = 10  # Maximum number of partial operation failures before reset
+
+# Load thresholds for servo state detection
+MIN_LOAD_THRESHOLD = 1  # Minimum load value for a servo to be considered powered
+MAX_LOAD_THRESHOLD = 1000  # Maximum load value for a servo to be considered normal
+
 # Command definitions
 CMD_REBOOT = 600        # Command to reboot the device
 CMD_GET_MAC_ADDRESS = 302  # Command to get the MAC address

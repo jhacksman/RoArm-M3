@@ -18,7 +18,7 @@ import config
 
 # Import modules
 from src.device_discovery import DeviceManager
-from src.data_processor import TelemetryProcessor
+from src.data_processor import TelemetryProcessor, DeviceState
 from src.camera_capture import CameraManager
 from src.isaac_integration import IsaacSimBridge
 
@@ -147,6 +147,8 @@ class RoArmIsaacBridge:
             device_info: Information about the device
         """
         serial_conn = device_info["serial"]
+        failure_count = 0
+        last_reset_time = 0
         
         while self.running and device_info["connected"]:
             try:
@@ -159,6 +161,9 @@ class RoArmIsaacBridge:
                     processed_data = self.data_processor.process_telemetry(device_id, line)
                     
                     if processed_data:
+                        # Reset failure count on successful data processing
+                        failure_count = 0
+                        
                         # Get the latest camera frame
                         camera_data = self.camera_manager.get_latest_frame()
                         
@@ -168,12 +173,32 @@ class RoArmIsaacBridge:
                         
                         # Send the data to Isaac Sim
                         self.isaac_bridge.send_data(processed_data)
+                        
+                        # Handle device state if present
+                        if "device_state" in processed_data:
+                            device_state = DeviceState[processed_data["device_state"]]
+                            self.handle_device_state(device_id, device_state, 
+                                                   self.data_processor, self.isaac_bridge)
+                    else:
+                        # Increment failure count on data processing failure
+                        failure_count += 1
+                
+                # Check if we should reset the device
+                if failure_count > 0 and self.data_processor.should_reset_device(
+                    device_id, failure_count, last_reset_time):
+                    self.logger.warning(f"Resetting device {device_id} after {failure_count} failures")
+                    
+                    # Reset the device
+                    self.device_manager.reset_device(device_id)
+                    last_reset_time = time.time()
+                    failure_count = 0
                 
                 # Sleep to avoid busy waiting
                 time.sleep(0.001)
                 
             except Exception as e:
                 self.logger.error(f"Error in device thread for {device_id}: {str(e)}")
+                failure_count += 1
                 time.sleep(1)  # Sleep to avoid rapid error loops
     
     def _signal_handler(self, sig, frame):
@@ -186,6 +211,38 @@ class RoArmIsaacBridge:
         """
         self.logger.info(f"Received signal {sig}, stopping...")
         self.stop()
+        
+    def handle_device_state(self, device_id, device_state, data_processor, isaac_bridge):
+        """
+        Handle different device states
+        
+        Args:
+            device_id: The ID of the device
+            device_state: The current state of the device
+            data_processor: The data processor instance
+            isaac_bridge: The Isaac Sim bridge instance
+        """
+        if device_state == DeviceState.NORMAL_OPERATION:
+            # Normal operation, continue sending data to Isaac Sim
+            pass
+        elif device_state == DeviceState.UNPOWERED_SERVOS:
+            # Unpowered servos, notify user but don't reset
+            self.logger.warning(f"Device {device_id} has unpowered servos. Please check power supply.")
+            # Continue sending data to Isaac Sim with warning flag
+            isaac_bridge.send_status_update(device_id, "UNPOWERED_SERVOS", 
+                                          "Device has unpowered servos. Please check power supply.")
+        elif device_state == DeviceState.PARTIAL_OPERATION:
+            # Partial operation, notify user and monitor
+            self.logger.warning(f"Device {device_id} has partial operation. Some servos may not be working.")
+            # Continue sending data to Isaac Sim with warning flag
+            isaac_bridge.send_status_update(device_id, "PARTIAL_OPERATION", 
+                                          "Device has partial operation. Some servos may not be working.")
+        elif device_state == DeviceState.COMMUNICATION_FAILURE:
+            # Communication failure, may need reset if persistent
+            self.logger.error(f"Device {device_id} has communication failure.")
+            # Send error status to Isaac Sim
+            isaac_bridge.send_status_update(device_id, "COMMUNICATION_FAILURE", 
+                                          "Device has communication failure.")
     
     def stop(self):
         """

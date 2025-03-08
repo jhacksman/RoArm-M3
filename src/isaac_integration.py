@@ -166,3 +166,23 @@ class IsaacSimBridge:
             self.data_queue.clear()
         
         self.logger.info("Cleared data queue")
+        
+    def send_status_update(self, device_id: str, status: str, message: str):
+        """
+        Send a status update to Isaac Sim
+        
+        Args:
+            device_id: The ID of the device
+            status: The status code (e.g., "UNPOWERED_SERVOS")
+            message: A human-readable message describing the status
+        """
+        status_data = {
+            "type": "status_update",
+            "device_id": device_id,
+            "status": status,
+            "message": message,
+            "timestamp": time.time()
+        }
+        
+        self.logger.info(f"Sending status update for device {device_id}: {status}")
+        self.send_data(status_data)
