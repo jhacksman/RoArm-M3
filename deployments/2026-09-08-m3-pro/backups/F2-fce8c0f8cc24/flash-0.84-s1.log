@@ -1,0 +1,67 @@
+esptool.py v4.8.1
+Serial port /dev/cu.usbserial-1130
+WARNING: Pre-connection option "no_reset" was selected. Connection may fail if the chip is not in bootloader or flasher stub mode.
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: fc:e8:c0:f8:cc:24
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 230400
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00010000 to 0x0014cfff...
+Compressed 1294848 bytes to 752933...
+Writing at 0x00010000... (2 %)
+Writing at 0x0002939f... (4 %)
+Writing at 0x000350c5... (6 %)
+Writing at 0x0003f6b6... (8 %)
+Writing at 0x00044675... (10 %)
+Writing at 0x0004b64c... (13 %)
+Writing at 0x0005e4c8... (15 %)
+Writing at 0x0007116d... (17 %)
+Writing at 0x00077184... (19 %)
+Writing at 0x0007d7fd... (21 %)
+Writing at 0x00083766... (23 %)
+Writing at 0x0008915d... (26 %)
+Writing at 0x0008ee3e... (28 %)
+Writing at 0x000944a8... (30 %)
+Writing at 0x0009a170... (32 %)
+Writing at 0x0009fc23... (34 %)
+Writing at 0x000a536b... (36 %)
+Writing at 0x000aa407... (39 %)
+Writing at 0x000af785... (41 %)
+Writing at 0x000b4cf8... (43 %)
+Writing at 0x000ba04d... (45 %)
+Writing at 0x000bf7dc... (47 %)
+Writing at 0x000c4adf... (50 %)
+Writing at 0x000c9c76... (52 %)
+Writing at 0x000cefc1... (54 %)
+Writing at 0x000d4349... (56 %)
+Writing at 0x000d91c6... (58 %)
+Writing at 0x000decdf... (60 %)
+Writing at 0x000e41c3... (63 %)
+Writing at 0x000e98f3... (65 %)
+Writing at 0x000ef243... (67 %)
+Writing at 0x000f44d9... (69 %)
+Writing at 0x000f99f0... (71 %)
+Writing at 0x000feccd... (73 %)
+Writing at 0x00104385... (76 %)
+Writing at 0x0010989c... (78 %)
+Writing at 0x0010efd7... (80 %)
+Writing at 0x001152ab... (82 %)
+Writing at 0x0011abb7... (84 %)
+Writing at 0x00120fec... (86 %)
+Writing at 0x0012b277... (89 %)
+Writing at 0x001311ec... (91 %)
+Writing at 0x00136302... (93 %)
+Writing at 0x0013bb00... (95 %)
+Writing at 0x00141423... (97 %)
+Writing at 0x00146a79... (100 %)
+Wrote 1294848 bytes (752933 compressed) at 0x00010000 in 34.2 seconds (effective 303.0 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Staying in bootloader.

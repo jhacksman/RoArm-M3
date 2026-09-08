@@ -1,0 +1,46 @@
+2C:BC:BB:4D:C1:6C
+esp-now mode: none
+---=== File Content ===---
+reading file: [boot] starts:
+
+{"name":"boot","intro":"these cmds run automatically at boot."}
+[StepNum: 1 ] - {"T":301,"mode":0}
+[StepNum: 2 ] - {"T":300,"mode":0,"mac":"FC:E8:C0:F8:BD:4C"}
+[StepNum: 3 ] - {"T":210,"cmd":1}
+[StepNum: 4 ] - {"T":301,"mode":3}
+^^^ ^^^ ^^^ reading file: boot.mission ends. ^^^ ^^^ ^^^
+file deleted successfully.
+file created successfully.
+[json parsing succeed.]
+--- --- --- RAW FILE -- --- ---
+---=== File Content ===---
+reading file: [boot.mission] starts:
+[lineNum: 1 ] - {"name":"boot","intro":"F1 pairing retained; automatic following paused pending safety fix."}
+^^^ ^^^ ^^^ reading file: boot.mission ends. ^^^ ^^^ ^^^
+--- --- --- NEW FILE -- --- ---
+---=== File Content ===---
+reading file: [boot.mission] starts:
+[lineNum: 1 ] - {"name":"boot","intro":"F1 pairing retained; automatic following paused pending safety fix."}
+[lineNum: 2 ] - {"T":301,"mode":0}
+^^^ ^^^ ^^^ reading file: boot.mission ends. ^^^ ^^^ ^^^
+[json parsing succeed.]
+--- --- --- RAW FILE -- --- ---
+---=== File Content ===---
+reading file: [boot.mission] starts:
+[lineNum: 1 ] - {"name":"boot","intro":"F1 pairing retained; automatic following paused pending safety fix."}
+[lineNum: 2 ] - {"T":301,"mode":0}
+^^^ ^^^ ^^^ reading file: boot.mission ends. ^^^ ^^^ ^^^
+--- --- --- NEW FILE -- --- ---
+---=== File Content ===---
+reading file: [boot.mission] starts:
+[lineNum: 1 ] - {"name":"boot","intro":"F1 pairing retained; automatic following paused pending safety fix."}
+[lineNum: 2 ] - {"T":301,"mode":0}
+[lineNum: 3 ] - {"T":300,"mode":0,"mac":"FC:E8:C0:F8:BD:4C"}
+^^^ ^^^ ^^^ reading file: boot.mission ends. ^^^ ^^^ ^^^
+---=== File Content ===---
+reading file: [boot] starts:
+
+{"name":"boot","intro":"F1 pairing retained; automatic following paused pending safety fix."}
+[StepNum: 1 ] - {"T":301,"mode":0}
+[StepNum: 2 ] - {"T":300,"mode":0,"mac":"FC:E8:C0:F8:BD:4C"}
+^^^ ^^^ ^^^ reading file: boot.mission ends. ^^^ ^^^ ^^^

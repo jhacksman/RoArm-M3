@@ -1,0 +1,30 @@
+{
+  "firmware": "0.84-s1",
+  "application_sha256": "8902622496f3c443c7c0fbb388e7bdc6004eb09f142b371fdd08f32347757268",
+  "application_bytes": 1294848,
+  "application_offset": "0x10000",
+  "partition_table_matches_factory": true,
+  "arduino_esp32_core": "3.0.7",
+  "ArduinoJson": "7.3.1",
+  "ESP Async WebServer": "3.6.0",
+  "Async TCP": "3.3.2",
+  "fqbn": "esp32:esp32:esp32:FlashMode=dio,FlashFreq=80,FlashSize=4M,PartitionScheme=default",
+  "source_sha256": {
+    "battery_ctrl.h": "9308d008e27153b6fbbf0072259d1fc9351d1891e334a46d1ce1e1a274288026",
+    "esp_now_ctrl.h": "9d3247722b09bd3e9f2571581b6ab9c4d362c8d3c8d449bf437640495d888c8b",
+    "files_ctrl.h": "48c0b617fca6b056eb2684dc1aaae1c2f14e054e4bf1b93e3589636a123a56d5",
+    "http_server.h": "d95bf3a9d92c932fb2353f1549737ef83fdb4f0db4c5bf76e6c5c11302e5aee3",
+    "json_cmd.h": "7887ae765bba52d56960bb3fe7b1b4dbea54f81acd96cb93c3678302f6af238b",
+    "m3_web_page.h": "d8e2abb2784084369adb498f66dcfdd1e83a562c5698d38346dd44973ac14b93",
+    "oled_ctrl.h": "b57b0bcfa8472df6c29b7c2954155efb6b0a0c7c67e8e1f99b6cad75bceea887",
+    "RoArm-M3_advance.h": "09be438d526f2f947d654847cafef29dedd9c15cda41e602c52262abf208b827",
+    "RoArm-M3_config.h": "5054eca7fcaa4f48b3e0c676b4745e23a25dbed53c2f9d37c750ba5e6683303b",
+    "RoArm-M3_module.h": "eb867e311332105acf0ae6a7d5f8b3f7e7ffa767e07a4c1ff56e1a7dd9358d8c",
+    "switch_module.h": "8a2118e9491b6d11a89c42d3c5a29c49ed3c7a2b0557d41b559f0013640d3595",
+    "uart_ctrl.h": "4baa15c8d7ddab9212d4b052fc3fecee03600a11ed4bc8dde644039d91cf2bd3",
+    "wifi_ctrl.h": "a5029cc25946cb7ac2a40d4e9ecb6c3b40a385c6574870860d727c7bb4bf98b5",
+    "main.cpp": "7b231043eaa139eb6f0028f2325b30b1f31b62180420d963a3b6eb9223b92b89",
+    "RoArm-M3_safe.ino": "db0beb14e9835c564743be81726fd98689ac8e682c20fa1798aa1a67ae263174",
+    "feedback_safety.h": "8e8e0e715f9b1e9c74d16fea80e238babda91303cb551a109d698f5a026f18f4"
+  }
+}

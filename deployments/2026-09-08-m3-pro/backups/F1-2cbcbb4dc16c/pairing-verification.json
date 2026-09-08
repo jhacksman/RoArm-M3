@@ -1,0 +1,13 @@
+{
+  "checked_at_utc": "2026-09-08T01:34:58.554200+00:00",
+  "sample_seconds": 10,
+  "leader_delivery_success": 16,
+  "leader_delivery_fail": 0,
+  "follower_packets_received": 16,
+  "leader_reboot_restored_pairing": true,
+  "follower_reboot_restored_pairing": true,
+  "unique_payload_received_after_each_reboot": true,
+  "receiver_whitelist_readback_verified": true,
+  "servo_power": "USB only; external servo supplies off",
+  "physical_tracking_tested": false
+}

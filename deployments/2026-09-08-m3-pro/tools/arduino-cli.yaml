@@ -1,0 +1,7 @@
+board_manager:
+  additional_urls:
+    - https://espressif.github.io/arduino-esp32/package_esp32_index.json
+directories:
+  data: /Volumes/MEDIA/Projects/2026/robotic-arm-roarm-m3-pro/tools/arduino-data
+  downloads: /Volumes/MEDIA/Projects/2026/robotic-arm-roarm-m3-pro/downloads/arduino-cache
+  user: /Volumes/MEDIA/Projects/2026/robotic-arm-roarm-m3-pro/tools/arduino-user

@@ -1,0 +1,6 @@
+{
+  "boot_app0.bin": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0",
+  "RoArm-M3_example.ino.bin": "b86e6b523ec2ecae12f03751e7116ab3a36ceefd8878ed8dc17e195057b93489",
+  "RoArm-M3_example.ino.bootloader.bin": "b22f373e6194a62505034bbcd2828ab5eaa0fba62f3e4198fb7ae677c1d2f6f7",
+  "RoArm-M3_example.ino.partitions.bin": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+}

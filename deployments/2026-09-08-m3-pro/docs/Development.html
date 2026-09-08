@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>RoArm-M3-S Secondary Development Tool Usage - Waveshare Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"d2731d8a8998dd6746304f96","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"RoArm-M3-S_Secondary_Development_Tool_Usage","wgTitle":"RoArm-M3-S Secondary Development Tool Usage","wgCurRevisionId":111031,"wgRevisionId":111031,"wgArticleId":23810,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"RoArm-M3-S_Secondary_Development_Tool_Usage","wgRelevantArticleId":23810,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],
+"wgRestrictionMove":[]};RLSTATE={"ext.gadget.tabber":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.toc.styles":"ready","skins.tweeki.styles":"ready","skins.tweeki.bootstraptheme.styles":"ready","skins.tweeki.externallinks.styles":"ready","skins.tweeki.awesome.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","ext.FancyBoxThumbs","ext.HighlightjsIntegration","skins.tweeki.messages","skins.tweeki.scripts"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/w/Uy8Yw0y/aAdkk0o.php?lang=en&amp;modules=mediawiki.toc.styles%7Cskins.tweeki.awesome.styles%7Cskins.tweeki.bootstraptheme.styles%7Cskins.tweeki.externallinks.styles%7Cskins.tweeki.styles&amp;only=styles&amp;skin=tweeki"/>
+<script async="" src="/w/Uy8Yw0y/aAdkk0o.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=tweeki"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/Uy8Yw0y/aAdkk0o.php?lang=en&amp;modules=ext.gadget.tabber&amp;only=styles&amp;skin=tweeki"/>
+<link rel="stylesheet" href="/w/Uy8Yw0y/aAdkk0o.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=tweeki"/>
+<meta name="generator" content="MediaWiki 1.35.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="shortcut icon" href="/w/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Waveshare Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://www.waveshare.com/w/api.php?action=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="Waveshare Wiki Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<!--[if lt IE 9]><script src="/w/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-RoArm-M3-S_Secondary_Development_Tool_Usage rootpage-RoArm-M3-S_Secondary_Development_Tool_Usage skin-tweeki action-view tweeki-animateLayout tweeki-non-advanced tweeki-user-anon"><a href="https://www.waveshare.com/cdn-cgi/content?id=vWu3Th5ZdUw8Mtqp1o0oK5ZEuSaUoq6GPe2gvj80FjI-1788826308.8288443-1.2.1.1-omsVUq8X0cWMmfUcut5oglavunhw7Pm2h2_QLX18HcHQI_jOfyQK5.P28WDIMNcq" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>			<!-- navbar -->
+			<div id="mw-navigation" class="navbar navbar-default navbar-fixed-top navbar-expand-lg fixed-top navbar-light bg-light" role="navigation">
+				<h2>Navigation menu</h2>
+				<div id="mw-head" class="navbar-inner">
+					<div class="container">
+
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+
+							<a href="/wiki/Main_Page" class="navbar-brand"><img src="https://www.waveshare.com/w/upload/a/a7/Ws-watermark-en.svg" alt="Waveshare Wiki" /></a>
+						</div>
+
+						<div id="navbar" class="navbar-collapse collapse">
+													<ul class="nav navbar-nav">
+							<li class="nav"><a href="#" id="n-raspberry-pi" class="dropdown-toggle" data-toggle="dropdown">Raspberry Pi <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523rpi-boards"><a href="/wiki/Main_Page#RPi-Boards" tabindex="-1">Boards/Kits</a></li><li id="n-main_page.2523rpi-displays"><a href="/wiki/Main_Page#RPi-Displays" tabindex="-1">Displays</a></li><li id="n-main_page.2523rpi-cameras"><a href="/wiki/Main_Page#RPi-Cameras" tabindex="-1">Cameras</a></li><li id="n-main_page.2523rpi-expansions"><a href="/wiki/Main_Page#RPi-Expansions" tabindex="-1">Expansions</a></li><li id="n-main_page.2523rpi-laptops"><a href="/wiki/Main_Page#RPi-Laptops" tabindex="-1">All-in-one</a></li><li id="n-main_page.2523rpi-robots"><a href="/wiki/Main_Page#RPi-Robots" tabindex="-1">Robots</a></li><li id="n-main_page.2523rpi-games"><a href="/wiki/Main_Page#RPi-Games" tabindex="-1">Portable Gaming</a></li><li id="n-main_page.2523rpi-acces"><a href="/wiki/Main_Page#RPi-Acces" tabindex="-1">Accessories</a></li><li id="n-main_page.2523android-linux-boards"><a href="/wiki/Main_Page#Android-Linux-Boards" tabindex="-1">Other Android/Linux Boards</a></li></ul></li><li class="nav"><a href="#" id="n-ai" class="dropdown-toggle" data-toggle="dropdown">AI <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523jetson-ai-boards"><a href="/wiki/Main_Page#Jetson-AI-Boards" tabindex="-1">Boards/Kits</a></li><li id="n-main_page.2523jetson-ai-displays"><a href="/wiki/Main_Page#Jetson-AI-Displays" tabindex="-1">Displays</a></li><li id="n-main_page.2523jetson-ai-cameras"><a href="/wiki/Main_Page#Jetson-AI-Cameras" tabindex="-1">Cameras</a></li><li id="n-main_page.2523jetson-ai-hat"><a href="/wiki/Main_Page#Jetson-AI-HAT" tabindex="-1">Expansions</a></li><li id="n-main_page.2523jetson-ai-robots"><a href="/wiki/Main_Page#Jetson-AI-Robots" tabindex="-1">Robots</a></li></ul></li><li class="nav"><a href="#" id="n-displays" class="dropdown-toggle" data-toggle="dropdown">Displays <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523display-lcd-oleds"><a href="/wiki/Main_Page#Display-LCD-OLEDs" tabindex="-1">LCD/OLED</a></li><li id="n-main_page.2523display-e-paper"><a href="/wiki/Main_Page#Display-e-Paper" tabindex="-1">e-Paper</a></li></ul></li><li class="nav"><a href="#" id="n-iot" class="dropdown-toggle" data-toggle="dropdown">IoT <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523long-range-wireless-comm"><a href="/wiki/Main_Page#Long-range-wireless-comm" tabindex="-1">Long Range Wireless</a></li><li id="n-main_page.2523short-range-wireless-comm"><a href="/wiki/Main_Page#Short-range-wireless-comm" tabindex="-1">Short Range Wireless</a></li><li id="n-main_page.2523wired-communication"><a href="/wiki/Main_Page#Wired-communication" tabindex="-1">Wired Comm / Converter</a></li><li id="n-main_page.2523misc-cameras-av"><a href="/wiki/Main_Page#Misc-cameras-av" tabindex="-1">Cameras / Audio / Video</a></li><li id="n-main_page.2523misc-sensor-modules"><a href="/wiki/Main_Page#Misc-sensor-modules" tabindex="-1">Sensors</a></li><li id="n-main_page.2523misc-servos-motors"><a href="/wiki/Main_Page#Misc-servos-motors" tabindex="-1">Motors / Servos</a></li><li id="n-main_page.2523misc-other-modules"><a href="/wiki/Main_Page#Misc-other-modules" tabindex="-1">others</a></li></ul></li><li class="nav"><a href="#" id="n-robotics" class="dropdown-toggle" data-toggle="dropdown">Robotics <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523robotics-cars"><a href="/wiki/Main_Page#Robotics-cars" tabindex="-1">Mobile Robots</a></li><li id="n-main_page.2523dog-like-robots"><a href="/wiki/Main_Page#Dog-like-Robots" tabindex="-1">Dog-like Robots</a></li><li id="n-main_page.2523robotics-drivers-sensors"><a href="/wiki/Main_Page#Robotics-drivers-sensors" tabindex="-1">Drivers / Sensors</a></li><li id="n-main_page.2523robotics-robot-arms"><a href="/wiki/Main_Page#Robotics-robot-arms" tabindex="-1">Robot Arm / Control</a></li></ul></li><li class="nav"><a href="#" id="n-mcu.252Ffpga" class="dropdown-toggle" data-toggle="dropdown">MCU/FPGA <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523arduino-main-boards"><a href="/wiki/Main_Page#Arduino-main-boards" tabindex="-1">Arduino</a></li><li id="n-main_page.2523micro.253Abit"><a href="/wiki/Main_Page#micro:bit" tabindex="-1">micro:bit</a></li><li id="n-main_page.2523mcu.2farm" class="LPC"><a href="/wiki/Main_Page#MCU.2FARM" tabindex="-1">STM32</a></li><li id="n-main_page.2523fpga"><a href="/wiki/Main_Page#FPGA" tabindex="-1">FPGA</a></li></ul></li><li class="nav"><a href="https://service.waveshare.com" id="n-https.253A.252F.252Fservice.waveshare.com" rel="nofollow" target="_blank">Support</a></li>							</ul>
+						
+													<ul class="nav navbar-nav navbar-right">
+							</ul>
+				<form class="navbar-form navbar-right" action="/w/index.php" id="searchform">
+					<div class="form-group"><input type="search" name="search" placeholder="Product name search" title="Search Waveshare Wiki [f]" accesskey="f" id="searchInput" class="search-query form-control"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="mw-searchButton" class="searchButton btn hidden"/>
+					</div>
+				</form><ul class="nav navbar-nav navbar-right">							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- /navbar -->
+					<div id="mw-page-base"></div>
+			<div id="mw-head-base"></div>
+			<a id="top"></a>
+
+			<!-- content -->
+			<div id="contentwrapper" class="user-loggedout not-editable container with-navbar with-navbar-fixed">
+
+				
+				<div class="row">
+					<div class="col-md-offset-2 col-md-10" role="main">
+								<div class="mw-body" id="content">
+			<div id="mw-js-message" style="display:none;"></div>
+									<h1 id="firstHeading" class="firstHeading page-header" lang="en"><span dir="auto">RoArm-M3-S Secondary Development Tool Usage</span></h1>
+									<!-- bodyContent -->
+			<div id="bodyContent">
+								<div id="siteSub">From Waveshare Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#RoArm-M3-S_Secondary_Development_Tool_Usage"><span class="tocnumber">1</span> <span class="toctext">RoArm-M3-S_Secondary Development Tool Usage</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#What_is_Arduino_IDE"><span class="tocnumber">1.1</span> <span class="toctext">What is Arduino IDE</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Arduino_IDE_Installation"><span class="tocnumber">1.2</span> <span class="toctext">Arduino IDE Installation</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#1._Install_Arduino_IDE"><span class="tocnumber">1.2.1</span> <span class="toctext"><b>1. Install Arduino IDE</b></span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="#2._Set_Language_in_Arduino_IDE_Interface"><span class="tocnumber">1.3</span> <span class="toctext">2. Set Language in Arduino IDE Interface</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Install_Development_Environment"><span class="tocnumber">1.4</span> <span class="toctext">Install Development Environment</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Install_Dependency_Library"><span class="tocnumber">1.5</span> <span class="toctext">Install Dependency Library</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Upload_Demo"><span class="tocnumber">1.6</span> <span class="toctext">Upload Demo</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#RoArm-M3-S_Tutorial"><span class="tocnumber">1.7</span> <span class="toctext">RoArm-M3-S Tutorial</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="RoArm-M3-S_Secondary_Development_Tool_Usage">RoArm-M3-S_Secondary Development Tool Usage</span></h2>
+<p>This tutorial introduces the installation and use of secondary development tools, how to upload modified programs to RoArm-M3-S, and how users can perform secondary development on open-source robotic arm programs. The development tool introduced here is Arduino IDE. The following is an introduction to the installation and use of robotic arms in environments such as dependency libraries in Arduino IDE.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="What_is_Arduino_IDE">What is Arduino IDE</span></h3>
+<p>Arduino IDE (Integrated Development Environment), is a development platform based on open-source code, with its own programming language and development environment. Since Arduino IDE provides a wide range of libraries, complex components (such as displays, sensors) and the software platform are easy to use.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Arduino_IDE_Installation">Arduino IDE Installation</span></h3>
+<h4><span class="mw-headline" id="1._Install_Arduino_IDE"><b>1. Install Arduino IDE</b></span></h4>
+<p>First, go to <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.arduino.cc/en/software">Arduino official website</a> to download the installation package of the latest Arduino IDE version. The official IDE supports downloading for different operating systems, you can select according to your operating system. Here we have downloaded one for Windows, if you have installed it, you can skip to the second step. The process is simple and you just need to click Next during the installation 
+</p><p><a href="/wiki/File:ArduinoIDE1.png" class="image"><img alt="ArduinoIDE1.png" src="/w/upload/5/58/ArduinoIDE1.png" decoding="async" loading="lazy" width="700" height="353" /></a>
+</p><p><font style="color:red;"><b>Notice: During the installation process, it will prompt you to install the driver, just click Install.</b> </font>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="2._Set_Language_in_Arduino_IDE_Interface">2. Set Language in Arduino IDE Interface</span></h3>
+<p>After the first installation, when you open the Arduino IDE, it will be in English. You can switch to other language in File --&gt; Preferences, or continue using the English interface.
+</p><p><a href="/wiki/File:%E5%AE%89%E8%A3%85Arduino2.png" class="image"><img alt="安装Arduino2.png" src="/w/upload/9/9d/%E5%AE%89%E8%A3%85Arduino2.png" decoding="async" loading="lazy" width="250" height="360" /></a>
+</p><p>In the Language field, select the language you want to switch to, and click OK.
+</p><p><a href="/wiki/File:550px-%E5%AE%89%E8%A3%85Arduino3.png" class="image"><img alt="550px-安装Arduino3.png" src="/w/upload/b/b9/550px-%E5%AE%89%E8%A3%85Arduino3.png" decoding="async" loading="lazy" width="550" height="382" /></a>
+</p>
+<h3><span class="mw-headline" id="Install_Development_Environment">Install Development Environment</span></h3>
+<p>The main control module of the driver board on the robotic arm is ESP32, so we need to install the development board corresponding to ESP32 in the Arduino IDE development environment. The steps are as follows:
+</p><p><b>1.</b> Open the Arduino IDE and click "File" → "Preferences".
+</p><p><a href="/wiki/File:250px-M2ESP321.png" class="image"><img alt="250px-M2ESP321.png" src="/w/upload/f/fb/250px-M2ESP321.png" decoding="async" loading="lazy" width="250" height="359" /></a>
+</p><p><br />
+<b>2.</b> Add the following link to the attached board manager URL, and then click OK to save the settings.
+</p>
+<pre>https://dl.espressif.com/dl/package_esp32_index.json</pre>
+<p><a href="/wiki/File:M2ESP322.png" class="image"><img alt="M2ESP322.png" src="/w/upload/thumb/6/69/M2ESP322.png/600px-M2ESP322.png" decoding="async" loading="lazy" width="600" height="398" srcset="/w/upload/6/69/M2ESP322.png 1.5x" /></a>
+</p><p><font style="color:red;"><b>Note: If you need to add multiple board URLs, you don't need to delete the URLs supported by the ESP32 board. You can directly add other URLs on a new line. By default, the URLs are separated by commas. </b> </font>For example, if you need to add the URL of the ESP8266 development board, add it to another line, which will be displayed as follows:
+</p>
+<pre>https://dl.espressif.com/dl/package_esp32_index.json，http://arduino.esp8266.com/stable/package_esp8266com_index.json</pre>
+<p><a href="/wiki/File:M2ESP323.png" class="image"><img alt="M2ESP323.png" src="/w/upload/3/3a/M2ESP323.png" decoding="async" loading="lazy" width="600" height="402" /></a><a href="/wiki/File:M2ESP324.png" class="image"><img alt="M2ESP324.png" src="/w/upload/7/7f/M2ESP324.png" decoding="async" loading="lazy" width="600" height="402" /></a>
+</p><p><br />
+<b>3.</b> Click to download <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://drive.google.com/file/d/1_he2DPT69UV8EtS8O0d6Bq0jnWpryycz/view?usp=sharing"><b>ESP32 development package</b></a> and unzip. Input the following path on "my computer": 
+</p>
+<pre>C:\Users\username\AppData\Local\Arduino15</pre>
+<p>The "username" needs to be changed according to your computer's username. Create a new folder named "packages" and copy the extracted folder of the ESP32 development package into the "packages" folder.
+</p><p><a href="/wiki/File:M2ESP325.png" class="image"><img alt="M2ESP325.png" src="/w/upload/4/4c/M2ESP325.png" decoding="async" loading="lazy" width="700" height="602" /></a>
+</p><p><br />
+You can see that the installed ESP32 development board version from "packages-esp32-hardware-esp32" is version 3.0.7, and the open source program development board ESP32 for the RoArm-M3-S is version 3.0.7.
+</p><p><a href="/wiki/File:Esp3.0.7.png" class="image"><img alt="Esp3.0.7.png" src="/w/upload/d/d9/Esp3.0.7.png" decoding="async" loading="lazy" width="600" height="124" /></a>
+</p>
+<h3><span class="mw-headline" id="Install_Dependency_Library">Install Dependency Library</span></h3>
+<p>Download <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/RoArm-M2-S/Libraries.zip">libraries</a>, unzip them, and open the default Arduino installation path: C:\Users\username\AppData\Local\Arduino15\libraries (please according to your actual path), and then copy the files in the figure to libraries file folder.
+</p><p><a href="/wiki/File:M2_libraries.png" class="image"><img alt="M2 libraries.png" src="/w/upload/thumb/f/f9/M2_libraries.png/600px-M2_libraries.png" decoding="async" loading="lazy" width="600" height="232" srcset="/w/upload/f/f9/M2_libraries.png 1.5x" /></a>
+</p>
+<h3><span class="mw-headline" id="Upload_Demo">Upload Demo</span></h3>
+<p><b>1.</b> Download <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_example_20260701.zip"><b>RoArm-M3 open source program for lower computer</b></a>, decompress it, and double-click to open RoArm-M3_example.ino. Note that all files in this directory should be placed within the same folder.
+</p><p><a href="/wiki/File:600px-M2%E4%B8%8A%E4%BC%A0%E7%A8%8B%E5%BA%8F.png" class="image"><img alt="600px-M2上传程序.png" src="/w/upload/c/c9/600px-M2%E4%B8%8A%E4%BC%A0%E7%A8%8B%E5%BA%8F.png" decoding="async" loading="lazy" width="600" height="360" /></a>
+</p><p><br />
+<b>2.</b> Click on "Tools" → "Port" and take note of the COM port already listed on your computer. Do not click on this COM port. (At this moment, the displayed COM port on my computer is COM1; the COM ports may differ on different computers.)
+</p><p><a href="/wiki/File:600px-M2%E4%B8%8A%E4%BC%A0%E7%A8%8B%E5%BA%8F1.png" class="image"><img alt="600px-M2上传程序1.png" src="/w/upload/3/31/600px-M2%E4%B8%8A%E4%BC%A0%E7%A8%8B%E5%BA%8F1.png" decoding="async" loading="lazy" width="600" height="349" /></a>
+</p><p><br />
+<b>3.</b> Connect the drive board on the RoArm-M3-S robotic arm to your computer using a USB cable (ensure it's connected to the left USB port). Then, click on "Tools" → "Port" and select the newly appeared COM port (in my case, it's COM29).
+</p><p><a href="/wiki/File:M2%E4%B8%8A%E4%BC%A0%E7%A8%8B%E5%BA%8F2.png" class="image"><img alt="M2上传程序2.png" src="/w/upload/4/44/M2%E4%B8%8A%E4%BC%A0%E7%A8%8B%E5%BA%8F2.png" decoding="async" loading="lazy" width="600" height="403" /></a>
+</p><p><br />
+<b>4.</b> In Arduino IDE, click on "Tool" → "DevBoard" → "ESP32" → "ESP32 Dev Module".
+</p><p><a href="/wiki/File:600px-M2%E4%B8%8A%E4%BC%A0%E7%A8%8B%E5%BA%8F3.png" class="image"><img alt="600px-M2上传程序3.png" src="/w/upload/a/a2/600px-M2%E4%B8%8A%E4%BC%A0%E7%A8%8B%E5%BA%8F3.png" decoding="async" loading="lazy" width="600" height="295" /></a>
+</p><p><br />
+<b>5.</b> Click on "Tool", others as shown below: (For the Partition Scheme, it's recommended to use "Huge APP" and ensure that PSRAM is set to "Enabled.")
+</p><p><a href="/wiki/File:M2%E4%B8%8A%E4%BC%A0%E7%A8%8B%E5%BA%8F4.png" class="image"><img alt="M2上传程序4.png" src="/w/upload/9/9c/M2%E4%B8%8A%E4%BC%A0%E7%A8%8B%E5%BA%8F4.png" decoding="async" loading="lazy" width="600" height="228" /></a>
+</p><p><br />
+<b>6.</b> Once all settings are configured, click "Upload" to upload the program to the drive board of the robotic arm.
+</p><p><a href="/wiki/File:M2%E4%B8%8A%E4%BC%A0%E7%A8%8B%E5%BA%8F5.png" class="image"><img alt="M2上传程序5.png" src="/w/upload/3/31/M2%E4%B8%8A%E4%BC%A0%E7%A8%8B%E5%BA%8F5.png" decoding="async" loading="lazy" width="600" height="187" /></a>
+</p><p><br />
+</p>
+<ul><li><font style="color:red;"><b>If you encounter problems during the upload process and need to reinstall or change the Arduino IDE version, it's important to uninstall Arduino IDE completely. After uninstalling the software, you'll need to manually delete all contents within the folder "C:\Users\username\AppData\Local\Arduino15" (some hidden files may need to be displayed first). Then, proceed to download and reinstall the Arduino IDE.</b></font> </li></ul>
+<h3><span class="mw-headline" id="RoArm-M3-S_Tutorial">RoArm-M3-S Tutorial</span></h3>
+<ul><li><a href="#AngleCtrl:_Servo_Angle_Control"><b>RoArm-M3-S_Web Usage</b></a></li>
+<li><a class="mw-selflink selflink"><b>RoArm-M3-S_Secondary Development Tool Usage</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_JSON_Command_Meaning" title="RoArm-M3-S JSON Command Meaning"><b>RoArm-M3-S_JSON Command Meaning</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_WIFI_Configuration" title="RoArm-M3-S WIFI Configuration"><b>RoArm-M3-S_WIFI Configuration</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Robotic_Arm_Control" title="RoArm-M3-S Robotic Arm Control"><b>RoArm-M3-S_Robotic Arm Control</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_FLASH_File_System_Operation" title="RoArm-M3-S FLASH File System Operation"><b>RoArm-M3-S_FLASH File System Operation</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Step_Recording_and_Reproduction" title="RoArm-M3-S Step Recording and Reproduction"><b>RoArm-M3-S_Step Recording and Reproduction</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_ESP-NOW_Control" title="RoArm-M3-S ESP-NOW Control"><b>RoArm-M3-S_ESP-NOW Control</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Python_UART_Communication_Control" title="RoArm-M3-S Python UART Communication Control"><b>RoArm-M3-S_Python UART Communication Control</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Python_HTTP_Request_Communication" title="RoArm-M3-S Python HTTP Request Communication"><b>RoArm-M3-S_Python HTTP Request Communication</b></a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260908001149
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.099 seconds
+Real time usage: 0.152 seconds
+Preprocessor visited node count: 60/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 244/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key waveshareDB:pcache:idhash:23810-0!canonical!groups=* and timestamp 20260908001149 and revision id 111031
+ -->
+</div></div>								<div class="printfooter">
+				Retrieved from "<a dir="ltr" href="https://www.waveshare.com/w/index.php?title=RoArm-M3-S_Secondary_Development_Tool_Usage&amp;oldid=111031">https://www.waveshare.com/w/index.php?title=RoArm-M3-S_Secondary_Development_Tool_Usage&amp;oldid=111031</a>"				</div>
+												<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>												<div class="visualClear"></div>
+							</div>
+			<!-- /bodyContent -->
+		</div>
+						</div>
+				</div>
+			</div>
+			<!-- /content -->
+
+			<!-- sidebar-left -->
+			<div class="sidebar-wrapper sidebar-left-wrapper">
+				<div class="sidebar-container container">
+					<div class="row">
+						<div id="sidebar-left" class="col-md-2 col-md-offset-0">
+							<div id="tweekiTOC"></div>						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /sidebar-left -->
+					<!-- footer -->
+			<div id="footer" role="contentinfo" class="footer container footer-sticky bg-light">
+			<ul id="footer-custom"><li class="dropup"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=RoArm-M3-S+Secondary+Development+Tool+Usage" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Login / Create Account</a></li></ul><div style="clear:both"></div>			</div>
+			<!-- /footer -->
+		
+<script>
+var fbtFancyBoxOptions = {};
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.099","walltime":"0.152","ppvisitednodes":{"value":60,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":244,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20260908001149","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":654});});</script>	<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a379bcee2803fef4',t:'MTc4ODgyNjMwOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

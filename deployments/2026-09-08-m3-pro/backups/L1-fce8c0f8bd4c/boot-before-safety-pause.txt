@@ -1,0 +1,10 @@
+---=== File Content ===---
+reading file: [boot] starts:
+
+{"name":"boot","intro":"these cmds run automatically at boot."}
+[StepNum: 1 ] - {"T":301,"mode":0}
+[StepNum: 2 ] - {"T":300,"mode":0,"mac":"00:00:00:00:00:00"}
+[StepNum: 3 ] - {"T":303,"mac":"2C:BC:BB:4D:C1:6C"}
+[StepNum: 4 ] - {"T":210,"cmd":0}
+[StepNum: 5 ] - {"T":301,"mode":2}
+^^^ ^^^ ^^^ reading file: boot.mission ends. ^^^ ^^^ ^^^

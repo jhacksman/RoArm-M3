@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>RoArm-M3-S ESP-NOW Control - Waveshare Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"e5ec91ce8462c766850bddbe","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"RoArm-M3-S_ESP-NOW_Control","wgTitle":"RoArm-M3-S ESP-NOW Control","wgCurRevisionId":101876,"wgRevisionId":101876,"wgArticleId":23816,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"RoArm-M3-S_ESP-NOW_Control","wgRelevantArticleId":23816,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[]};RLSTATE={"ext.gadget.tabber":
+"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.toc.styles":"ready","skins.tweeki.styles":"ready","skins.tweeki.bootstraptheme.styles":"ready","skins.tweeki.externallinks.styles":"ready","skins.tweeki.awesome.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","ext.FancyBoxThumbs","ext.HighlightjsIntegration","skins.tweeki.messages","skins.tweeki.scripts"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/w/Uy8Yw0y/aAdkk0o.php?lang=en&amp;modules=mediawiki.toc.styles%7Cskins.tweeki.awesome.styles%7Cskins.tweeki.bootstraptheme.styles%7Cskins.tweeki.externallinks.styles%7Cskins.tweeki.styles&amp;only=styles&amp;skin=tweeki"/>
+<script async="" src="/w/Uy8Yw0y/aAdkk0o.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=tweeki"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/Uy8Yw0y/aAdkk0o.php?lang=en&amp;modules=ext.gadget.tabber&amp;only=styles&amp;skin=tweeki"/>
+<link rel="stylesheet" href="/w/Uy8Yw0y/aAdkk0o.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=tweeki"/>
+<meta name="generator" content="MediaWiki 1.35.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="shortcut icon" href="/w/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Waveshare Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://www.waveshare.com/w/api.php?action=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="Waveshare Wiki Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<!--[if lt IE 9]><script src="/w/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-RoArm-M3-S_ESP-NOW_Control rootpage-RoArm-M3-S_ESP-NOW_Control skin-tweeki action-view tweeki-animateLayout tweeki-non-advanced tweeki-user-anon"><a href="https://www.waveshare.com/cdn-cgi/content?id=Nzgjg.Fi8Zq4lFGWWCh6CHyyRrr5rnyihfjsrt1PKxo-1788826307.602331-1.2.1.1-wnD5QPjKt20S_TwSo.I6JA_xZs2Bjvh6QfINyjACQ7B.dz37A5Dkvr4l6SA_IoSW" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>			<!-- navbar -->
+			<div id="mw-navigation" class="navbar navbar-default navbar-fixed-top navbar-expand-lg fixed-top navbar-light bg-light" role="navigation">
+				<h2>Navigation menu</h2>
+				<div id="mw-head" class="navbar-inner">
+					<div class="container">
+
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+
+							<a href="/wiki/Main_Page" class="navbar-brand"><img src="https://www.waveshare.com/w/upload/a/a7/Ws-watermark-en.svg" alt="Waveshare Wiki" /></a>
+						</div>
+
+						<div id="navbar" class="navbar-collapse collapse">
+													<ul class="nav navbar-nav">
+							<li class="nav"><a href="#" id="n-raspberry-pi" class="dropdown-toggle" data-toggle="dropdown">Raspberry Pi <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523rpi-boards"><a href="/wiki/Main_Page#RPi-Boards" tabindex="-1">Boards/Kits</a></li><li id="n-main_page.2523rpi-displays"><a href="/wiki/Main_Page#RPi-Displays" tabindex="-1">Displays</a></li><li id="n-main_page.2523rpi-cameras"><a href="/wiki/Main_Page#RPi-Cameras" tabindex="-1">Cameras</a></li><li id="n-main_page.2523rpi-expansions"><a href="/wiki/Main_Page#RPi-Expansions" tabindex="-1">Expansions</a></li><li id="n-main_page.2523rpi-laptops"><a href="/wiki/Main_Page#RPi-Laptops" tabindex="-1">All-in-one</a></li><li id="n-main_page.2523rpi-robots"><a href="/wiki/Main_Page#RPi-Robots" tabindex="-1">Robots</a></li><li id="n-main_page.2523rpi-games"><a href="/wiki/Main_Page#RPi-Games" tabindex="-1">Portable Gaming</a></li><li id="n-main_page.2523rpi-acces"><a href="/wiki/Main_Page#RPi-Acces" tabindex="-1">Accessories</a></li><li id="n-main_page.2523android-linux-boards"><a href="/wiki/Main_Page#Android-Linux-Boards" tabindex="-1">Other Android/Linux Boards</a></li></ul></li><li class="nav"><a href="#" id="n-ai" class="dropdown-toggle" data-toggle="dropdown">AI <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523jetson-ai-boards"><a href="/wiki/Main_Page#Jetson-AI-Boards" tabindex="-1">Boards/Kits</a></li><li id="n-main_page.2523jetson-ai-displays"><a href="/wiki/Main_Page#Jetson-AI-Displays" tabindex="-1">Displays</a></li><li id="n-main_page.2523jetson-ai-cameras"><a href="/wiki/Main_Page#Jetson-AI-Cameras" tabindex="-1">Cameras</a></li><li id="n-main_page.2523jetson-ai-hat"><a href="/wiki/Main_Page#Jetson-AI-HAT" tabindex="-1">Expansions</a></li><li id="n-main_page.2523jetson-ai-robots"><a href="/wiki/Main_Page#Jetson-AI-Robots" tabindex="-1">Robots</a></li></ul></li><li class="nav"><a href="#" id="n-displays" class="dropdown-toggle" data-toggle="dropdown">Displays <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523display-lcd-oleds"><a href="/wiki/Main_Page#Display-LCD-OLEDs" tabindex="-1">LCD/OLED</a></li><li id="n-main_page.2523display-e-paper"><a href="/wiki/Main_Page#Display-e-Paper" tabindex="-1">e-Paper</a></li></ul></li><li class="nav"><a href="#" id="n-iot" class="dropdown-toggle" data-toggle="dropdown">IoT <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523long-range-wireless-comm"><a href="/wiki/Main_Page#Long-range-wireless-comm" tabindex="-1">Long Range Wireless</a></li><li id="n-main_page.2523short-range-wireless-comm"><a href="/wiki/Main_Page#Short-range-wireless-comm" tabindex="-1">Short Range Wireless</a></li><li id="n-main_page.2523wired-communication"><a href="/wiki/Main_Page#Wired-communication" tabindex="-1">Wired Comm / Converter</a></li><li id="n-main_page.2523misc-cameras-av"><a href="/wiki/Main_Page#Misc-cameras-av" tabindex="-1">Cameras / Audio / Video</a></li><li id="n-main_page.2523misc-sensor-modules"><a href="/wiki/Main_Page#Misc-sensor-modules" tabindex="-1">Sensors</a></li><li id="n-main_page.2523misc-servos-motors"><a href="/wiki/Main_Page#Misc-servos-motors" tabindex="-1">Motors / Servos</a></li><li id="n-main_page.2523misc-other-modules"><a href="/wiki/Main_Page#Misc-other-modules" tabindex="-1">others</a></li></ul></li><li class="nav"><a href="#" id="n-robotics" class="dropdown-toggle" data-toggle="dropdown">Robotics <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523robotics-cars"><a href="/wiki/Main_Page#Robotics-cars" tabindex="-1">Mobile Robots</a></li><li id="n-main_page.2523dog-like-robots"><a href="/wiki/Main_Page#Dog-like-Robots" tabindex="-1">Dog-like Robots</a></li><li id="n-main_page.2523robotics-drivers-sensors"><a href="/wiki/Main_Page#Robotics-drivers-sensors" tabindex="-1">Drivers / Sensors</a></li><li id="n-main_page.2523robotics-robot-arms"><a href="/wiki/Main_Page#Robotics-robot-arms" tabindex="-1">Robot Arm / Control</a></li></ul></li><li class="nav"><a href="#" id="n-mcu.252Ffpga" class="dropdown-toggle" data-toggle="dropdown">MCU/FPGA <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523arduino-main-boards"><a href="/wiki/Main_Page#Arduino-main-boards" tabindex="-1">Arduino</a></li><li id="n-main_page.2523micro.253Abit"><a href="/wiki/Main_Page#micro:bit" tabindex="-1">micro:bit</a></li><li id="n-main_page.2523mcu.2farm" class="LPC"><a href="/wiki/Main_Page#MCU.2FARM" tabindex="-1">STM32</a></li><li id="n-main_page.2523fpga"><a href="/wiki/Main_Page#FPGA" tabindex="-1">FPGA</a></li></ul></li><li class="nav"><a href="https://service.waveshare.com" id="n-https.253A.252F.252Fservice.waveshare.com" rel="nofollow" target="_blank">Support</a></li>							</ul>
+						
+													<ul class="nav navbar-nav navbar-right">
+							</ul>
+				<form class="navbar-form navbar-right" action="/w/index.php" id="searchform">
+					<div class="form-group"><input type="search" name="search" placeholder="Product name search" title="Search Waveshare Wiki [f]" accesskey="f" id="searchInput" class="search-query form-control"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="mw-searchButton" class="searchButton btn hidden"/>
+					</div>
+				</form><ul class="nav navbar-nav navbar-right">							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- /navbar -->
+					<div id="mw-page-base"></div>
+			<div id="mw-head-base"></div>
+			<a id="top"></a>
+
+			<!-- content -->
+			<div id="contentwrapper" class="user-loggedout not-editable container with-navbar with-navbar-fixed">
+
+				
+				<div class="row">
+					<div class="col-md-offset-2 col-md-10" role="main">
+								<div class="mw-body" id="content">
+			<div id="mw-js-message" style="display:none;"></div>
+									<h1 id="firstHeading" class="firstHeading page-header" lang="en"><span dir="auto">RoArm-M3-S ESP-NOW Control</span></h1>
+									<!-- bodyContent -->
+			<div id="bodyContent">
+								<div id="siteSub">From Waveshare Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#ESP-NOW_SETTINGS"><span class="tocnumber">1</span> <span class="toctext">ESP-NOW SETTINGS</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#ESP-NOW_Communication_Protocol"><span class="tocnumber">1.1</span> <span class="toctext">ESP-NOW Communication Protocol</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#ESP-NOW_Functionalities"><span class="tocnumber">1.2</span> <span class="toctext">ESP-NOW Functionalities</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#ESP-NOW_Communication_Data_Structure"><span class="tocnumber">1.2.1</span> <span class="toctext"><b>ESP-NOW Communication Data Structure</b></span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Set_Broadcast_Follower_Mode"><span class="tocnumber">1.2.2</span> <span class="toctext"><b>Set Broadcast Follower Mode</b></span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Set_ESP-NOW_Operation_Mode"><span class="tocnumber">1.2.3</span> <span class="toctext"><b>Set ESP-NOW Operation Mode</b></span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Get_MAC_Address_of_Device"><span class="tocnumber">1.2.4</span> <span class="toctext"><b>Get MAC Address of Device</b></span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Add_MAC_Address_of_Controlled_Device_to_PeerList"><span class="tocnumber">1.2.5</span> <span class="toctext"><b>Add MAC Address of Controlled Device to PeerList</b></span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Remove_MAC_Address_of_Controlled_Device_from_PeerList"><span class="tocnumber">1.2.6</span> <span class="toctext"><b>Remove MAC Address of Controlled Device from PeerList</b></span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Multicast_Control"><span class="tocnumber">1.2.7</span> <span class="toctext"><b>Multicast Control</b></span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Unicast.2FBroadcast_Control"><span class="tocnumber">1.2.8</span> <span class="toctext"><b>Unicast/Broadcast Control</b></span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="#ESP-NOW_Usage"><span class="tocnumber">1.3</span> <span class="toctext">ESP-NOW Usage</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#Broadcast_Control"><span class="tocnumber">1.3.1</span> <span class="toctext"><b>Broadcast Control</b></span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Unicast_Control"><span class="tocnumber">1.3.2</span> <span class="toctext"><b>Unicast Control</b></span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#Multicast_Control_2"><span class="tocnumber">1.3.3</span> <span class="toctext"><b>Multicast Control</b></span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="#RoArm-M3-S_Tutorial"><span class="tocnumber">1.4</span> <span class="toctext">RoArm-M3-S Tutorial</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="ESP-NOW_SETTINGS">ESP-NOW SETTINGS</span></h2>
+<p>This tutorial primarily focuses on configuring ESP-NOW for the robotic arm. After configuration, the robotic arm can achieve one-to-one and one-to-many ESP-NOW communication control. Among these, JSON commands are used to implement this function.
+</p>
+<h3><span class="mw-headline" id="ESP-NOW_Communication_Protocol">ESP-NOW Communication Protocol</span></h3>
+<p>ESP-NOW is a fast and efficient wireless communication protocol developed by Espressif Systems, aimed at providing low-power, high-performance local area network (LAN) communication solutions. It was initially designed for Espressif's Wi-Fi chips such as ESP8266 and ESP32.
+</p><p>The features of ESP-NOW are as follows:
+</p><p><b>1. Quick Response:</b> The ESP-NOW protocol does not require TCP/IP stack processing, therefore it has very low latency and is suitable for applications with high real-time requirements.
+</p><p><b>2. High Throughput:</b> The ESP-NOW protocol uses frame broadcasting to transmit data with high transmission efficiency, enabling simultaneous transmission of the same information to multiple nodes.
+</p><p><b>3. Low-power: </b>ESP-NOW protocol uses very low power in data transmission, and is suitable for battery power supply.
+</p><p><b>4. User-friendly: </b>The configuration of ESP-NOW protocol is easy, only by defining the basic parameters such as the channels, encryption key, and data structure can it realize the wireless communication.
+</p><p><b>5. Multicast Support: </b>ESP-NOW protocol supports one-to-many and one-to-all node communication, improving the network flexibility.
+</p><p><b>6. Expandability: </b>ESP-NOW protocol supports the transmission of multiple data types, and more complex communication functions can be achieved by customizing the data structure.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="ESP-NOW_Functionalities">ESP-NOW Functionalities</span></h3>
+<p>RoArm-M3-S comes with ESP-NOW functionality, and by default, is in Follower mode upon factory startup. In this mode, RoArm-M3-S can be controlled by other devices or can send ESP-NOW messages to other devices to control them.
+</p>
+<h4><span class="mw-headline" id="ESP-NOW_Communication_Data_Structure"><b>ESP-NOW Communication Data Structure</b></span></h4>
+<p>Before explaining the meanings of various functional commands, let's first introduce the ESP-NOW communication data structure of RoArm-M3-S, as follows:
+</p>
+<pre class="code2highlight lang-c++">typedef struct struct_message {
+  byte devCode;
+  float base;
+  float shoulder;
+  float elbow;
+  float hand;
+  byte cmd;
+  char message[210];
+} struct_message;</pre>
+<p>In this part, the specific value for variables will be set in the JSON commands. Here, we introduce the meaning of variables:    
+</p>
+<ul><li>devCode: this device code. We do not use this variable in the demo we use, so you can choose not to set this code (always set it as 0). You can set this variable to differentiate the devices controlled by JSON commands when there are many devices that should be controlled through broadcast rather than multicast. This interface is reserved for you to modify the OnDataRecv() function of esp_now_ctrl.h in the slave demo.</li></ul>
+<ul><li>base： BASE joint angle (in radian)</li></ul>
+<ul><li>shoulder: SHOULDER joint angle (in radian)</li></ul>
+<ul><li>elbow: ELBOW joint angle (in radian)</li></ul>
+<ul><li>hand: GRIPPER/WRIST joint angle (in radian)</li></ul>
+<ul><li>cmd: ESP-NOW control message type. For specific valuing, you can refer to the following JSON command introductions.</li></ul>
+<ul><li>message: A series of strings. When the ESP-NOW control message type is 1, this string will be used as a JSON-formatted command, but the command content must not be a command that causes long-term blocking.</li></ul>
+<p><br />
+Next, let's explore the specific meaning of the related JSON command for ESP-NOW configuration.
+</p>
+<h4><span class="mw-headline" id="Set_Broadcast_Follower_Mode"><b>Set Broadcast Follower Mode</b></span></h4>
+<pre class="code2highlight lang-python">{&quot;T&quot;:300,&quot;mode&quot;:1}
+
+{&quot;T&quot;:300,&quot;mode&quot;:0,&quot;mac&quot;:&quot;00:00:00:00:00:00&quot;}</pre>
+<ul><li>3000: This command is CMD_BROADCAST_FOLLOWER for setting the broadcast follower mode of this device.</li></ul>
+<ul><li>mode:
+<ul><li>1 - [factory default] This device can be controlled by the broadcast signal from other devices.</li>
+<li>0 - This device can not be controlled by the broadcast signal from other devices.</li></ul></li></ul>
+<ul><li>mac: the MAC address of the only Leader controlling the device when the mode =0.
+<ul><li>The device can be controlled only by the ESP-NOW messages sent by the devices with a given MAC address.</li>
+<li>If the device does not need to be controlled by other devices, you can randomly input a MAC address such as 00:00:00:00:00:00.</li></ul></li></ul>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="Set_ESP-NOW_Operation_Mode"><b>Set ESP-NOW Operation Mode</b></span></h4>
+<pre class="code2highlight lang-python">{&quot;T&quot;:301,&quot;mode&quot;:3}</pre>
+<ul><li>301: This command is CMD_ESP_NOW_CONFIG for setting the operation mode of ESP-NOW for this device.</li></ul>
+<ul><li>mode (byte): The code of the ESP-NOW operation mode.
+<ul><li>0 - Turn off.</li>
+<li>1 - Stream multicast Leader continuously sends its joint position information to devices in the peerList.</li>
+<li>2 - Stream unicast/Stream broadcast Leader, continuously sends its joint position messages to a Mac address. When the Mac address is set to FF:FF:FF:FF:FF:FF, it is in stream broadcast control.</li>
+<li>3 - [factory default] Follower, when the robotic arm is in this mode, it can receive the ESP-NOW message from other Leader devices, or can send the ESP-NOW message to other devices as the Leader device.</li></ul></li></ul>
+<p><font color="#FF0000">
+Note: Only in stream multicast, stream unicast/stream broadcast modes, the master control device continuously sends its joint position information to the controlled devices. The controlled devices will mimic the same movement when the master control device is manually rotated.
+</font>
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="Get_MAC_Address_of_Device"><b>Get MAC Address of Device</b></span></h4>
+<pre class="code2highlight lang-python">{&quot;T&quot;:302}</pre>
+<ul><li>302: This command is CMD_GET_MAC_ADDRESS for obtaining the MAC address of this device.</li></ul>
+<p>After inputting this command, the return value is shown below:
+</p>
+<pre>44:17:93:EE:FD:70
+</pre>
+<p>Each device has a unique MAC address. When using ESP-NOW features, except for broadcast control, you need to obtain the MAC address of the controlled device. By default, the OLED screen of each robotic arm displays its own MAC address.
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="Add_MAC_Address_of_Controlled_Device_to_PeerList"><b>Add MAC Address of Controlled Device to PeerList</b></span></h4>
+<pre class="code2highlight lang-python">{&quot;T&quot;:303,&quot;mac&quot;:&quot;44:17:93:EE:FD:70&quot;}</pre>
+<ul><li>303: This command is CMD_ESP_NOW_ADD_FOLLOWER for adding the MAC address of the controlled device to peerList, and peerList is for storing the MAC address.</li></ul>
+<ul><li>mac: The MAC address of the controlled device to be added.</li></ul>
+<p>You can add dozens of MAC addresses to the peerList for multicast control. However, when using multicast control, the peerList should not include the MAC address for broadcast control: FF:FF:FF:FF:FF:FF.
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="Remove_MAC_Address_of_Controlled_Device_from_PeerList"><b>Remove MAC Address of Controlled Device from PeerList</b></span></h4>
+<pre class="code2highlight lang-python">{&quot;T&quot;:304,&quot;mac&quot;:&quot;44:17:93:EE:FD:70&quot;}</pre>
+<ul><li>304: This command is CMD_ESP_NOW_REMOVE_FOLLOWER for removing the MAC address of the controlled device from peerList.</li></ul>
+<ul><li>mac: The MAC address of the controlled device to be removed.</li></ul>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="Multicast_Control"><b>Multicast Control</b></span></h4>
+<pre class="code2highlight lang-python"># Multicast control, controls the device of peerList to rotate the joints to the specified angle
+{&quot;T&quot;:305,&quot;dev&quot;:0,&quot;b&quot;:0,&quot;s&quot;:0,&quot;e&quot;:1.57,&quot;h&quot;:1.57,&quot;cmd&quot;:0,&quot;megs&quot;:&quot;hello!&quot;}
+
+# Multicast control, sends the JSON command to turn on the LED to the devices in peerlist
+{&quot;T&quot;:305,&quot;dev&quot;:0,&quot;b&quot;:0,&quot;s&quot;:0,&quot;e&quot;:0,&quot;h&quot;:0,&quot;cmd&quot;:1,&quot;megs&quot;:&quot;{\&quot;T\&quot;:114,\&quot;led\&quot;:255}&quot;}</pre>
+<ul><li>305: This command is CMD_ESP_NOW_GROUP_CTRL, which is used to send information through ESP-NOW multicast to all devices in the peerList.</li></ul>
+<p>Please refer to <a href="#ESP-NOW_Communication_Data_Structure"><b>ESP-NOW Communication Data Structure</b></a>. The various keys in this JSON command correspond to the structure variables as follows, with additional supplementary parts:
+</p>
+<ul><li>dev: the corresponding variable is devCode.</li></ul>
+<ul><li>b, s, e, h: respectively correspond to the variable base, shoulder, elbow, and hand.</li></ul>
+<ul><li>cmd: ESP-NOW control message type.
+<ul><li>When cmd is 0, the controlled robotic arms will rotate to the specified angle of all joints.</li>
+<li>When cmd is 1, b, s, e, and h are invalid. When a non-blocking JSON command is input into the message (megs), the robotic arm will execute the functionality corresponding to the JSON command.</li></ul></li></ul>
+<ul><li>megs: the corresponding variable is the message.</li></ul>
+<p><br />
+</p>
+<h4><span id="Unicast/Broadcast_Control"></span><span class="mw-headline" id="Unicast.2FBroadcast_Control"><b>Unicast/Broadcast Control</b></span></h4>
+<pre class="code2highlight lang-python"># Unicast control, sends the command of controlling the joint angle to the specific device
+{&quot;T&quot;:306,&quot;mac&quot;:&quot;44:17:93:EE:FD:70&quot;,&quot;dev&quot;:0,&quot;b&quot;:0,&quot;s&quot;:0,&quot;e&quot;:1.57,&quot;h&quot;:1.57,&quot;cmd&quot;:0,&quot;megs&quot;:&quot;hello!&quot;}
+
+# Broadcast control, sends the command of controlling the joint angle to all devices
+{&quot;T&quot;:306,&quot;mac&quot;:&quot;FF:FF:FF:FF:FF:FF&quot;,&quot;dev&quot;:0,&quot;b&quot;:0,&quot;s&quot;:0,&quot;e&quot;:1.57,&quot;h&quot;:1.57,&quot;cmd&quot;:0,&quot;megs&quot;:&quot;hello!&quot;}</pre>
+<ul><li>306: This command is CMD_ESP_NOW_SINGLE for controlling the device of peerList in unicast or broadcast control</li></ul>
+<ul><li>mac: The MAC address of the controlled device. When the MAC address is FF:FF:FF:FF:FF:FF, the command is a broadcast signal and will be sent to all devices.</li></ul>
+<p>Please refer to <a href="#ESP-NOW_Communication_Data_Structure"><b>ESP-NOW Communication Data Structure</b></a>. The various keys in this JSON command correspond to the structure variables as follows, with additional supplementary parts:
+</p>
+<ul><li>dev: the corresponding variable is devCode.</li></ul>
+<ul><li>b, s, e, h: respectively correspond to the variable base, shoulder, elbow, and hand.</li></ul>
+<ul><li>cmd: ESP-NOW control message type.
+<ul><li>When cmd is 0, the controlled robotic arms will rotate to the specified angle of all joints.</li></ul></li></ul>
+<ul><li><ul><li>When cmd is 1, b, s, e, and h are invalid. When a non-blocking JSON command is input into the message (megs), the robotic arm will execute the functionality corresponding to the JSON command.</li></ul></li></ul>
+<ul><li>megs: the corresponding variable is the message.</li></ul>
+<p>Note: Whether it is multicast, or unicast/broadcast, the MAC address of the controlled device should be added to peerList first.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="ESP-NOW_Usage">ESP-NOW Usage</span></h3>
+<p>After learning the specific meaning and usage of JSON commands, the following describes the specific use of broadcast control, unicast control, and multicast control. Here we assume that we currently have four new mechanical arms that have not been configured with ESP-NOW-related functions, and we label these four mechanical arms as A, B, C, and D.
+</p><p>Turn on the power supply to the four robotic arms, turn on the switch, and after the start-up is completed, follow the steps of the following three control modes.
+</p>
+<h4><span class="mw-headline" id="Broadcast_Control"><b>Broadcast Control</b></span></h4>
+<p>In this part, we use the robotic arm A to control the robotic arms B, C, and D to swing together. It is not necessary to obtain the MAC address of robotic arms B, C, and D for broadcast control, and it is sufficient to use the broadcast MAC address, and the example is as follows:
+</p><p>Connect the robotic arm A to the PC with a USB cable through the Type-C connector, and communicate with the robotic arm A through the serial port on the computer. We can use the serial port debugging assistant or the UART monitoring of the Arduino IDE to communicate with the robotic arm A or use the Python UART communication tutorial to communicate with the robotic arm A.
+</p><p><br />
+</p><p>First, <b>add the broadcast MAC address</b>. Use the following command to add the broadcast MAC address to the peerList of robot arm A:
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:303,&quot;mac&quot;:&quot;FF:FF:FF:FF:FF:FF&quot;}</pre>
+<p>Once added, you can send JSON command messages to robotic arms B, C, and D using the commands for broadcast control.
+</p><p><br />
+</p><p>For example, use the following command to send the command to <b>turn on the LED light</b> to robotic arms B, C, and D via robotic arm A.
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:306,&quot;mac&quot;:&quot;FF:FF:FF:FF:FF:FF&quot;,&quot;dev&quot;:0,&quot;b&quot;:0,&quot;s&quot;:0,&quot;e&quot;:0,&quot;h&quot;:0,&quot;cmd&quot;:1,&quot;megs&quot;:&quot;{\&quot;T\&quot;:114,\&quot;led\&quot;:255}&quot;}</pre>
+<p>After the command is successfully sent, the LEDs of robotic arms B, C, and D will be on.
+</p><p>The above is just an example of sending the signal for broadcasting control, you can also send other JSON commands to robotic arms B, C, and D. Please refer to the meaning of broadcasting control commands of ESP-NOW function for specific modification.
+</p><p><br />
+</p><p>Next, use the following command to <b>turn off the torque lock on the robotic arm A</b>, then you can manually swing it.
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:210,&quot;cmd&quot;:0}</pre>
+<p><br />
+</p><p>You can <b>turn on [stream broadcast Leader] mode</b> by setting the "ESP-NOW operation mode" of the robotic arm A. (When there is only the broadcast MAC address in the peerList, the original stream unicast mode is the stream broadcast mode.)
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:301,&quot;mode&quot;:2}</pre>
+<p>At this time, the robot arms B, C, and D will swing to the same position as the robot arm A, and when you turn the joint of the robot arm A, the robot arms B, C, and D will also rotate accordingly.
+</p><p><br />
+</p><p>Finally, by changing the "working mode of ESP-NOW" of the robotic arm A to the follower mode, i.e., <b>turn off the [stream broadcast leader] mode</b>. Enter the following command:
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:301,&quot;mode&quot;:3}</pre>
+<p>Note: All of the above JSON commands are communicating with Robotic Arm A.
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="Unicast_Control"><b>Unicast Control</b></span></h4>
+<p>In this part, we introduce how the robotic arm A controls the robotic arm B only. In the unicast control mode, it requires the MAC address of the controlled device, that is, the MAC address of the robotic arm B. The MAC address can be obtained from the OLED screen of the robotic arm B, such as BB:BB:BB:BB:BB:BB.
+</p><p>Connect the robotic arm A to the PC with a USB cable through the Type-C connector, and communicate with the robotic arm A through the serial port on the computer. We can use the serial port debugging assistant or the UART monitoring of the Arduino IDE to communicate with the robotic arm A or use the Python UART communication tutorial to communicate with the robotic arm A. 
+</p><p><br />
+First, <b>add the MAC address of robotic arm B</b>. Use the following command to add the MAC address of robot arm B to the peerList of robot arm A:
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:303,&quot;mac&quot;:&quot;BB:BB:BB:BB:BB:BB&quot;}
+#Change the MAC address to the MAC address of the device to be controlled</pre>
+<p>After adding successfully, use the command of unicast control to send a JSON command message to the robotic arm.
+</p><p><font color="FF000">
+Note: If the MAC address of robotic arm B has been added before, adding it again will show Add Failure due to a duplicate MAC address, but as long as the MAC address of robotic arm B is correct, it will still be determined as the designated controlled device for unicast control. When the [Stream Unicast Leader] mode is turned on, only the robotic arm B will follow the joint position information from robotic arm A.
+</font>
+</p><p><br />
+For example, use the following command to send the command to <b>turn on the LED light</b> to robotic arm B.
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:306,&quot;mac&quot;:&quot;BB:BB:BB:BB:BB:BB&quot;,&quot;dev&quot;:0,&quot;b&quot;:0,&quot;s&quot;:0,&quot;e&quot;:0,&quot;h&quot;:0,&quot;cmd&quot;:1,&quot;megs&quot;:&quot;{\&quot;T\&quot;:114,\&quot;led\&quot;:255}&quot;}</pre>
+<p>If you have operated the broadcast control, the LED of the robotic arm B is on, and you can use the following command to <b>turn off the LED of the robotic arm B</b>.
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:306,&quot;mac&quot;:&quot;BB:BB:BB:BB:BB:BB&quot;,&quot;dev&quot;:0,&quot;b&quot;:0,&quot;s&quot;:0,&quot;e&quot;:0,&quot;h&quot;:0,&quot;cmd&quot;:1,&quot;megs&quot;:&quot;{\&quot;T\&quot;:114,\&quot;led\&quot;:0}&quot;}</pre>
+<p><br />
+Next, use the following command to <b>turn off the torque lock on the robotic arm A</b>, then you can manually swing the robotic arm A.
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:210,&quot;cmd&quot;:0}</pre>
+<p><br />
+You can <b>turn on [stream unicast Leader] mode</b> by setting the "ESP-NOW operation mode" of the robotic arm A. If you operate the broadcast control, the MAC address newly added is the MAC address of robotic arm B. Hence, the [stream unicast Leader] mode only sends the joint angle information to the robotic arm B.
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:301,&quot;mode&quot;:2}</pre>
+<p>At this time, the robot arm B will swing to the same position as the robot arm A, and when you turn the joint of the robot arm A, the robot arm B will follow while the robotic arms C and D will not move.
+</p><p>Note: All of the above JSON commands are communicating with Robotic Arm A.
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="Multicast_Control_2"><b>Multicast Control</b></span></h4>
+<p>In this part, we introduce how the robotic arm A controls the robotic arm B and C to swing. In the multicast control, it requires the MAC addresses of the controlled device, that is, the MAC addresses of the robotic arms B and C. The MAC addresses can be obtained from the OLED screens of the robotic arm B and robotic arm C, such as BB:BB:BB:BB:BB:BB and CC:CC:CC:CC:CC:CC.
+</p><p>Connect the robotic arm A to the PC with a USB cable through the Type-C connector, and communicate with the robotic arm A through the serial port on the computer. We can use the serial port debugging assistant or the UART monitoring of the Arduino IDE to communicate with the robotic arm A or use the Python UART communication tutorial to communicate with the robotic arm A.
+</p><p><br />
+First, <b>add the MAC addresses of robotic arm B and robotic arm C</b>. Use the following commands to add the MAC addresses of robotic arms B and C to the peerList of robotic arm A:
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:303,&quot;mac&quot;:&quot;BB:BB:BB:BB:BB:BB&quot;}
+{&quot;T&quot;:303,&quot;mac&quot;:&quot;CC:CC:CC:CC:CC:CC&quot;}
+#Modify the MAC addresses to the MAC addresses of the two devices to be controlled</pre>
+<p>If you have operated the unicast control, you have added the MAC address of B to the peerList, then executing the JSON command to add the MAC address of robotic arm B may report an error, so just ignore it.
+</p><p>If you have operated the broadcast control and added the addresses, you need to remove the broadcast address. Use the following command to <b>remove the broadcast address of robotic arm A from the peerList</b>:
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:304,&quot;mac&quot;:&quot;FF:FF:FF:FF:FF:FF&quot;}</pre>
+<p><br />
+You can use the following command to send the command to <b>turn on the LED light</b> to robotic arm B and robotic arm C.
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:305,&quot;dev&quot;:0,&quot;b&quot;:0,&quot;s&quot;:0,&quot;e&quot;:0,&quot;h&quot;:0,&quot;cmd&quot;:1,&quot;megs&quot;:&quot;{\&quot;T\&quot;:114,\&quot;led\&quot;:255}&quot;}</pre>
+<p>If the LED is on, you can use the following command to <b>turn off the LEDs of the robotic arm B and robotic arm C</b>.
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:305,&quot;dev&quot;:0,&quot;b&quot;:0,&quot;s&quot;:0,&quot;e&quot;:0,&quot;h&quot;:0,&quot;cmd&quot;:1,&quot;megs&quot;:&quot;{\&quot;T\&quot;:114,\&quot;led\&quot;:0}&quot;}</pre>
+<p><br />
+Next, use the following command to <b>turn off the torque lock on the robotic arm A</b>, then you can manually swing it.
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:210,&quot;cmd&quot;:0}</pre>
+<p><br />
+<b>Turn on [stream multicast Leader] mode</b> by setting the "ESP-NOW operation mode" of the robotic arm A, and then the angle information of the robotic arm A will be sent to the robotic arms B and C.
+</p>
+<pre class="code2highlight lang-python">{&quot;T&quot;:301,&quot;mode&quot;:1}</pre>
+<p>At this time, the robot arms B and C will swing to the same position as the robot arm A, and when you turn the joint of the robot arm A, the robot arms B and C will also rotate accordingly.
+</p><p>Note: All of the above JSON commands are communicating with Robotic Arm A.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="RoArm-M3-S_Tutorial">RoArm-M3-S Tutorial</span></h3>
+<ul><li><a href="#AngleCtrl:_Servo_Angle_Control"><b>RoArm-M3-S_Web Usage</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Secondary_Development_Tool_Usage" title="RoArm-M3-S Secondary Development Tool Usage"><b>RoArm-M3-S_Secondary Development Tool Usage</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_JSON_Command_Meaning" title="RoArm-M3-S JSON Command Meaning"><b>RoArm-M3-S_JSON Command Meaning</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_WIFI_Configuration" title="RoArm-M3-S WIFI Configuration"><b>RoArm-M3-S_WIFI Configuration</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Robotic_Arm_Control" title="RoArm-M3-S Robotic Arm Control"><b>RoArm-M3-S_Robotic Arm Control</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_FLASH_File_System_Operation" title="RoArm-M3-S FLASH File System Operation"><b>RoArm-M3-S_FLASH File System Operation</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Step_Recording_and_Reproduction" title="RoArm-M3-S Step Recording and Reproduction"><b>RoArm-M3-S_Step Recording and Reproduction</b></a></li>
+<li><a class="mw-selflink selflink"><b>RoArm-M3-S_ESP-NOW Control</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Python_UART_Communication_Control" title="RoArm-M3-S Python UART Communication Control"><b>RoArm-M3-S_Python UART Communication Control</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Python_HTTP_Request_Communication" title="RoArm-M3-S Python HTTP Request Communication"><b>RoArm-M3-S_Python HTTP Request Communication</b></a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260907223458
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.041 seconds
+Real time usage: 0.057 seconds
+Preprocessor visited node count: 176/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 4575/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key waveshareDB:pcache:idhash:23816-0!canonical!groups=* and timestamp 20260907223458 and revision id 101876
+ -->
+</div></div>								<div class="printfooter">
+				Retrieved from "<a dir="ltr" href="https://www.waveshare.com/w/index.php?title=RoArm-M3-S_ESP-NOW_Control&amp;oldid=101876">https://www.waveshare.com/w/index.php?title=RoArm-M3-S_ESP-NOW_Control&amp;oldid=101876</a>"				</div>
+												<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>												<div class="visualClear"></div>
+							</div>
+			<!-- /bodyContent -->
+		</div>
+						</div>
+				</div>
+			</div>
+			<!-- /content -->
+
+			<!-- sidebar-left -->
+			<div class="sidebar-wrapper sidebar-left-wrapper">
+				<div class="sidebar-container container">
+					<div class="row">
+						<div id="sidebar-left" class="col-md-2 col-md-offset-0">
+							<div id="tweekiTOC"></div>						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /sidebar-left -->
+					<!-- footer -->
+			<div id="footer" role="contentinfo" class="footer container footer-sticky bg-light">
+			<ul id="footer-custom"><li class="dropup"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=RoArm-M3-S+ESP-NOW+Control" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Login / Create Account</a></li></ul><div style="clear:both"></div>			</div>
+			<!-- /footer -->
+		
+<script>
+var fbtFancyBoxOptions = {};
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.041","walltime":"0.057","ppvisitednodes":{"value":176,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":4575,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20260907223458","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":496});});</script>	<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a379bce68b47acc8',t:'MTc4ODgyNjMwNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

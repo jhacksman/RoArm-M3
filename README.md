@@ -1,5 +1,13 @@
 # RoArm-M3 Pro Documentation
 
+## Completed four-arm setup — September 2026
+
+L1 → F1 and L2 → F2 now run guarded firmware **0.84-s1**, with separate MAC-specific ESP-NOW pairing restored at boot. Both pairs passed user-observed powered tracking tests. The patch prevents leaders from sending motion targets when their servo supply or joint feedback is invalid.
+
+The [complete setup snapshot](deployments/2026-09-08-m3-pro/README.md) includes source, tests, deployed firmware, original factory archives, all four verified original flash backups, per-arm configuration, and verification logs. Start with the [arm inventory](deployments/2026-09-08-m3-pro/arms.json), [operating notes](deployments/2026-09-08-m3-pro/docs/OPERATING_NOTES.md), and [snapshot/build notes](deployments/2026-09-08-m3-pro/docs/REPOSITORY-SNAPSHOT.md). File checksums are in [SHA256SUMS.snapshot](deployments/2026-09-08-m3-pro/SHA256SUMS.snapshot).
+
+The earlier documentation and experiments below are preserved.
+
 ## Overview
 
 The RoArm-M3 Pro is a 5+1 DOF (Degrees of Freedom) smart robotic arm designed for innovative applications. It features a lightweight structure with an effective load capacity of 0.2kg when grabbing objects 0.5m away from the mechanical arm's origin. The Pro version differs from the standard M3 model by using metal shell servos (ST3235) for all joints except the gripper, providing reduced backlash that doesn't increase over time.

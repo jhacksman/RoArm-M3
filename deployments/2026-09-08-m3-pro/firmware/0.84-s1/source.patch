@@ -1,0 +1,183 @@
+--- vendor/RoArm-M3_module.h
++++ src/RoArm-M3_module.h
+@@ -1,5 +1,6 @@
+ #include "RoArm-M3_config.h"
+ #include <math.h>
++#include "feedback_safety.h"
+ #define ANG2DEG 0.017453292
+ 
+ // Instantiate a servo control object.
+@@ -22,6 +23,53 @@
+ };
+ 
+ ServoFeedback servoFeedback[7];
++
++bool jointFeedbackValid = false;
++uint32_t jointFeedbackSampleTime = 0;
++uint32_t jointFeedbackSampleDuration = 0;
++float motionSupplyVoltage = 0.0f;
++uint32_t espNowMotionBlockedCycles = 0;
++uint32_t espNowMotionTxFrames = 0;
++
++// Read the INA219 bus register directly so an I2C error cannot leave a cached
++// voltage authorizing motion. The library helper does not expose read errors.
++bool readMotionSupply() {
++  motionSupplyVoltage = 0.0f;
++  Wire.beginTransmission(INA219_ADDRESS);
++  Wire.write(static_cast<uint8_t>(0x02));
++  if (Wire.endTransmission(false) != 0) return false;
++  if (Wire.requestFrom(static_cast<uint8_t>(INA219_ADDRESS),
++                       static_cast<uint8_t>(2)) != 2) return false;
++  const uint8_t high = Wire.read();
++  const uint8_t low = Wire.read();
++  const uint16_t raw = (static_cast<uint16_t>(high) << 8) | low;
++  motionSupplyVoltage = static_cast<float>(raw >> 3) * 0.004f;
++  return !(raw & 1) && FeedbackSafety::voltageValid(
++      motionSupplyVoltage, Protective_voltage_min / 100.0f,
++      Protective_voltage / 100.0f);
++}
++
++bool motionStreamingAllowed() {
++  const bool supplyOK = readMotionSupply();
++  return FeedbackSafety::canStream(jointFeedbackValid, supplyOK, millis(),
++                                  jointFeedbackSampleTime,
++                                  jointFeedbackSampleDuration);
++}
++
++bool allowEspNowMotion() {
++  const bool allowed = motionStreamingAllowed();
++  static bool reported = false;
++  static bool lastAllowed = false;
++  if (!reported || allowed != lastAllowed) {
++    Serial.println(allowed ? "ESP-NOW motion ready: valid supply and fresh joints."
++                           : "ESP-NOW motion blocked: invalid supply or joint feedback.");
++    reported = true;
++    lastAllowed = allowed;
++  }
++  if (!allowed) ++espNowMotionBlockedCycles;
++  return allowed;
++}
++
+ // [0] BASE_SERVO_ID
+ // [1] SHOULDER_DRIVING_SERVO_ID
+ // [2] SHOULDER_DRIVEN_SERVO_ID
+@@ -623,14 +671,22 @@
+ // EEmode funcs change here.
+ // get position by servo feedback.
+ void RoArmM3_getPosByServoFeedback() {
+-  getFeedback(BASE_SERVO_ID, true);
+-  getFeedback(SHOULDER_DRIVING_SERVO_ID, true);
+-  getFeedback(ELBOW_SERVO_ID, true);
+-
+-  getFeedback(WRIST_SERVO_ID, true);
+-  getFeedback(ROLL_SERVO_ID, true);
+-
+-  getFeedback(GRIPPER_SERVO_ID, true);
++  jointFeedbackValid = false;
++  const uint32_t started = millis();
++  const bool supplyBefore = readMotionSupply();
++  const byte ids[] = {BASE_SERVO_ID, SHOULDER_DRIVING_SERVO_ID,
++                      SHOULDER_DRIVEN_SERVO_ID, ELBOW_SERVO_ID,
++                      WRIST_SERVO_ID, ROLL_SERVO_ID, GRIPPER_SERVO_ID};
++  bool complete = true;
++  for (byte id : ids) {
++    const bool ok = getFeedback(id, true);
++    complete = ok && FeedbackSafety::positionValid(servoFeedback[id - 11].pos)
++               && complete;
++  }
++  const bool supplyAfter = readMotionSupply();
++  jointFeedbackSampleDuration = static_cast<uint32_t>(millis() - started);
++  if (!complete || !supplyBefore || !supplyAfter ||
++      jointFeedbackSampleDuration > FeedbackSafety::kMaxSampleMs) return;
+ 
+   radB = calculateRadByFeedback(servoFeedback[BASE_SERVO_ID - 11].pos, BASE_JOINT);
+   radS = calculateRadByFeedback(servoFeedback[SHOULDER_DRIVING_SERVO_ID - 11].pos, SHOULDER_JOINT);
+@@ -640,6 +696,8 @@
+   radG = calculateRadByFeedback(servoFeedback[GRIPPER_SERVO_ID - 11].pos, EOAT_JOINT);
+ 
+   RoArmM3_computePosbyJointRad(radB, radS, radE, radT, radR, radG);
++  jointFeedbackSampleTime = millis();
++  jointFeedbackValid = true;
+ }
+ 
+ 
+@@ -648,6 +706,12 @@
+ void RoArmM3_infoFeedback() {
+   jsonInfoHttp.clear();
+   jsonInfoHttp["T"] = 1051;
++  jsonInfoHttp["firmware"] = "0.84-s1";
++  jsonInfoHttp["feedback_valid"] = jointFeedbackValid;
++  jsonInfoHttp["motion_allowed"] = motionStreamingAllowed();
++  jsonInfoHttp["motion_supply_v"] = motionSupplyVoltage;
++  jsonInfoHttp["motion_tx_frames"] = espNowMotionTxFrames;
++  jsonInfoHttp["motion_blocked_cycles"] = espNowMotionBlockedCycles;
+   jsonInfoHttp["x"] = lastX;
+   jsonInfoHttp["y"] = lastY;
+   jsonInfoHttp["z"] = lastZ;
+@@ -659,6 +723,11 @@
+   jsonInfoHttp["t"] = radT;
+   jsonInfoHttp["r"] = radR;
+   jsonInfoHttp["g"] = radG;
++  if (!jointFeedbackValid) {
++    for (const char* field : {"x", "y", "z", "tit", "b", "s", "e", "t", "r", "g"}) {
++      jsonInfoHttp[field] = nullptr;
++    }
++  }
+ 
+   jsonInfoHttp["tB"] = servoFeedback[BASE_SERVO_ID - 11].load;
+   jsonInfoHttp["tS"] = servoFeedback[SHOULDER_DRIVING_SERVO_ID - 11].load - servoFeedback[SHOULDER_DRIVEN_SERVO_ID - 11].load;
+@@ -1459,4 +1528,4 @@
+     RoArmM3_goalPosMove();
+     RoArmM3_lastPosUpdate();
+   }
+-}+}
+--- vendor/esp_now_ctrl.h
++++ src/esp_now_ctrl.h
+@@ -234,6 +234,7 @@
+ 
+ 
+ void espNowGroupSend(byte devCodeIn, float bIn, float sIn, float eIn, float tIn, float rIn, float hIn, byte cmdIn, String messageIn) {
++  if (cmdIn == 0 && !allowEspNowMotion()) return;
+   espNowMessage.devCode  = devCodeIn;
+   espNowMessage.base     = bIn;
+   espNowMessage.shoulder = sIn;
+@@ -256,6 +257,7 @@
+ 
+ 
+ void espNowSingleDevSend(String inputMac, byte devCodeIn, float bIn, float sIn, float eIn, float tIn, float rIn, float hIn, byte cmdIn, String messageIn){
++  if (cmdIn == 0 && !allowEspNowMotion()) return;
+   if (inputMac.length() != 17) {
+     Serial.println("invalid MAC address format.");
+     return;
+@@ -292,6 +294,7 @@
+ 
+ 
+ void espNowSingleDevFlowCtrl() {
++  if (!allowEspNowMotion()) return;
+ 
+   espNowMessage.base     = radB;
+   espNowMessage.shoulder = radS;
+@@ -305,6 +308,7 @@
+                                   sizeof(struct_message));
+ 
+   if (result == ESP_OK) {
++    ++espNowMotionTxFrames;
+     Serial.println("Sent with success");
+   }
+   else {
+@@ -314,6 +318,7 @@
+ 
+ 
+ void espNowGroupDevsFlowCtrl() {
++  if (!allowEspNowMotion()) return;
+   espNowMessage.base     = radB;
+   espNowMessage.shoulder = radS;
+   espNowMessage.elbow    = radE;
+@@ -323,6 +328,7 @@
+   espNowMessage.cmd =0;
+   esp_err_t result = esp_now_send(0, (uint8_t *) &espNowMessage, sizeof(struct_message));
+   if (result == ESP_OK) {
++    ++espNowMotionTxFrames;
+     Serial.println("Sent with success");
+   }
+   else {

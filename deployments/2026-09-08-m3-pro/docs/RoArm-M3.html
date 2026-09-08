@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>RoArm-M3 - Waveshare Wiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"a76886055af697da998bae60","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"RoArm-M3","wgTitle":"RoArm-M3","wgCurRevisionId":111030,"wgRevisionId":111030,"wgArticleId":22507,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UART interface","I2C interface","TTL bus servo interface interface"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"RoArm-M3","wgRelevantArticleId":22507,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[]};RLSTATE={
+"ext.gadget.tabber":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","mediawiki.toc.styles":"ready","skins.tweeki.styles":"ready","skins.tweeki.bootstraptheme.styles":"ready","skins.tweeki.externallinks.styles":"ready","skins.tweeki.awesome.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","ext.FancyBoxThumbs","ext.HighlightjsIntegration","skins.tweeki.messages","skins.tweeki.scripts"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/w/Uy8Yw0y/aAdkk0o.php?lang=en&amp;modules=mediawiki.toc.styles%7Cskins.tweeki.awesome.styles%7Cskins.tweeki.bootstraptheme.styles%7Cskins.tweeki.externallinks.styles%7Cskins.tweeki.styles&amp;only=styles&amp;skin=tweeki"/>
+<script async="" src="/w/Uy8Yw0y/aAdkk0o.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=tweeki"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/Uy8Yw0y/aAdkk0o.php?lang=en&amp;modules=ext.gadget.tabber&amp;only=styles&amp;skin=tweeki"/>
+<link rel="stylesheet" href="/w/Uy8Yw0y/aAdkk0o.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=tweeki"/>
+<meta name="generator" content="MediaWiki 1.35.5"/>
+<meta property="og:image" content="https://www.waveshare.com/w/upload/8/8f/360px-RoArm-M3-S-2.jpg"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="shortcut icon" href="/w/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Waveshare Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://www.waveshare.com/w/api.php?action=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="Waveshare Wiki Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<!--[if lt IE 9]><script src="/w/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-RoArm-M3 rootpage-RoArm-M3 skin-tweeki action-view tweeki-animateLayout tweeki-non-advanced tweeki-user-anon"><a href="https://www.waveshare.com/cdn-cgi/content?id=sznlaKhy.2OicZEb1D7wTQId.sCbt15HhR.DapPC6k0-1788826287.7486517-1.2.1.1-Y_mPDc1JxtawinsJwVz42VyIuJfcvej9fANd63WeSokFXqwu.ytinenPfpna2A9W" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>			<!-- navbar -->
+			<div id="mw-navigation" class="navbar navbar-default navbar-fixed-top navbar-expand-lg fixed-top navbar-light bg-light" role="navigation">
+				<h2>Navigation menu</h2>
+				<div id="mw-head" class="navbar-inner">
+					<div class="container">
+
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+
+							<a href="/wiki/Main_Page" class="navbar-brand"><img src="https://www.waveshare.com/w/upload/a/a7/Ws-watermark-en.svg" alt="Waveshare Wiki" /></a>
+						</div>
+
+						<div id="navbar" class="navbar-collapse collapse">
+													<ul class="nav navbar-nav">
+							<li class="nav"><a href="#" id="n-raspberry-pi" class="dropdown-toggle" data-toggle="dropdown">Raspberry Pi <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523rpi-boards"><a href="/wiki/Main_Page#RPi-Boards" tabindex="-1">Boards/Kits</a></li><li id="n-main_page.2523rpi-displays"><a href="/wiki/Main_Page#RPi-Displays" tabindex="-1">Displays</a></li><li id="n-main_page.2523rpi-cameras"><a href="/wiki/Main_Page#RPi-Cameras" tabindex="-1">Cameras</a></li><li id="n-main_page.2523rpi-expansions"><a href="/wiki/Main_Page#RPi-Expansions" tabindex="-1">Expansions</a></li><li id="n-main_page.2523rpi-laptops"><a href="/wiki/Main_Page#RPi-Laptops" tabindex="-1">All-in-one</a></li><li id="n-main_page.2523rpi-robots"><a href="/wiki/Main_Page#RPi-Robots" tabindex="-1">Robots</a></li><li id="n-main_page.2523rpi-games"><a href="/wiki/Main_Page#RPi-Games" tabindex="-1">Portable Gaming</a></li><li id="n-main_page.2523rpi-acces"><a href="/wiki/Main_Page#RPi-Acces" tabindex="-1">Accessories</a></li><li id="n-main_page.2523android-linux-boards"><a href="/wiki/Main_Page#Android-Linux-Boards" tabindex="-1">Other Android/Linux Boards</a></li></ul></li><li class="nav"><a href="#" id="n-ai" class="dropdown-toggle" data-toggle="dropdown">AI <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523jetson-ai-boards"><a href="/wiki/Main_Page#Jetson-AI-Boards" tabindex="-1">Boards/Kits</a></li><li id="n-main_page.2523jetson-ai-displays"><a href="/wiki/Main_Page#Jetson-AI-Displays" tabindex="-1">Displays</a></li><li id="n-main_page.2523jetson-ai-cameras"><a href="/wiki/Main_Page#Jetson-AI-Cameras" tabindex="-1">Cameras</a></li><li id="n-main_page.2523jetson-ai-hat"><a href="/wiki/Main_Page#Jetson-AI-HAT" tabindex="-1">Expansions</a></li><li id="n-main_page.2523jetson-ai-robots"><a href="/wiki/Main_Page#Jetson-AI-Robots" tabindex="-1">Robots</a></li></ul></li><li class="nav"><a href="#" id="n-displays" class="dropdown-toggle" data-toggle="dropdown">Displays <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523display-lcd-oleds"><a href="/wiki/Main_Page#Display-LCD-OLEDs" tabindex="-1">LCD/OLED</a></li><li id="n-main_page.2523display-e-paper"><a href="/wiki/Main_Page#Display-e-Paper" tabindex="-1">e-Paper</a></li></ul></li><li class="nav"><a href="#" id="n-iot" class="dropdown-toggle" data-toggle="dropdown">IoT <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523long-range-wireless-comm"><a href="/wiki/Main_Page#Long-range-wireless-comm" tabindex="-1">Long Range Wireless</a></li><li id="n-main_page.2523short-range-wireless-comm"><a href="/wiki/Main_Page#Short-range-wireless-comm" tabindex="-1">Short Range Wireless</a></li><li id="n-main_page.2523wired-communication"><a href="/wiki/Main_Page#Wired-communication" tabindex="-1">Wired Comm / Converter</a></li><li id="n-main_page.2523misc-cameras-av"><a href="/wiki/Main_Page#Misc-cameras-av" tabindex="-1">Cameras / Audio / Video</a></li><li id="n-main_page.2523misc-sensor-modules"><a href="/wiki/Main_Page#Misc-sensor-modules" tabindex="-1">Sensors</a></li><li id="n-main_page.2523misc-servos-motors"><a href="/wiki/Main_Page#Misc-servos-motors" tabindex="-1">Motors / Servos</a></li><li id="n-main_page.2523misc-other-modules"><a href="/wiki/Main_Page#Misc-other-modules" tabindex="-1">others</a></li></ul></li><li class="nav"><a href="#" id="n-robotics" class="dropdown-toggle" data-toggle="dropdown">Robotics <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523robotics-cars"><a href="/wiki/Main_Page#Robotics-cars" tabindex="-1">Mobile Robots</a></li><li id="n-main_page.2523dog-like-robots"><a href="/wiki/Main_Page#Dog-like-Robots" tabindex="-1">Dog-like Robots</a></li><li id="n-main_page.2523robotics-drivers-sensors"><a href="/wiki/Main_Page#Robotics-drivers-sensors" tabindex="-1">Drivers / Sensors</a></li><li id="n-main_page.2523robotics-robot-arms"><a href="/wiki/Main_Page#Robotics-robot-arms" tabindex="-1">Robot Arm / Control</a></li></ul></li><li class="nav"><a href="#" id="n-mcu.252Ffpga" class="dropdown-toggle" data-toggle="dropdown">MCU/FPGA <b class="caret"></b></a><ul class="dropdown-menu " role="menu"><li id="n-main_page.2523arduino-main-boards"><a href="/wiki/Main_Page#Arduino-main-boards" tabindex="-1">Arduino</a></li><li id="n-main_page.2523micro.253Abit"><a href="/wiki/Main_Page#micro:bit" tabindex="-1">micro:bit</a></li><li id="n-main_page.2523mcu.2farm" class="LPC"><a href="/wiki/Main_Page#MCU.2FARM" tabindex="-1">STM32</a></li><li id="n-main_page.2523fpga"><a href="/wiki/Main_Page#FPGA" tabindex="-1">FPGA</a></li></ul></li><li class="nav"><a href="https://service.waveshare.com" id="n-https.253A.252F.252Fservice.waveshare.com" rel="nofollow" target="_blank">Support</a></li>							</ul>
+						
+													<ul class="nav navbar-nav navbar-right">
+							</ul>
+				<form class="navbar-form navbar-right" action="/w/index.php" id="searchform">
+					<div class="form-group"><input type="search" name="search" placeholder="Product name search" title="Search Waveshare Wiki [f]" accesskey="f" id="searchInput" class="search-query form-control"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="mw-searchButton" class="searchButton btn hidden"/>
+					</div>
+				</form><ul class="nav navbar-nav navbar-right">							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- /navbar -->
+					<div id="mw-page-base"></div>
+			<div id="mw-head-base"></div>
+			<a id="top"></a>
+
+			<!-- content -->
+			<div id="contentwrapper" class="user-loggedout not-editable container with-navbar with-navbar-fixed">
+
+				
+				<div class="row">
+					<div class="col-md-offset-2 col-md-10" role="main">
+								<div class="mw-body" id="content">
+			<div id="mw-js-message" style="display:none;"></div>
+									<h1 id="firstHeading" class="firstHeading page-header" lang="en"><span dir="auto">RoArm-M3</span></h1>
+									<!-- bodyContent -->
+			<div id="bodyContent">
+								<div id="siteSub">From Waveshare Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div class="wiki-pages jet-green-color">
+<div class="tabber">
+<table id="infotable" class="a-r at-c roundy bgd-green bl-white" style="margin-left: 5px; margin-bottom: 5px; width: 30%;">
+
+<tbody><tr>
+<td>
+<table class="at-c roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>RoArm-M3</b>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;"><a href="https://www.waveshare.com/roarm-m3.htm" target="_blank" rel="nofollow noreferrer noopener"><img alt="RoArm-M3" src="/w/upload/8/8f/360px-RoArm-M3-S-2.jpg" decoding="async" loading="lazy" width="360" height="270" /></a><br /><br /><small>RoArm-M3 robotic arm,TTL bus servo interface/I2C/UART</small>
+</td></tr></tbody></table>
+</td></tr>
+<tr style="display:none;">
+<td>
+<table class="roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>{{{name2}}}</b>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;"><br />
+</td></tr></tbody></table>
+</td></tr>
+<tr style="display:none;">
+<td>
+<table class="roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>{{{name3}}}</b>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;"><br />
+</td></tr></tbody></table>
+</td></tr>
+<tr style="display:none;">
+<td>
+<table class="roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>{{{name4}}}</b>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;"><br />
+</td></tr></tbody></table>
+</td></tr>
+<tr style="display:none;">
+<td>
+<table class="roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>{{{name5}}}</b>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;"><br />
+</td></tr></tbody></table>
+</td></tr>
+<tr style="display:none;">
+<td>
+<table class="roundy" style="background: transparent;width:100%;">
+
+<tbody><tr>
+<td class="at-c textwhite"><b>{{{name6}}}</b>
+</td></tr>
+<tr>
+<td class="at-c bgwhite" style="margin:5px;"><br />
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td>
+<table class="roundy" style="display:none;">
+<tbody><tr>
+<td style="width:2%;">
+</td>
+<td style="width:3%;">
+</td>
+<th colspan="2" width="90%" class="at-c roundytop bgl-white">Primary Attribute
+</th>
+<td style="width:3%;">
+</td>
+<td style="width:2%;">
+</td></tr>
+<tr>
+<td colspan="6" width="90px" class="at-c roundytl roundytr bgwhite b-green" style="border-width: 0 0 1px 0;"><b>Category:</b>
+</td></tr>
+<tr style="display:none;">
+<th colspan="3" width="90px" class="at-r bgwhite b-green" style="border-width: 0 0 1px 0;">{{{userDefinedInfo}}}:
+</th>
+<td colspan="3" class="at-l b-green bgwhite" style="border-width: 0 0 1px 0;">{{{userdefinedvalue}}}
+</td></tr>
+<tr style="display:none;">
+<td colspan="6" width="90px" class="at-c roundybl roundybr bgwhite"><b>Brand:</b> Waveshare
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td>
+<table class="a-r roundy" style="display:none;">
+<tbody><tr>
+<td style="width:2%;">
+</td>
+<td style="width:3%;">
+</td>
+<th colspan="2" width="90%" class="at-c roundytop bgl-white">Website
+</th>
+<td style="width:3%;">
+</td>
+<td style="width:2%;">
+</td></tr>
+<tr>
+<td colspan="6" width="90px" class="at-c roundytl roundytr bgwhite b-green" style="border-width: 0 0 1px 0;"><b>International:</b> {{{website_en}}}
+</td></tr>
+<tr>
+<td colspan="6" width="90px" class="at-c roundybl roundybr bgwhite"><b>Chinese:</b> {{{website_cn}}}
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td>
+<table class="a-r roundy" style="background: transparent; border-collapse:collapse;width:100%;display:none;">
+<tbody><tr>
+<td style="width:2%;">
+</td>
+<td style="width:3%;">
+</td>
+<th colspan="2" width="90%" class="at-c roundytop bgl-white">Onboard Interfaces
+</th>
+<td style="width:3%;">
+</td>
+<td style="width:2%;">
+</td></tr>
+<tr>
+<td colspan="6" width="90px" class="at-l roundy bgwhite b-green" style="border-width: 0 0 1px 0;">
+<table class="roundy bgwhite fulltable" style="text-align:center;">
+
+<tbody><tr>
+<td class="roundy bl-gray bw-1" style="width:25%;;"><small><b><a href="/wiki/Category:UART_interface" title="Category:UART interface">UART</a></b></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;;"><small><b><a href="/wiki/Category:I2C_interface" title="Category:I2C interface">I2C</a></b></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;;"><small><b><a href="/w/index.php?title=Category:TTL_bus_servo_interface_interface&amp;action=edit&amp;redlink=1" class="new" title="Category:TTL bus servo interface interface (page does not exist)">TTL bus servo interface</a></b></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td></tr>
+<tr>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td></tr>
+<tr>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td></tr>
+<tr>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td></tr>
+<tr>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td>
+<td class="roundy bl-gray bw-1" style="width:25%;display:none;"><small></small>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr style="display:none;">
+<td>
+<table class="a-r roundy" style="background: transparent; border-collapse:collapse;width:100%;;display:none;">
+<tbody><tr>
+<td style="width:2%;">
+</td>
+<td style="width:3%;">
+</td>
+<th colspan="2" width="90%" class="at-c roundytop bgl-white">Related Products
+</th>
+<td style="width:3%;">
+</td>
+<td style="width:2%;">
+</td></tr>
+<tr>
+<td colspan="6" width="90px" class="at-l roundy bgwhite b-green" style="border-width: 0 0 1px 0;">
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-1"><a href="#Introduction"><span class="tocnumber">1.1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-2 tocsection-2"><a href="#Features"><span class="tocnumber">1.2</span> <span class="toctext">Features</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Appearance"><span class="tocnumber">1.3</span> <span class="toctext">Appearance</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Onboard_Interfaces_on_General_Driver_Board_for_Robots"><span class="tocnumber">1.4</span> <span class="toctext">Onboard Interfaces on General Driver Board for Robots</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Product_Use"><span class="tocnumber">2</span> <span class="toctext">Product Use</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Precautions"><span class="tocnumber">2.1</span> <span class="toctext">Precautions</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Start_Working"><span class="tocnumber">2.2</span> <span class="toctext">Start Working</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Basic_Usage"><span class="tocnumber">2.3</span> <span class="toctext">Basic Usage</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#AngleCtrl:_Servo_Angle_Control"><span class="tocnumber">2.3.1</span> <span class="toctext">AngleCtrl: Servo Angle Control</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Torque:_Torque_Lock_Control"><span class="tocnumber">2.3.2</span> <span class="toctext">Torque: Torque Lock Control</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#DEFA:_Dynamic_External_Force_Adaptive_Control"><span class="tocnumber">2.3.3</span> <span class="toctext">DEFA: Dynamic External Force Adaptive Control</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#LED:_LED_Light_Control"><span class="tocnumber">2.3.4</span> <span class="toctext">LED: LED Light Control</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#HORIZONTAL_DRAG:_Horizontal_Plane_Painting"><span class="tocnumber">2.3.5</span> <span class="toctext">HORIZONTAL DRAG: Horizontal Plane Painting</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#VERTICAL_DRAG:_Vertical_Plane_Painting"><span class="tocnumber">2.3.6</span> <span class="toctext">VERTICAL DRAG: Vertical Plane Painting</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#COORDCTRL:_End_Point_Coordinate_Control"><span class="tocnumber">2.3.7</span> <span class="toctext">COORDCTRL: End Point Coordinate Control</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#FEEDBACK_INFOMATIONL:_Information_Feedback"><span class="tocnumber">2.3.8</span> <span class="toctext">FEEDBACK INFOMATIONL: Information Feedback</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="#Advanced_Use"><span class="tocnumber">2.4</span> <span class="toctext">Advanced Use</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#What_is_JSON_Command"><span class="tocnumber">2.4.1</span> <span class="toctext">What is JSON Command</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Basic_Format_of_JSON_Command"><span class="tocnumber">2.4.2</span> <span class="toctext">Basic Format of JSON Command</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Why_Use_JSON_Commands_for_Communication.3F"><span class="tocnumber">2.4.3</span> <span class="toctext">Why Use JSON Commands for Communication?</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#How_to_Send_JSON_Commands"><span class="tocnumber">2.4.4</span> <span class="toctext">How to Send JSON Commands</span></a>
+<ul>
+<li class="toclevel-4 tocsection-21"><a href="#Web_Delivery"><span class="tocnumber">2.4.4.1</span> <span class="toctext"><b>Web Delivery</b></span></a></li>
+<li class="toclevel-4 tocsection-22"><a href="#Python_HTTP_Request_Communication"><span class="tocnumber">2.4.4.2</span> <span class="toctext"><b>Python HTTP Request Communication</b></span></a></li>
+<li class="toclevel-4 tocsection-23"><a href="#Python-Serial_Communication"><span class="tocnumber">2.4.4.3</span> <span class="toctext"><b>Python-Serial Communication</b></span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-24"><a href="#Functions"><span class="tocnumber">2.5</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="#RoArm-M3-S_Tutorial"><span class="tocnumber">2.5.1</span> <span class="toctext">RoArm-M3-S Tutorial</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#ROS2_Tutorial_Catalog"><span class="tocnumber">2.5.2</span> <span class="toctext">ROS2 Tutorial Catalog</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Resources"><span class="tocnumber">3</span> <span class="toctext">Resources</span></a>
+<ul>
+<li class="toclevel-2 tocsection-27"><a href="#RoArm-M3_Related_Program"><span class="tocnumber">3.1</span> <span class="toctext">RoArm-M3 Related Program</span></a>
+<ul>
+<li class="toclevel-3 tocsection-28"><a href="#RoArm-M3_Open_Source_Demo"><span class="tocnumber">3.1.1</span> <span class="toctext">RoArm-M3 Open Source Demo</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#RoArm-M3_Python_Demo"><span class="tocnumber">3.1.2</span> <span class="toctext">RoArm-M3 Python Demo</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-30"><a href="#RoArm-M3_Drawings"><span class="tocnumber">3.2</span> <span class="toctext">RoArm-M3 Drawings</span></a>
+<ul>
+<li class="toclevel-3 tocsection-31"><a href="#RoArm-M3_3D_Mode"><span class="tocnumber">3.2.1</span> <span class="toctext">RoArm-M3 3D Mode</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#RoArm-M3_2D_Dimensions"><span class="tocnumber">3.2.2</span> <span class="toctext">RoArm-M3 2D Dimensions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-33"><a href="#Schematic_Diagram_of_General_Driver_Board_for_Robots"><span class="tocnumber">3.3</span> <span class="toctext">Schematic Diagram of General Driver Board for Robots</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#Software_Driver"><span class="tocnumber">3.4</span> <span class="toctext">Software Driver</span></a>
+<ul>
+<li class="toclevel-3 tocsection-35"><a href="#Software"><span class="tocnumber">3.4.1</span> <span class="toctext">Software</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#Serial_Driver"><span class="tocnumber">3.4.2</span> <span class="toctext">Serial Driver</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-37"><a href="#Project_Resource"><span class="tocnumber">3.5</span> <span class="toctext">Project Resource</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#FAQ"><span class="tocnumber">4</span> <span class="toctext">FAQ</span></a></li>
+<li class="toclevel-1"><a href="#Support"><span class="tocnumber">5</span> <span class="toctext">Support</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Overview">Overview</span></h1>
+<h2><span class="mw-headline" id="Introduction">Introduction</span></h2>
+<p>This is a 5+1 DOF smart robotic arm designed for innovative applications. It adopts a lightweight structure and has an effective load of 0.2kg when grabbing objects 0.5m away from the mechanical arm's origin, and it can be flexibly installed on various mobile platforms. Its 360° omnidirectional base movement range, combined with five flexible joints, creates a workspace with a diameter of up to 1m.
+</p><p>This joint direct drive design of the product improves repositioning accuracy while also enhancing structural reliability, and adopts innovative dual-drive technology to double the torque of the shoulder joint. The master control module: uses an ESP32 MCU and supports multiple wireless control methods, providing flexible control interfaces and a wide range of communication protocols, allowing the robotic arm to easily connect to various common devices. At the same time, it is also compatible with ROS2 and a variety of host computers, and supports a variety of wireless and wired communication methods.
+</p><p>The user-friendly cross-platform web application and simple and intuitive coordinate control mode greatly reduce the difficulty of use. Additionally, rich textual and video tutorials are provided to help you get started with learning and using this robotic arm quickly. At the same time, the RoArm-M3 series can also <b>support the popular AI robotic arm project LeRobot</b>, integrating its pre-training models, teaching datasets, and simulation environments to provide strong support for the research and development of deep learning, imitation learning, and reinforcement learning. By calling LeRobot's examples and algorithm library, developers can deploy intelligent algorithms to RoArm-M3 more quickly, further expanding the possibilities of innovative applications.
+</p><p>The RoArm-M3 series achieves an excellent balance in multiple dimensions such as lightweight, ease of use, scalability, and open innovation. It is a multifunctional robotic arm that integrates intelligent control, human-computer interaction, and customizable development. If you need a solution that is flexible, scalable, and easy to use, the RoArm-M3 series will be a good choice to help you achieve more innovation.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Features">Features</span></h2>
+<ul><li><b>Omnidirectional workspace:</b> The 360° all-round rotating base with flexible joint movement creates a working space with a diameter of up to 1m to achieve all-round freedom of movement.</li></ul>
+<ul><li><b>Usability:</b> Provides cross platform Web applications and coordinate control modes, reducing the difficulty of use and enabling users to easily operate robotic arms.</li></ul>
+<ul><li><b>Open source code:</b> Open source the control code and communication interface documentation of RoArm-M3 robotic arm series, which is convenient for users to carry out secondary development.</li></ul>
+<ul><li><b>Joint direct-drive design:</b> Using 12-bit high-precision magnetic encoder to obtain the joint angle makes the repositioning accuracy up to 0.088°, which improves the structure reliability.</li></ul>
+<ul><li><b>Dual-drive technology:</b> Innovative dual-drive technology enhances the torque of the shoulder joint of the robotic arm and improves the overall loading capacity of the arm.</li></ul>
+<ul><li><b>Powerful master control module:</b> Adopts ESP32 master control MCU, which supports multiple control interfaces and wireless communication protocols.</li></ul>
+<ul><li><b>Multi-platform compatibility:</b> Compatible with ROS2 and a variety of host computers, supports a variety of wireless and wired communication modes, providing flexibility for different development and control needs.</li></ul>
+<ul><li><b>Rich tutorial resources:</b> Provides rich graphic and video tutorials covering a wide range of functions to help users quickly get started learning and using the robotic arm, thus accelerating the realization of innovative applications.</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Appearance">Appearance</span></h2>
+<p>The following are annotations of various parts and commonly used interfaces of the robotic arm:
+<a href="/wiki/File:RAM3-introduction.jpg" class="image"><img alt="RAM3-introduction.jpg" src="/w/upload/thumb/8/8b/RAM3-introduction.jpg/800px-RAM3-introduction.jpg" decoding="async" loading="lazy" width="800" height="600" srcset="/w/upload/thumb/8/8b/RAM3-introduction.jpg/1200px-RAM3-introduction.jpg 1.5x, /w/upload/8/8b/RAM3-introduction.jpg 2x" /></a>
+</p>
+<h2><span class="mw-headline" id="Onboard_Interfaces_on_General_Driver_Board_for_Robots">Onboard Interfaces on General Driver Board for Robots</span></h2>
+<p><a href="/wiki/File:700px-General-Driver-for-Robots-details-intro.jpg" class="image"><img alt="700px-General-Driver-for-Robots-details-intro.jpg" src="/w/upload/e/e1/700px-General-Driver-for-Robots-details-intro.jpg" decoding="async" loading="lazy" width="700" height="401" /></a>
+</p>
+<table border="1;" style="height:200px;width:1200px;">
+
+<tbody><tr style="background:#7eb128; color:white;" align="center">
+<td>No.</td>
+<td>Resource Name</td>
+<td>Description
+</td></tr>
+<tr align="center">
+<td>1</td>
+<td>ESP32-WROOM-32 main control module</td>
+<td>Can be developed using Arduino IDE
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>2</td>
+<td>IPEX Gen 1 WIFI interface</td>
+<td>Used for connecting the antenna with IPEX1 outer screw inner hole
+</td></tr>
+<tr align="center">
+<td>3</td>
+<td>Lidar Interface</td>
+<td>Integrated the radar adapter board functionality
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>4</td>
+<td>IIC peripheral expansion interface</td>
+<td>Can be used to connect OLED screens or other IIC sensors
+</td></tr>
+<tr align="center">
+<td>5</td>
+<td>Reset button</td>
+<td>Press and release to reboot the ESP32
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>6</td>
+<td>Download button (BOOT)</td>
+<td>When pressed, it boots the ESP32 into download mode
+</td></tr>
+<tr align="center">
+<td>7</td>
+<td>DC-DC 5V Regulator circuit</td>
+<td>Can power a host device such as a Raspberry Pi or Jetson nano, etc.
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>8</td>
+<td>Type-C port (LADAR)</td>
+<td>LiDAR data interface
+</td></tr>
+<tr align="center">
+<td>9</td>
+<td>Type-C port (USB)</td>
+<td>ESP32 serial communication interface, which can upload programs for ESP32
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>10</td>
+<td>XH2.54 Power connector</td>
+<td>Inputs DC7~12.6V, can directly power the serial bus servos and motors
+</td></tr>
+<tr align="center">
+<td>11</td>
+<td>INA219</td>
+<td>Voltage/current monitoring chip
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>12</td>
+<td>Power switch</td>
+<td>Control external power supply ON/OFF (ON position in the figure above)
+</td></tr>
+<tr align="center">
+<td>13</td>
+<td>ST3215 Bus Servo Interface</td>
+<td>Used to connect ST3215 serial bus servo
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>14</td>
+<td>Motor interface PH2.0 6P</td>
+<td>Group B interface for motor with encoder
+</td></tr>
+<tr align="center">
+<td>15</td>
+<td>Motor interface PH2.0 6P</td>
+<td>Group A interface for motor with encoder
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>16</td>
+<td>Motor interface PH2.0 2P</td>
+<td>Group A interface for motor without encoder (LED lamp interface in this product)
+</td></tr>
+<tr align="center">
+<td>17</td>
+<td>Motor interface PH2.0 2P</td>
+<td>Group B interface for motor without encoder
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>18</td>
+<td>AK09918C</td>
+<td>3-axis electronic compass
+</td></tr>
+<tr align="center">
+<td>19</td>
+<td>QMI8658</td>
+<td>6-axis motion sensor
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>20</td>
+<td>TB6612FNG</td>
+<td>Motor control chip
+</td></tr>
+<tr align="center">
+<td>21</td>
+<td>Serial bus servo control circuit</td>
+<td>Connect multiple ST3215 bus servos and get servo feedback
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>22</td>
+<td>TF card slot</td>
+<td>Can be used to store logs or WIFI configurations
+</td></tr>
+<tr align="center">
+<td>23</td>
+<td>40PIN expansion interface</td>
+<td>Easy access to Raspberry Pi 4B, Raspberry Pi Zero or Jetson Orin Nano
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>24</td>
+<td>40PIN expansion interface</td>
+<td>Convenient for using the pins on the host computer installed on the driver board
+</td></tr>
+<tr align="center">
+<td>25</td>
+<td>CP2102 chip</td>
+<td>Serial port to USB, used for radar data transmission
+</td></tr>
+<tr style="background:#ebf2dc; color:black;" align="center">
+<td>26</td>
+<td>CP2102 chip</td>
+<td>Serial to USB, used for ESP32 serial communication
+</td></tr>
+<tr align="center">
+<td>27</td>
+<td>Automatic download circuit</td>
+<td>Does not require pressing the EN and BOOT buttons when uploading code to ESP32F
+</td></tr></tbody></table>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Product_Use">Product Use</span></h1>
+<h2><span class="mw-headline" id="Precautions">Precautions</span></h2>
+<p><font color="#FF0000">
+<b>Please read the following before use:</b>
+</font>
+</p>
+<ol><li>This product is already assembled at the factory, but due to the large number of servos used, it is not recommended to disassemble the product.</li>
+<li>The operating voltage range of this product is 7-12.6V. It is recommended to use the standard 12V 5A power supply or 3S lithium battery for power supply. It is strictly prohibited to use power supplies that exceed the operating voltage range of the product.</li>
+<li>The servo used in this product has a relatively high torque, which may pose potential risks. Therefore, it is advisable to avoid having sensitive areas such as eyes or head within the range of the servo's movement when using it.</li>
+<li>Keep away from children when using this product to avoid injury; And the product cannot be subjected to severe impacts.</li>
+<li>For safety reasons, the default demo's robotic arm runs at a relatively slow speed. You can refer to the following tutorial to change this speed, but a too low speed may cause the robotic arm to shake when running to certain specific positions.</li></ol>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Start_Working">Start Working</span></h2>
+<p>Please read the <a href="#Appearance"><b>Appearance</b></a> section first to understand the structure of the robotic arm and various common interfaces.
+</p>
+<ol><li>Connect the configured 12V 5A power cable to the power interface on the robotic arm, turn on the power switch, and the device will start up with all joints automatically moving to the middle position.</li>
+<li>The meaning of the content displayed on the OLED screen after power on is as follows:
+<ul><li>The first line indicates that the WiFi is in AP mode at this time, and the WiFi hotspot is named RoArm-M3;</li>
+<li>The second line indicates that STA mode is turned off. When WiFi is in STA mode, the router will assign an IP address and display it;</li>
+<li>The content of the third line is the MAC address of this device, which is unique and used for ESP-NOW communication.</li></ul></li>
+<li>Use your mobile phone or computer to connect to the WiFi of the RoArm-M3-S after powering on: RoArm-M3, the password is 12345678, open Google Chrome after connecting to WiFi, and enter 192.168.4.1 in the URL bar to open the Web interface. Next, you can use the Web-based features to control the robotic arm. For details on how to use the Web side, please refer to the <a href="#Basic_Usage">Basic Usage</a> section.</li></ol>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Basic_Usage">Basic Usage</span></h2>
+<h3><span class="mw-headline" id="AngleCtrl:_Servo_Angle_Control">AngleCtrl: Servo Angle Control</span></h3>
+<p>The number displayed on each column of buttons is the angle to which each joint rotates, displayed in radians. The labeling of each joint can be found in the figure in the <a href="#Appearance"><b>Appearance</b></a> section. All displayed numerical feedback will only be updated after the button is released. Specific updates are detailed in the following rotation instructions.<br />
+<a href="/wiki/File:500px-RAM3-web1(2).png" class="image"><img alt="500px-RAM3-web1(2).png" src="/w/upload/9/95/500px-RAM3-web1%282%29.png" decoding="async" loading="lazy" width="500" height="389" /></a><br />
+<b>1.</b> "B L" and "B R": Control the rotation of the basic joint, with a rotation range of 360° (3.14~-3.14). After the product is turned on, the basic joint will automatically rotate to the middle position, and the number on the button is 0 at this time.
+</p>
+<dl><dd><dl><dd><ul><li>When clicking "B L" continuously, the basic joint will rotate 180° to the left, and the number will be updated from 0 to 3.14;</li>
+<li>When clicking "B R" continuously, the basic joint will rotate 360° to the right, and the number will be updated from 3.14 to -3.14.</li></ul></dd></dl></dd></dl>
+<p><b>2.</b> "S D" and "S U": Control the rotation of the shoulder joint, with a rotation range of 180° (1.57~-1.57). After the product is turned on, the shoulder joint will automatically rotate to the middle position, and the number on the button is 0 at this time.
+</p>
+<dl><dd><dl><dd><ul><li>When clicking "S D" continuously, the shoulder joint will rotate 90° forward to its maximum limit, and the number will be updated from 0 to 1.57;</li>
+<li>When clicking "S U" continuously, the shoulder joint will rotate 180° in the opposite direction, and the number will change from 1.57 to -1.57.</li></ul></dd></dl></dd></dl>
+<p><b>3.</b> "E D" and "E U": Control the rotation of the elbow joint, with a rotation range of 180°. After the product is turned on, the elbow joint will automatically rotate to the middle position, and the number on the button is 1.57 at this time.
+</p>
+<dl><dd><dl><dd><ul><li>When clicking "E D" continuously, the elbow joint will rotate downward, and the number will increase from 1.57;</li>
+<li>When clicking "E U" continuously, the elbow joint will rotate in the opposite direction, and the number will decrease from the beginning.</li></ul></dd></dl></dd></dl>
+<p><b>4.</b> "W+DG" and "W-UG": Control the rotation of the wrist joint 1, with a rotation range of 180° (1.57~-1.57). After the product is turned on, the elbow joint will automatically rotate to the middle position, and the number on the button is 0 at this time.
+</p>
+<dl><dd><dl><dd><ul><li>When clicking "W+DG" continuously, the wrist joint1 will rotate 90° downward its maximum limit, and the number will be updated from 0 to 1.57;</li>
+<li>When clicking "W-UG" continuously, the elbow joint1 will rotate 180° in the opposite direction to the limit, and the number will change from 1.57 to -1.57.</li></ul></dd></dl></dd></dl>
+<p><b>5.</b> "R+DG" and "R-UG": Control the rotation of the wrist joint 2, with a rotation range of 360° (3.14~-3.14). After the product is turned on, the elbow joint will automatically rotate to the middle position, and the number on the button is 0 at this time.
+</p>
+<dl><dd><dl><dd><ul><li>When clicking "R+DG" continuously, the wrist joint2 will rotate 180° to the right limit, and the number will be updated from 0 to 3.14;</li>
+<li>When clicking "R-UG" continuously, the elbow joint1 will rotate 360° in the opposite direction to the limit, and the number will change from 3.14 to -3.14.</li></ul></dd></dl></dd></dl>
+<p><b>6.</b> "G+ DG" and "G-UG": Control the rotation of the end joint, with a rotation range of 135° (3.14~1.08). After the product is turned on, the elbow joint will automatically rotate to the middle position, and the number on the button is 3.14 at this time.
+</p>
+<dl><dd><dl><dd><ul><li>When clicking "G+DG" continuously, the end joint will be clamped, which is the default clamping state;</li>
+<li>When clicking "G-UG" continuously, the end joint will open, with a maximum opening angle of 135°, and the number will change from 3.14 to 1.08.</li></ul></dd></dl></dd></dl>
+<p><b>INIT:</b> After clicking, each joint will reset to the middle position when the product is turned on.
+</p>
+<div role="note" class="note note-info">Note: The rotation range of each joint is set with a limit. </div>
+<h3><span class="mw-headline" id="Torque:_Torque_Lock_Control">Torque: Torque Lock Control</span></h3>
+<p>Clicking "Torque OFF" means that the torque lock is turned off. After turning off the torque lock, the joint can be rotated manually when the robotic arm is powered on; clicking "Torque ON" means that the torque lock is turned on. After turning on, the joint cannot be rotated manually when the robotic arm is powered on.
+</p><p>Note: After turning off the torque lock, if a certain joint or all joints of the robotic arm receive other rotation commands, the torque lock will be automatically turned on.
+</p>
+<h3><span class="mw-headline" id="DEFA:_Dynamic_External_Force_Adaptive_Control">DEFA: Dynamic External Force Adaptive Control</span></h3>
+<p>Clicking on "DEFA ON" indicates that the function is enabled. After enabling it, using external force to rotate the robotic arm will rebound to the position before rotation; Clicking "DEFA OFF" means that the function is turned off.
+</p>
+<h3><span class="mw-headline" id="LED:_LED_Light_Control">LED: LED Light Control</span></h3>
+<p>Click "LED OFF" to turn off the LED light; Click "LED ON" to turn on the LED light.
+</p>
+<h3><span class="mw-headline" id="HORIZONTAL_DRAG:_Horizontal_Plane_Painting">HORIZONTAL DRAG: Horizontal Plane Painting</span></h3>
+<p>For specific operations on the page, please refer to the <a href="/wiki/Horizontal_Drag_Instructions" title="Horizontal Drag Instructions"><b>【Hotizontal Drag Instructions】</b></a> section.
+</p>
+<h3><span class="mw-headline" id="VERTICAL_DRAG:_Vertical_Plane_Painting">VERTICAL DRAG: Vertical Plane Painting</span></h3>
+<p>For specific operations on the page, please refer to the <a href="/wiki/Vertical_Drag_Instructions" title="Vertical Drag Instructions"><b>【Vertical Drag Instructions】</b></a> section.
+</p>
+<h3><span class="mw-headline" id="COORDCTRL:_End_Point_Coordinate_Control">COORDCTRL: End Point Coordinate Control</span></h3>
+<ul><li>X. Y and Z respectively represent the position coordinates of the X-axis, Y-axis, and Z-axis of the end joint of the robotic arm;</li></ul>
+<ul><li>T represents the angle of the end point of the robotic arm in the vertical plane. Under the condition of keeping the endpoint unchanged, the angles that each joint needs to rotate are obtained by inverse solving the coordinate points;</li></ul>
+<ul><li>R represents the rotation angle of wrist joint 2, as detailed in the "R+DG" column of the AngleCtrl function;</li></ul>
+<ul><li>G represents the rotation angle of the end joint, as described in detail in the "G+DG" column of the AngleCtrl function, all six of which can be adjusted through "+-".</li></ul>
+<p>INIT: After clicking, the end point will reset to the middle position when the product is turned on.
+</p><p><a href="/wiki/File:500px-RAM3-web2(2).png" class="image"><img alt="500px-RAM3-web2(2).png" src="/w/upload/b/bf/500px-RAM3-web2%282%29.png" decoding="async" loading="lazy" width="500" height="384" /></a>
+</p>
+<h3><span class="mw-headline" id="FEEDBACK_INFOMATIONL:_Information_Feedback">FEEDBACK INFOMATIONL: Information Feedback</span></h3>
+<p>You can input control commands here to communicate with the robotic arm, and the feedback information from the control commands will be displayed above the input box. Below the "SEND" button are commonly used control commands for robotic arms. Clicking the "INPUT" button next to the command will automatically input them into the input box.
+</p><p><a href="/wiki/File:500px-RAM3-web3(2).png" class="image"><img alt="500px-RAM3-web3(2).png" src="/w/upload/6/61/500px-RAM3-web3%282%29.png" decoding="async" loading="lazy" width="500" height="390" /></a>
+</p>
+<h2><span class="mw-headline" id="Advanced_Use">Advanced Use</span></h2>
+<p>When controlling a robotic arm, we use a specific control command—a JSON command—to tell the robotic arm what action it should perform. In advanced use, we mainly introduce how to send JSON commands for robotic arm control and instructions for using robotic arm JSON commands.
+</p>
+<h3><span class="mw-headline" id="What_is_JSON_Command">What is JSON Command</span></h3>
+<p>JSON (JavaScript Object Notation) is a lightweight data exchange format, typically used for transmitting and storing data between different systems. JSON originally originated from JavaScript, but it has become an independent data format from programming languages and can therefore be used and parsed in various programming languages.
+</p><p>JSON commands are like a standardized "menu" that can tell the robotic arm the angles at which each joint needs to rotate, where the robotic arm needs to move to, and how fast to move, etc.
+</p>
+<h3><span class="mw-headline" id="Basic_Format_of_JSON_Command">Basic Format of JSON Command</span></h3>
+<p>The basic format of a JSON command is: <code>key:value</code>
+</p>
+<ul><li>The key must be a string enclosed in double quotation marks;</li></ul>
+<ul><li>Values can be of various types: strings, numbers, objects, arrays, Boolean values, or null. Among them, strings must be enclosed in double quotes, while others do not require quotes;</li></ul>
+<p>Let's use a simple example to understand the JSON command. The following is the command for releasing the end point of the robotic arm:
+</p>
+<pre class="code2highlight lang-JSON">{&quot;T&quot;:106,&quot;cmd&quot;:1.57,&quot;spd&quot;:0,&quot;acc&quot;:0}</pre>
+<p>Among them, T, cmd, spd, and acc in double quotation marks are keys, and values are after colons. Explanation of this command:
+</p>
+<ul><li>"T": 106 represents the command used to control the rotation of the end joint of the robotic arm (CMD_EOAT_HAND_CTRL). This is a fixed value, which cannot be changed, is a numerical value that the program recognizes the purpose of the command.
+<ul><li>The value of T is defined in the header file jsonn_cmd. h of the product's slave computer program.</li>
+<li>Note: Different control commands will use different T values. <br /></li></ul></li></ul>
+<ul><li>"cmd": The angle at which the end joint needs to be rotated (displayed in radians). The default initial position of the end joint is 3.14. The value given here is 1.57,  so the gripper rotate openly.</li></ul>
+<ul><li>"spd": The speed of joint rotation. When the speed value is 0, rotate at maximum speed.</li></ul>
+<ul><li>"acc": Acceleration of joint rotation. When the acceleration value is 0, rotate at maximum acceleration.</li></ul>
+<p>This command tells the robotic arm: "Please open the gripper with maximum speed and acceleration."
+</p>
+<div role="note" class="note note-warn"> Each symbol in a JSON command is important, and missing commas or parentheses can cause the directive to fail to execute. It is recommended that you directly copy and paste the command of the corresponding function and change the corresponding value. </div>
+<h3><span id="Why_Use_JSON_Commands_for_Communication?"></span><span class="mw-headline" id="Why_Use_JSON_Commands_for_Communication.3F">Why Use JSON Commands for Communication?</span></h3>
+<p>The following are the advantages of using JSON formatted commands to control robots:
+</p><p><b>1. Good readability</b>
+</p><p>JSON is a lightweight text data format that is easy for humans to read and write. It uses the form of key-value pairs, which makes the commands easy to understand and debug, especially during the development and testing phases.
+</p><p><b>2. Easy to parse</b>
+</p><p>Many programming languages provide JSON parsers, making parsing JSON commands very easy. This makes it easy to convert commands into executable operations.
+</p><p><b>3. Cross platform compatibility</b>
+</p><p>JSON is a universal format that can be used on almost any programming language and platform. This means that you can use different programming languages to send and receive JSON commands.
+</p><p><b>4. Structured data</b>
+</p><p>JSON supports nested data structures and can contain objects and arrays. This allows you to organize commands in a clear manner, including parameters, options, and subcommands.
+</p><p><b>5. Scalability</b>
+</p><p>You can easily add new fields and parameters to JSON commands to support more features and options without changing the overall structure of the command.
+</p><p><b>6. Easy to integrate</b>
+</p><p>JSON is the standard input and output format for many APIs and Web services. This enables robots to seamlessly inherit from other systems and services, such as communicating through REST APIs.
+</p><p><b>7. Standardization</b>
+</p><p>JSON is a standardized data format that is widely supported and adopted. This means that you can use various libraries and tools to process and manipulate JSON data.
+</p><p><b>8. Support for multiple languages</b>
+</p><p>Due to the fact that JSON can be used in multiple programming languages, it is possible to implement robot control systems written in multiple languages without the need to rewrite command parsers.
+</p><p>Overall, JSON formatted commands provide a simple, flexible, readable, and easily parsed way to control robots, making robot control systems more powerful and maintainable.
+</p>
+<h3><span class="mw-headline" id="How_to_Send_JSON_Commands">How to Send JSON Commands</span></h3>
+<p>You can use various methods to send JSON commands to set up and control the robotic arm. In fact, the underlying interface for web page operations in basic use also uses JSON commands to communicate with the robotic arm.
+</p>
+<h4><span class="mw-headline" id="Web_Delivery"><b>Web Delivery</b></span></h4>
+<p>In the web interface, we also reserve a <b>command input box</b> that can send JSON commands to set or control the robotic arm.
+There are the following advantages and disadvantages to using web pages to send JSON commands:
+</p>
+<ul><li><b>Advantages:</b> Suitable for beginners to debug simple commands;</li>
+<li><b>Disadvantage:</b> Some JSON commands require lengthy feedback, which may result in incomplete display.</li></ul>
+<p>By default, you have already connected to the WIFI of the robotic arm and opened the web interface according to the <a href="#Start_Working"> <b>Start Working</b></a> section.
+In the web interface, you can see an input box under "FEEDBACK INFOMATION" where you can enter the corresponding JSON command to communicate with the robotic arm. After clicking "SEND" to send, the feedback information from the JSON command will be displayed above the input box.
+<a href="/wiki/File:500px-RAM3-web3(2).png" class="image"><img alt="500px-RAM3-web3(2).png" src="/w/upload/6/61/500px-RAM3-web3%282%29.png" decoding="async" loading="lazy" width="500" height="390" /></a>
+</p>
+<h4><span class="mw-headline" id="Python_HTTP_Request_Communication"><b>Python HTTP Request Communication</b></span></h4>
+<p>HTTP (Hypertext Transfer Protocol) is an object-oriented protocol used for data communication on the Web, belonging to the application layer.
+</p><p><b>Features: Wireless communication</b>, based on WIFI module implementation, request-response model, flexible and simple.
+</p><p>Click to download <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_Python.zip">RoArm-M3-S_Python Demo</a>, which includes two Python demos. The Python demo for HTTP request communication is  http_simple_ctrl.py. The demos are as follows:
+</p>
+<pre class="code2highlight lang-python">import requests
+import argparse
+
+def main():
+    parser = argparse.ArgumentParser(description='Http JSON Communication')
+    parser.add_argument('ip', type=str, help='IP address: 192.168.10.104')
+
+    args = parser.parse_args()
+
+    ip_addr = args.ip
+
+    try:
+        while True:
+            command = input(&quot;input your json cmd: &quot;)
+            url = &quot;http://&quot; + ip_addr + &quot;/js?json=&quot; + command
+            response = requests.get(url)
+            content = response.text
+            print(content)
+    except KeyboardInterrupt:
+        pass
+
+if __name__ == &quot;__main__&quot;:
+    main()</pre>
+<p>Before running the program, you need to confirm the IP address of the robotic arm. The IP address of the robotic arm is related to the WIFI mode that the robotic arm is in.
+</p>
+<ul><li>If the WIFI mode of the robotic arm is only in AP mode, the IP address is 192.168.4.1;</li></ul>
+<ul><li>If the WIFI mode of the robotic arm is in STA mode, the IP address of the robotic arm can be obtained on its OLED screen.</li></ul>
+<p>Use the following command to run the HTTP request communication program. The IP address in the command needs to be changed to the IP address of your robotic arm.
+</p>
+<pre>python http_simple_ctrl.py 192.168.4.1
+</pre>
+<div role="note" class="note note-warn">Note: Regardless of the mode, the robotic arm needs to be on the same LAN as the device on which the script is running. </div>
+<p>After running, you can see the return of "input your json cmd:", after which you can enter JSON commands to set or control the robotic arm. Only one JSON command can be sent at a time, and feedback information from the robotic arm can also be obtained here.
+</p>
+<h4><span class="mw-headline" id="Python-Serial_Communication"><b>Python-Serial Communication</b></span></h4>
+<p><b>Features: Wired connection</b>, default baud rate @ 115200, bidirectional communication, stable, low latency.
+</p><p><b>Purpose:</b> Convenient for users to control robotic arms using devices such as PC/Raspberry Pi/Jetson Orin Nano.
+</p><p><b>Connection method:</b> (Both connection methods cannot appear simultaneously, choose one of them)
+</p>
+<ul><li>Connect to one of the above devices through the ESP32 serial communication interface in <a href="#Appearance"><b>Appearance</b></a>;</li>
+<li>Connect to one of the above devices through the TX|RX pin of the serial number 23 or 24 40-PIN expansion interface in <a href="#Onboard_Interfaces_on_General_Driver_Board_for_Robots"><b>Onboard Interfaces on General Driver Board for Robots</b></a>;</li></ul>
+<p><b>Python demo: </b>serial_simple_ctrl.py
+</p>
+<pre class="code2highlight lang-python">import serial
+import argparse
+import threading
+
+def read_serial():
+    while True:
+        data = ser.readline().decode('utf-8')
+        if data:
+            print(f&quot;Received: {data}&quot;, end='')
+
+def main():
+    global ser
+    parser = argparse.ArgumentParser(description='Serial JSON Communication')
+    parser.add_argument('port', type=str, help='Serial port name (e.g., COM1 or /dev/ttyUSB0)')
+
+    args = parser.parse_args()
+
+    ser = serial.Serial(args.port, baudrate=115200, dsrdtr=None)
+    ser.setRTS(False)
+    ser.setDTR(False)
+
+    serial_recv_thread = threading.Thread(target=read_serial)
+    serial_recv_thread.daemon = True
+    serial_recv_thread.start()
+
+    try:
+        while True:
+            command = input(&quot;&quot;)
+            ser.write(command.encode() + b'\n')
+    except KeyboardInterrupt:
+        pass
+    finally:
+        ser.close()
+
+
+if __name__ == &quot;__main__&quot;:
+    main()</pre>
+<p>After running the program by connecting to the robotic arm, you can send commands in JSON format and get feedback from the robotic arm.
+</p>
+<h2><span class="mw-headline" id="Functions">Functions</span></h2>
+<h3><span class="mw-headline" id="RoArm-M3-S_Tutorial">RoArm-M3-S Tutorial</span></h3>
+<ul><li><a href="#AngleCtrl:_Servo_Angle_Control"><b>RoArm-M3-S_Web Usage</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Secondary_Development_Tool_Usage" title="RoArm-M3-S Secondary Development Tool Usage"><b>RoArm-M3-S_Secondary Development Tool Usage</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_JSON_Command_Meaning" title="RoArm-M3-S JSON Command Meaning"><b>RoArm-M3-S_JSON Command Meaning</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_WIFI_Configuration" title="RoArm-M3-S WIFI Configuration"><b>RoArm-M3-S_WIFI Configuration</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Robotic_Arm_Control" title="RoArm-M3-S Robotic Arm Control"><b>RoArm-M3-S_Robotic Arm Control</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_FLASH_File_System_Operation" title="RoArm-M3-S FLASH File System Operation"><b>RoArm-M3-S_FLASH File System Operation</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Step_Recording_and_Reproduction" title="RoArm-M3-S Step Recording and Reproduction"><b>RoArm-M3-S_Step Recording and Reproduction</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_ESP-NOW_Control" title="RoArm-M3-S ESP-NOW Control"><b>RoArm-M3-S_ESP-NOW Control</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Python_UART_Communication_Control" title="RoArm-M3-S Python UART Communication Control"><b>RoArm-M3-S_Python UART Communication Control</b></a></li>
+<li><a href="/wiki/RoArm-M3-S_Python_HTTP_Request_Communication" title="RoArm-M3-S Python HTTP Request Communication"><b>RoArm-M3-S_Python HTTP Request Communication</b></a></li></ul>
+<h3><span class="mw-headline" id="ROS2_Tutorial_Catalog">ROS2 Tutorial Catalog</span></h3>
+<ul><li><a href="/wiki/RoArm-M3_How_to_Install_ROS2" title="RoArm-M3 How to Install ROS2"><b>1. How to Install ROS2</b></a></li>
+<li><a href="/wiki/RoArm-M3_ROS2_Workspace_Description" title="RoArm-M3 ROS2 Workspace Description"><b>2. ROS2 Workspace Description</b></a></li>
+<li><a href="/wiki/RoArm-M3_Drive_Node_to_Control_Real-world_Robotic_Arm" title="RoArm-M3 Drive Node to Control Real-world Robotic Arm"><b>3. Drive Node to Control Real-world Robotic Arm</b></a></li>
+<li><a href="/wiki/RoArm-M3_Moveit2_Drag-and-drop_Interaction_in_Moveit2" title="RoArm-M3 Moveit2 Drag-and-drop Interaction in Moveit2"><b>4. Drag-and-drop Interaction in Moveit2</b></a></li>
+<li><a href="/wiki/RoArm-M3_Control_Robotic_Arm_with_Keyboard" title="RoArm-M3 Control Robotic Arm with Keyboard"><b>5. Control Robotic Arm with Keyboard</b></a></li>
+<li><a href="/wiki/RoArm-M3_Control_Robotic_Arm_with_Commands" title="RoArm-M3 Control Robotic Arm with Commands"><b>6. Control Robotic Arm with Commands</b></a></li>
+<li><a href="/wiki/RoArm-M3_Moveit_MTC_Demonstration" title="RoArm-M3 Moveit MTC Demonstration"><b>7. Moveit MTC Demonstration</b></a></li></ul>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Resources">Resources</span></h1>
+<h2><span class="mw-headline" id="RoArm-M3_Related_Program">RoArm-M3 Related Program</span></h2>
+<h3><span class="mw-headline" id="RoArm-M3_Open_Source_Demo">RoArm-M3 Open Source Demo</span></h3>
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_example_20260701.zip">RoArm-M3 open source program for lower computer</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://github.com/waveshareteam/roarm_ws">RoArm-M3 ROS2 Github open source project address</a></li></ul>
+<h3><span class="mw-headline" id="RoArm-M3_Python_Demo">RoArm-M3 Python Demo</span></h3>
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_Python.zip">RoArm-M3 Python demo</a></li></ul>
+<h2><span class="mw-headline" id="RoArm-M3_Drawings">RoArm-M3 Drawings</span></h2>
+<h3><span class="mw-headline" id="RoArm-M3_3D_Mode">RoArm-M3 3D Mode</span></h3>
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_STEP_260310.zip">RoArm-M3 3D mode file</a></li></ul>
+<h3><span class="mw-headline" id="RoArm-M3_2D_Dimensions">RoArm-M3 2D Dimensions</span></h3>
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_2Dsize.zip">RoArm-M3 2D dimensions diagram</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/common/Camera%20mounting%20bracket%20drawing.zip">Camera mounting bracket drawing</a></li></ul>
+<h2><span class="mw-headline" id="Schematic_Diagram_of_General_Driver_Board_for_Robots">Schematic Diagram of General Driver Board for Robots</span></h2>
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/common/General_Driver_for_Robots.pdf">Driver Board Schematic</a></li></ul>
+<h2><span class="mw-headline" id="Software_Driver">Software Driver</span></h2>
+<h3><span class="mw-headline" id="Software">Software</span></h3>
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/common/Vertical%20and%20horizontal%20plane%20control%20tools.zip">Vertical and horizontal plane control tools</a></li>
+<li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_FACTORY-260701.zip">RoArm-M3 initialization download tool</a></li></ul>
+<h3><span class="mw-headline" id="Serial_Driver">Serial Driver</span></h3>
+<ul><li><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/common/CP210x_USB_TO_UART.zip">CP2102 serial driver</a></li></ul>
+<h2><span class="mw-headline" id="Project_Resource">Project Resource</span></h2>
+<p>This section features third - party project resources. We merely provide links and bear no responsibility for content updates or maintenance. Thank you for your understanding.<br />
+</p><p><b>Kevin McAleer-2 Robot Arms - what should I do?</b><br />
+<iframe width="400" height="315" src="//www.youtube.com/embed/DQPC1Ev3jng" frameborder="0" allowfullscreen=""></iframe>
+</p>
+<ul><li>Youtube: <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.youtube.com/watch?v=DQPC1Ev3jng">https://www.youtube.com/watch?v=DQPC1Ev3jng</a></li></ul>
+<h1><span class="mw-headline" id="FAQ">FAQ</span></h1>
+<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#accordion1">
+								Question:  1. What is the difference between the RoArm-M3-S and RoArm-M3-Pro models? 
+							</a>
+						</h4>
+					</div>
+					<div id="accordion1" class="panel-collapse collapse in">
+						<div class="panel-body">
+<div>&#160;<b>Answer:</b></div>
+<div>
+<p>Answer: The RoArm-M3-S uses the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.com/st3215-servo.htm">ST3215 Servo</a> and <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.com/st3215-hs-servo-motor.htm">ST3215-HS Servo</a> with engineering plastic housings; the RoArm-M3-Pro uses the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://www.waveshare.com/st3215-servo.htm">ST3215 Servo</a> with metal housing for all joints except the wrist joint 2 and the end joint. The backlash of the servo with a metal housing will be smaller and will not increase over time.
+</p>
+</div>
+<div style="display:none;"></div>
+<div style="display:none;"></div>
+<p><font color="red" style="display:none;"></font>
+</p>
+						</div>
+					</div>
+				</div>
+</div>
+<p><br />
+</p>
+<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#accordion2">
+								Question:  2. When using serial communication, the robotic arm does not respond to JSON commands or ROS2 control? 
+							</a>
+						</h4>
+					</div>
+					<div id="accordion2" class="panel-collapse collapse in">
+						<div class="panel-body">
+<div>&#160;<b>Answer:</b></div>
+<div>
+<p>Answer: First, check if the robotic arm is powered on. The power interface and power switch markings can be found in the figure in the <a href="#Appearance"><b>【Appearance】</b></a> section. After plugging in the power interface, check if the power switch on the driver board is turned on; Next, compare the <a href="#Onboard_Interfaces_on_General_Driver_Board_for_Robots"><b>【Onboard Interfaces on General Driver Board for Robots】</b></a> section to ensure that the robotic arm is plugged into the USB interface with serial number 9; Finally, check if the port number for serial communication is correct. If the control arm does not respond after the above checks, please consult technical support.
+</p>
+</div>
+<div style="display:none;"></div>
+<div style="display:none;"></div>
+<p><font color="red" style="display:none;"></font>
+</p>
+						</div>
+					</div>
+				</div>
+</div>
+<p><br />
+</p>
+<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#accordion3">
+								Question:  3. Why does the new COM port not appear when I upload the program to the General Driver for Robots using the download tool or Arduino IDE? 
+							</a>
+						</h4>
+					</div>
+					<div id="accordion3" class="panel-collapse collapse in">
+						<div class="panel-body">
+<div>&#160;<b>Answer:</b></div>
+<div>
+<p>Answer: First check whether it is inserted into the USB port of the serial number ⑨ according to the <a href="#Appearance"><b>【Appearance】</b></a> section, if yes, then look at the device manager of the computer whether there is a new COM port appearing; if not, check the other devices part if there is an unrecognized device named CP2102 (as shown in the figure <a href="/wiki/File:300px-CP2102%E6%9C%AA%E8%AF%86%E5%88%AB.png" class="image"><img alt="300px-CP2102未识别.png" src="/w/upload/d/d4/300px-CP2102%E6%9C%AA%E8%AF%86%E5%88%AB.png" decoding="async" loading="lazy" width="300" height="51" /></a>). If such a device is found, it's likely due to the lack of a driver. In that case, you can click to install the <a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://files.waveshare.com/wiki/common/CP210x_USB_TO_UART.zip"><b>CP2102 serial driver</b></a>. If there is no unrecognized device with CP2102 in the name in other devices part, please contact the store's customer service to return it to the factory for repair.
+</p>
+</div>
+<div style="display:none;"></div>
+<div style="display:none;"></div>
+<p><font color="red" style="display:none;"></font>
+</p>
+						</div>
+					</div>
+				</div>
+</div>
+<p><br />
+</p>
+<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#accordion4">
+								Question:  4. When uploading a program to the General Driver for Robots using a download tool or the Arduino IDE, the terminal always shows the "Connecting..." interface, what should I do? 
+							</a>
+						</h4>
+					</div>
+					<div id="accordion4" class="panel-collapse collapse in">
+						<div class="panel-body">
+<div>&#160;<b>Answer:</b></div>
+<div>
+<p>Answer: In general, this situation occurs when the automatic download circuit of the General Driver for Robots can not work. At this time, you need to unplug the USB cable to upload again, when "..." appears during unload, press and hold the BOOT button on the General Driver for Robots, then press the EN key for one second and release the EN key, and finally release the BOOT key. If the upload is unsuccessful after multiple attempts, contact the store's customer service to return to the factory for repair. <br />
+<a href="/wiki/File:400px-General_Driver_for_Robots_Download.png" class="image"><img alt="400px-General Driver for Robots Download.png" src="/w/upload/7/78/400px-General_Driver_for_Robots_Download.png" decoding="async" loading="lazy" width="400" height="389" /></a>
+</p>
+</div>
+<div style="display:none;"></div>
+<div style="display:none;"></div>
+<p><font color="red" style="display:none;"></font>
+</p>
+						</div>
+					</div>
+				</div>
+</div>
+<p><br />
+</p>
+<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#accordion5">
+								Question:  5. After re-uploading the program to the product, I encounter password errors or other connection issues with Wi-Fi, how to solve the problem? 
+							</a>
+						</h4>
+					</div>
+					<div id="accordion5" class="panel-collapse collapse in">
+						<div class="panel-body">
+<div>&#160;<b>Answer:</b></div>
+<div>
+<p>Answer: After re-flashing the program, you need to clear the NVS area with {"T":604} command via serial communication, then power the robotic arm again, and reconnect to the WIFI.
+</p>
+</div>
+<div style="display:none;"></div>
+<div style="display:none;"></div>
+<p><font color="red" style="display:none;"></font>
+</p>
+						</div>
+					</div>
+				</div>
+</div>
+<p><br />
+</p>
+<h1><span class="mw-headline" id="Support">Support</span></h1>
+<p><br />
+<br />
+</p>
+<div style="background:linear-gradient(to bottom right,#91C942,#7DB036); border-radius:15px; width:100%;min-width:750px;">
+<div style="display:flex;flex-direction: row;align-items: flex-start;">
+<div style="flex:l; font-size:15px; width:70%; margin-top:20px; margin-bottom:20px; margin-right:40px;padding-left:40px;">
+<p style="font-size:20px; font-weight:bold;">
+Technical Support
+</p>
+<p>
+If you need technical support or have any feedback/review, please click the <b>Submit Now</b> button to submit a ticket, Our support team will check and reply to you within 1 to 2 working days. Please be patient as we make every effort to help you to resolve the issue. 
+<br /> 
+Working Time: 9 AM - 6 PM GMT+8 (Monday to Friday)
+</p>
+</div>
+<div style="margin-top:94px;">
+<div id="service" style="display:flex; flex:r; background-color:#393939; color:white; text-align:center; font-size:20px; border-radius:20px;">
+<p><a target="_blank" rel="nofollow noreferrer noopener" class="external text" href="https://service.waveshare.com/">Submit Now</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 
+NewPP limit report
+Cached time: 20260908001128
+Cache expiry: 0
+Dynamic content: true
+Complications: []
+CPU time usage: 0.153 seconds
+Real time usage: 0.229 seconds
+Preprocessor visited node count: 795/1000000
+Post‐expand include size: 9509/2097152 bytes
+Template argument size: 7757/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 8674/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  113.246      1 -total
+ 53.68%   60.792      5 Template:FAQ
+ 18.56%   21.016      1 Template:Infobox_item
+ 12.33%   13.958      3 Template:Note
+ 11.93%   13.505      1 Template:Servicebox1
+-->
+</div></div>								<div class="printfooter">
+				Retrieved from "<a dir="ltr" href="https://www.waveshare.com/w/index.php?title=RoArm-M3&amp;oldid=111030">https://www.waveshare.com/w/index.php?title=RoArm-M3&amp;oldid=111030</a>"				</div>
+												<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/w/index.php?title=Category:TTL_bus_servo_interface_interface&amp;action=edit&amp;redlink=1" class="new" title="Category:TTL bus servo interface interface (page does not exist)">TTL bus servo interface interface</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:UART_interface" title="Category:UART interface">UART interface</a></li><li><a href="/wiki/Category:I2C_interface" title="Category:I2C interface">I2C interface</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+			<!-- /bodyContent -->
+		</div>
+						</div>
+				</div>
+			</div>
+			<!-- /content -->
+
+			<!-- sidebar-left -->
+			<div class="sidebar-wrapper sidebar-left-wrapper">
+				<div class="sidebar-container container">
+					<div class="row">
+						<div id="sidebar-left" class="col-md-2 col-md-offset-0">
+							<div id="tweekiTOC"></div>						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /sidebar-left -->
+					<!-- footer -->
+			<div id="footer" role="contentinfo" class="footer container footer-sticky bg-light">
+			<ul id="footer-custom"><li class="dropup"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=RoArm-M3" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Login / Create Account</a></li></ul><div style="clear:both"></div>			</div>
+			<!-- /footer -->
+		
+<script>
+var fbtFancyBoxOptions = {};
+</script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.153","walltime":"0.229","ppvisitednodes":{"value":795,"limit":1000000},"postexpandincludesize":{"value":9509,"limit":2097152},"templateargumentsize":{"value":7757,"limit":2097152},"expansiondepth":{"value":5,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":8674,"limit":5000000},"timingprofile":["100.00%  113.246      1 -total"," 53.68%   60.792      5 Template:FAQ"," 18.56%   21.016      1 Template:Infobox_item"," 12.33%   13.958      3 Template:Note"," 11.93%   13.505      1 Template:Servicebox1"]},"cachereport":{"timestamp":"20260908001128","ttl":0,"transientcontent":true}}});mw.config.set({"wgBackendResponseTime":723});});</script>	<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a379bc6a6854d82e',t:'MTc4ODgyNjI4Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

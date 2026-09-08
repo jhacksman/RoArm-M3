@@ -1,0 +1,4 @@
+Servo ID:11 status: failed.
+All bus servos status checked.
+Init failed, skip moveInit.
+Reset joint torque to ST_TORQUE_MAX.
