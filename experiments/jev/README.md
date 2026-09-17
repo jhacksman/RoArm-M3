@@ -8,6 +8,7 @@ Investigate Jev as a task-level decision component around a locally controlled r
 - [Research findings and primary sources](research/FINDINGS.md)
 - [Optical flow, sensor fusion and Doom-style steering](research/OPTICAL_FLOW_AND_SENSOR_FUSION.md)
 - [Jetson Thor plus Jev: papers and architecture](research/THOR_AND_JEV.md)
+- [Verified Thor inventory and replay validation](research/THOR_INVENTORY.md)
 - [Harness design](HARNESS.md)
 - [Build and evaluation gates](PLAN.md)
 - [Progress](PROGRESS.md)

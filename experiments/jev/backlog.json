@@ -71,10 +71,11 @@
     {
       "id": "RJ-10",
       "task": "Thor platform inventory and perception replay benchmark",
-      "status": "waiting_for_recorded_thor_ssh_reachability",
+      "status": "partial_inventory_and_offline_harness_verified",
       "acceptance": "Record actual hardware/software and compatible pinned stack; compare baseline tracking with candidate neural perception on reviewed replay; measure concurrent GPU load, queue age and end-to-end latency. No motor authority.",
       "owner": null,
-      "access_observation": "Single SSH transport attempt timed out before authentication; no inventory obtained. Details retained only in private fleet reference."
+      "access_observation": "Authenticated SSH succeeded after host came online. Hardware/software inventoried; 13 tests and seven synthetic replay attempts passed on Thor.",
+      "remaining": "Perception replay, camera identification, compatible environment and GPU profiling; storage allocation needed before large installs."
     },
     {
       "id": "RJ-11",
