@@ -64,6 +64,20 @@
       "status": "ready_for_offline_design; hardware_depends_on_RJ-01_RJ-02",
       "acceptance": "Inventory candidate sensor optics/range and mounting; define calibrated non-contact target-alignment experiment; compare wrist tracking with/without flow and Jev with deterministic supervision using the same actions; record failures and measured latency.",
       "owner": null
+    },
+    {
+      "id": "RJ-10",
+      "task": "Thor platform inventory and perception replay benchmark",
+      "status": "ready_for_inventory",
+      "acceptance": "Record actual hardware/software and compatible pinned stack; compare baseline tracking with candidate neural perception on reviewed replay; measure concurrent GPU load, queue age and end-to-end latency. No motor authority.",
+      "owner": null
+    },
+    {
+      "id": "RJ-11",
+      "task": "RoArm GPU planning and learned-skill integration assessment",
+      "status": "depends_on_RJ-01_RJ-02_RJ-10",
+      "acceptance": "Validate robot description and control interface before cuMotion; define synchronized demonstrations and one ACT skill experiment; keep all action producers behind one arbiter. No assumption of pretrained RoArm support.",
+      "owner": null
     }
   ]
 }

@@ -54,3 +54,7 @@ Use the maintained OpenSCAD workflow to design indexed part nests, calibration-b
 ## Reactive steering extension
 
 The [optical-flow and sensor-fusion proposal](research/OPTICAL_FLOW_AND_SENSOR_FUSION.md) adds an earlier non-contact alignment experiment. Jev may choose short, bounded steering intentions as well as task-level skills. Local visual servoing owns numerical alignment and timing; the same freshness, ownership and stop contracts apply. Start with one arm, wrist target tracking and overhead context; evaluate flow before committing to dedicated modules or bimanual fusion.
+
+## Thor execution host
+
+The user reports access to a Jetson Thor. The [Thor research plan](research/THOR_AND_JEV.md) proposes local perception, motion planning and optional learned skills alongside hosted Jev decisions. Keep a single local command arbiter and profile combined workloads. Actual host configuration and RoArm integration remain unverified; local Jev deployment is a future option with no verified release date.
