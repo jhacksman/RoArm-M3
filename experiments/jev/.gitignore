@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+*.local
+*.local.*
+credentials*
+secrets*
+keys/
+runs/
+logs/
+artifacts/
+__pycache__/
+.venv/

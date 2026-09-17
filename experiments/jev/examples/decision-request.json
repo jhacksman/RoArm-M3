@@ -1,0 +1,47 @@
+{
+  "model": "jev-latest",
+  "state": {
+    "example_kind": "SYNTHETIC \u2014 not live telemetry",
+    "task": "Make a bracket-and-cap kit; leave the spacer out.",
+    "observation_epoch": "synthetic-001",
+    "arm_state": "idle, empty gripper; motion disabled for this example",
+    "task_progress": {
+      "bracket": "already placed and independently observed",
+      "cap": "still needed",
+      "spacer": "not requested"
+    },
+    "available_parts": [
+      {
+        "id": "part-cap-1",
+        "name": "cap",
+        "location": "known nest B",
+        "visibility": "clear"
+      }
+    ],
+    "candidate_actions": [
+      {
+        "id": "pick-cap-1",
+        "meaning": "Pick the observed cap from known nest B with a prevalidated skill"
+      },
+      {
+        "id": "observe",
+        "meaning": "Acquire fresh sensor state without moving the arm"
+      },
+      {
+        "id": "ask-operator",
+        "meaning": "Request help; no motion"
+      }
+    ]
+  },
+  "questions": {
+    "next_action": {
+      "type": "choice",
+      "instructions": "Choose the available candidate that progresses the stated kit. Use only observed facts. If there is insufficient information choose observe or ask-operator. This is an offline decision example and cannot authorize motion.",
+      "criteria": {
+        "pick-cap-1": "The cap is needed, present and offered as an available skill target.",
+        "observe": "The state needs a fresh observation before choosing a target.",
+        "ask-operator": "The task is blocked or requires clarification."
+      }
+    }
+  }
+}
