@@ -1,6 +1,6 @@
 # Progress
 
-Updated September 17, 2026. Research/design complete for the initial pass; implementation not started.
+Updated September 17, 2026. Initial research merged in PR #19. Offline decision contract and replay implementation now available; hardware integration has not started.
 
 Completed: primary Jev docs reviewed; independent Doom and browser harness source inspected; SayCan prior art reviewed; RoArm deployment notes/command definitions examined; old pick/place example syntax failure confirmed without executing its code. Findings distinguish source claims from measurements.
 
@@ -8,10 +8,16 @@ Deliverables: harness proposal, gated evaluation plan, synthetic API request and
 
 Unknowns: actual camera/mounting and hardware readiness; currently installed firmware; exact account-accessible model and API quota; measured latency; calibration and grasp reliability; independent task success; official Doom source provenance.
 
-Next: RJ-01 platform/protocol audit and offline RJ-04 adapter design. No inference, motor command or firmware change has been performed by this experiment. Research is published for review in PR #19; it is not a controller release.
+Next: RJ-01 platform/protocol audit, RJ-10 Thor access/inventory, and the remaining RJ-04 live shadow transport. No inference, motor command or firmware change has been performed by this experiment. Research is published for review in PR #19; it is not a controller release.
 
 Claim a task ID with an owner and timestamp before implementation; preserve evidence and record failures. Test counts, timing budgets and acceptance thresholds must be declared as proposed or measured, never invented as achieved results.
 
 September 17 sensor-fusion follow-up: documented aggregate flow versus wrist-camera tracking, overhead RGB-D roles, calibration/rotation/depth ambiguities, bounded reactive steering and a non-contact alignment experiment. Added RJ-09. Primary sources: TypeSafe, PX4, Bitcraze, OpenCV and multi-camera visual-servoing research. Proposed architecture only; no sensor purchase, credentials, inference or hardware execution. Next offline work can define RJ-09 while RJ-01 inventories actual hardware.
 
 September 17 Thor follow-up: user reports Thor access. Added THOR_AND_JEV.md with six primary research references, versioned NVIDIA integration evidence, hybrid runtime design and measurement gates. Added RJ-10/RJ-11. Exact host and software remain uninspected. Local Jev weights/runtime availability is unverified. Research update targets https://github.com/jhacksman/RoArm-M3/pull/19; no hardware or cloud-model execution.
+
+September 17 implementation: added dependency-free immutable observation/candidate contracts, a Jev Choice request builder and response validator, and a sequential shadow gate with freshness, precondition, duplicate and epoch checks. Synthetic fixture contains six cases/seven attempts. Standard-library suite: 13 tests passed, including malformed responses, stale state, changed candidates, duplicate attempts and CLI error handling. No live inference or motor interface exists. RJ-04 remains partial: live transport and recorded physical-observation evaluation are pending.
+
+Thor inventory: consulted the private fleet reference and attempted a single SSH connection to its recorded target with a five-second timeout. Transport timed out before host-key verification/authentication; no hardware facts were obtained. Public notes intentionally omit LAN addresses and credentials. Access must be restored or the fleet target corrected before remote inventory.
+
+Later September 17: Thor is reachable and authenticated. Verified actual Jetson AGX Thor Developer Kit and installed software; see research/THOR_INVENTORY.md. Uploaded source commit 041c0e9 to an isolated workspace, verified six source hashes, and passed all 13 tests plus seven synthetic replay attempts on Python 3.12.3. Earlier SSH timeout is resolved. No dependencies installed, H3 service changes, live inference or robot actuation. Storage is 96% used; no cleanup performed.
