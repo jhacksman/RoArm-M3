@@ -109,3 +109,7 @@ For more detailed information on specific components, control methods, and advan
 ## Support
 
 For technical support or feedback, please visit the [Waveshare Support Page](https://service.waveshare.com/).
+
+## Jev robotics research
+
+[experiments/jev](experiments/jev/README.md) explores a Jev task-decision harness around RoArm-M3 Pro skills. Research only so far; no validated autonomous task performance is claimed.

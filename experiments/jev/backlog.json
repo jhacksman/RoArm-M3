@@ -1,0 +1,83 @@
+{
+  "updated": "2026-09-17",
+  "phase": "research_complete_implementation_not_started",
+  "tasks": [
+    {
+      "id": "RJ-01",
+      "task": "Platform inventory and protocol audit",
+      "status": "ready",
+      "acceptance": "Actual arm/host/camera inventory; inspect command dispatch and non-motion feedback.",
+      "owner": null
+    },
+    {
+      "id": "RJ-02",
+      "task": "Stop, watchdog and exclusive command ownership",
+      "status": "depends_on_RJ-01",
+      "acceptance": "Physically validated local stop and communications-loss behavior; no competing leader/autonomy command stream.",
+      "owner": null
+    },
+    {
+      "id": "RJ-03",
+      "task": "Calibration and single-arm deterministic skill",
+      "status": "depends_on_RJ-02",
+      "acceptance": "Camera/arm calibration plus independently observed pick/place with failure traces.",
+      "owner": null
+    },
+    {
+      "id": "RJ-04",
+      "task": "Jev adapter and replay evaluation",
+      "status": "ready_for_offline_design",
+      "acceptance": "Use source-grounded API contract, validate choices and deadlines; model access/inference still untested.",
+      "owner": null
+    },
+    {
+      "id": "RJ-05",
+      "task": "Task suite and baseline comparison",
+      "status": "depends_on_RJ-03_RJ-04",
+      "acceptance": "Predeclared tasks and outcomes; compare same sensors/skills with deterministic baseline.",
+      "owner": null
+    },
+    {
+      "id": "RJ-06",
+      "task": "Supervised closed-loop run",
+      "status": "depends_on_RJ-02_RJ-03_RJ-04_RJ-05",
+      "acceptance": "Full trial logs and uncut recording; no fabricated performance claims.",
+      "owner": null
+    },
+    {
+      "id": "RJ-07",
+      "task": "Second arm / shared workspace",
+      "status": "deferred",
+      "acceptance": "Only after single-arm task is stable; resource arbitration and collision handling.",
+      "owner": null
+    },
+    {
+      "id": "RJ-08",
+      "task": "Official Doom walkthrough follow-up",
+      "status": "open_research_gap",
+      "acceptance": "Locate published official source or walkthrough; independent harness must not be mislabeled official.",
+      "owner": null
+    },
+    {
+      "id": "RJ-09",
+      "task": "Wrist flow and overhead fusion feasibility experiment",
+      "status": "ready_for_offline_design; hardware_depends_on_RJ-01_RJ-02",
+      "acceptance": "Inventory candidate sensor optics/range and mounting; define calibrated non-contact target-alignment experiment; compare wrist tracking with/without flow and Jev with deterministic supervision using the same actions; record failures and measured latency.",
+      "owner": null
+    },
+    {
+      "id": "RJ-10",
+      "task": "Thor platform inventory and perception replay benchmark",
+      "status": "ready_for_inventory",
+      "acceptance": "Record actual hardware/software and compatible pinned stack; compare baseline tracking with candidate neural perception on reviewed replay; measure concurrent GPU load, queue age and end-to-end latency. No motor authority.",
+      "owner": null
+    },
+    {
+      "id": "RJ-11",
+      "task": "RoArm GPU planning and learned-skill integration assessment",
+      "status": "depends_on_RJ-01_RJ-02_RJ-10",
+      "acceptance": "Validate robot description and control interface before cuMotion; define synchronized demonstrations and one ACT skill experiment; keep all action producers behind one arbiter. No assumption of pretrained RoArm support.",
+      "owner": null
+    }
+  ]
+}
