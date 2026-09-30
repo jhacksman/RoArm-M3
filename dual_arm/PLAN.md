@@ -17,7 +17,7 @@ DA-03 may reuse PR20's choice/replay validation once reviewed and available; kee
 
 ## Decisions needed from the owner
 
-1. Are F1 and F2 the two Jetson-controlled arms, retaining L1/L2 for demonstrations, and are both still the recorded M3 Pro configuration?
+1. Which physical arms will be selected for autonomous control, and what are their verified hardware revisions? Selection and eventual names are TBD; F1/F2 remain follower labels for the existing teleoperation setup.
 2. What first tabletop task, part mass and fixture layout should define DA-01? Provide measured mounting spacing/orientation when available.
 3. Should the existing Thor be the initial deployment target, and is there a supported RTX workstation available for optional simulation? Orin Nano module/RAM matters if that is the preferred target.
 

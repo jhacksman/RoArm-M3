@@ -11,11 +11,11 @@ flowchart LR
     Planner --> Gate[Local ownership and validation gate]
     Jev[Optional Jev task choices] --> Gate
     Gate --> Mock[First milestone: mock transports only]
-    Gate -. Later validated hardware adapter .-> Left[Left ESP32 and servos]
-    Gate -. Later validated hardware adapter .-> Right[Right ESP32 and servos]
+    Gate -. Later validated hardware adapter .-> ArmA[Arm A: hardware TBD]
+    Gate -. Later validated hardware adapter .-> ArmB[Arm B: hardware TBD]
 ```
 
-The host chooses bounded joint trajectories and supervises execution; each ESP32 retains its servo control. One coordinator owns both arms and the shared collision scene. Use unique `left_`/`right_` joint, link and controller names, a single `cell_world`, measured fixed base transforms, and a shared clock policy. Define left, right, gripper and combined planning groups. Independent single-arm plans do not establish inter-arm collision avoidance.
+The host chooses bounded joint trajectories and supervises execution; each ESP32 retains its servo control. One coordinator owns both arms and the shared collision scene. Use unique joint, link and controller prefixes (neutral development placeholders `arm_a_`/`arm_b_`), a single `cell_world`, measured fixed base transforms, and a shared clock policy. Physical arm selection, final names and placement are TBD; placeholders do not map to any existing teleoperation label. Define per-arm, gripper and combined planning groups. Independent single-arm plans do not establish inter-arm collision avoidance.
 
 Prefer two independent USB serial links for initial deployment, with explicit persistent identity mapping and one writer per arm. Preserve existing ESP-NOW demonstration configurations; a later, reviewed transition must exclude leader/radio/web/mission writers before autonomous ownership. No automatic switch on startup. Lease/epoch, monotonic sequence, deadline, calibration/scene revision and per-arm acknowledgment belong in the local coordinator; vendor serial JSON must not be assumed to implement these contracts.
 

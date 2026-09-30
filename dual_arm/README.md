@@ -6,7 +6,7 @@ Start with [architecture and host choice](ARCHITECTURE.md), [hardware and protoc
 
 ## What exists already
 
-- The [September deployment](../deployments/2026-09-08-m3-pro/README.md) records four M3 Pro arms on guarded **0.84-s1**, with user-tested L1 → F1 and L2 → F2 tracking. That establishes the earlier demonstration setup, not autonomous dual-arm readiness. **F1/F2 are proposed targets, pending confirmation**; retain L1/L2 for demonstrations.
+- The [September deployment](../deployments/2026-09-08-m3-pro/README.md) records four M3 Pro arms on guarded **0.84-s1**, with user-tested L1 → F1 and L2 → F2 tracking. That establishes the earlier demonstration setup, not autonomous dual-arm readiness. **Autonomous arm selection and eventual names are TBD.** F1/F2 mean follower roles in the existing teleoperation setup; they are not assigned autonomous targets. Preserve the L1 → F1 and L2 → F2 teleoperation labels and pairings.
 - [Jev research](../experiments/jev/README.md) already separates task choices from local execution. [PR #20](https://github.com/jhacksman/RoArm-M3/pull/20), inspected at `1553d15a76c0829a8fdd417f326442fbc65102d2`, adds offline choice validation and synthetic replay. It remains separate and unmerged. Reuse its snapshots/freshness/replay semantics after review; do not fork another decision harness here.
 - [Earlier Isaac Sim material](../isaac_sim/README.md) contains exploratory examples, not a verified M3 model or deployment recipe. Use this wing's dated requirements before choosing a simulator host.
 - The inspected main tree (`0e801e0643d945f0674400414bb37a8cb6fd11d2`) contained no actual arm STEP/STL/URDF/Xacro files. The official sources now have a reproducible [manifest](assets/manifest.json).

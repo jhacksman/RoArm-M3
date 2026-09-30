@@ -6,7 +6,7 @@ Read the [deployment rules](../deployments/2026-09-08-m3-pro/AGENTS.md), [invent
 
 | Input | Required evidence / unresolved choice |
 | --- | --- |
-| Two target arms | Confirm F1/F2 versus another pair; labels, mechanical revision, firmware hash and actual servo/end-effector variants. Existing docs call them M3 Pro; current vendor servo naming differs from older root README text. Do not infer torque, mass or limits from that name alone. |
+| Two target arms | Selection and eventual names are TBD; no existing arm is assigned an autonomous role. F1/F2 denote teleoperation followers. Once selected, record physical identity, mechanical revision, firmware hash and actual servo/end-effector variants. Existing deployment docs call those arms M3 Pro; current vendor servo naming differs from older root README text. Do not infer torque, mass or limits from that name alone. |
 | Cell layout | Measured base separation and orientations, mounting plate/fasteners, table and fixtures, reachable safe zones, cable sweep, gripper/tool collision geometry and payload. No invented spacing is supplied. |
 | Joint calibration | Vendor joint ↔ firmware field mapping, radians/degrees/ticks, signs, zero offsets, limits, wrap handling, shoulder dual-servo coupling and gripper angle ↔ opening. Distinguish five pose joints from the gripper: not a general six-axis pose arm. |
 | Dynamics | Measured/verified link masses and inertias, payload center of mass, conservative velocity/acceleration/effort limits, backlash/compliance and stopping behavior. The vendor Xacro's zero effort/velocity values are not usable limits. |
