@@ -1,5 +1,7 @@
 # NVIDIA Isaac Sim Integration for RoArm-M3 Pro
 
+> Historical exploratory material. The requirements and examples below have not been validated against the current release. For the dual-arm project, use the [2026-09-30 host/architecture review](../dual_arm/ARCHITECTURE.md) and [official asset inventory](../dual_arm/assets/README.md). Neither Jetson target nor this Mac is established as an Isaac Sim host.
+
 This documentation provides comprehensive guidance on integrating the RoArm-M3 Pro robotic arm with NVIDIA Isaac Sim for simulation, training, and sim-to-real transfer learning.
 
 ## Overview
