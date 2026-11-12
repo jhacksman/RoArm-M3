@@ -1,5 +1,7 @@
 # LeRobot Integration for RoArm-M3 Pro
 
+For the November 2026 Flash ALOHA work, start with the [source review, offline setup checker and bring-up requirements](flash_aloha/README.md). Flash ALOHA does not yet have a RoArm backend. The older examples below are sketches and do not establish a working integration with the deployed numeric `T` command protocol.
+
 ## Overview
 
 This documentation provides comprehensive information about integrating the RoArm-M3 Pro robotic arm with the LeRobot AI framework developed by Hugging Face. LeRobot is an open-source framework designed to make AI for robotics more accessible, providing tools for recording datasets, training neural networks, and deploying them to robots.
