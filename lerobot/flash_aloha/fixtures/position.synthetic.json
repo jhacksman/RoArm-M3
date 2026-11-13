@@ -1,0 +1,14 @@
+{
+  "_fixture": "Synthetic format example; not hardware evidence or a recommended pose.",
+  "T": 1051,
+  "firmware": "0.84-s1",
+  "feedback_valid": true,
+  "motion_allowed": true,
+  "motion_supply_v": 12.0,
+  "b": 0.1,
+  "s": 0.2,
+  "e": 0.3,
+  "t": 0.4,
+  "r": 0.5,
+  "g": 0.6
+}

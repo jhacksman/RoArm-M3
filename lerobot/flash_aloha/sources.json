@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-12",
+  "project_url": "https://johnyao93.github.io/flash-aloha/",
+  "repositories": {
+    "flash_aloha": {
+      "url": "https://github.com/JohnYao93/flash-aloha",
+      "revision": "4172a8ed8cadb6eeb4a59285826e83cb00a2f01c",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "8b5851a6232e8cfb2326631667963794bdefac5d87c8338e9673f88ee9cde041"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "b3b7d42875c1349f38e3c6834e167b87ef3d3ffb0d89563d52e89bf12956a007"
+        },
+        {
+          "path": "src/hardware/arm_factory.py",
+          "sha256": "b8f730acb5f6857519b787db792e971bcde932086ead3dfe7550e2935c70e928"
+        },
+        {
+          "path": "src/hardware/arm_interface.py",
+          "sha256": "1747f87cf5925c260503c996361d54b2e6f4d97d97cd9e91cbff5fb41eaf98f1"
+        },
+        {
+          "path": "src/hardware/backends/arx.py",
+          "sha256": "9c87210dedde2d2ba1eea034c906b0d8bceff240d51ce7a865d5411512fc4484"
+        },
+        {
+          "path": "src/hardware/runtime.py",
+          "sha256": "edce4b3f95343acb0e811036bb6ad878ca6bae9c488fabec7e6bbe86a92810dd"
+        },
+        {
+          "path": "src/hardware/safe_exit.py",
+          "sha256": "0640a2895c88857b10c89b1bd9dec56dd831ad439ded9561f3010f8beae2b920"
+        },
+        {
+          "path": "src/contracts/standard_capture.py",
+          "sha256": "22b7e195c5779756b53aee5989efb42016122864da20d85adea42c63544c077b"
+        },
+        {
+          "path": "src/contracts/standard_recording.py",
+          "sha256": "7c7d73b6201f8276e984a59a45f8541580f9141fdc26d182372d4723dbfe01f4"
+        },
+        {
+          "path": "src/contracts/standard_image_processing.py",
+          "sha256": "fbddd500ef2bd32e4aee43e47339a2de7d0a3c517633d5286fdb5b77a1337d18"
+        },
+        {
+          "path": "src/contracts/robot_contract.py",
+          "sha256": "00c817644a0558cf3b3cc83fc25f45a3fd97019bbd1ab61fc5a844040eb0b8d6"
+        },
+        {
+          "path": "src/config/task_config.py",
+          "sha256": "e666ce5d028db9c995aa821af065888c466890da6d55d2dfc941a2a371ede14f"
+        },
+        {
+          "path": "src/config/tasks/single_arm.yaml",
+          "sha256": "fb347d552a45a01a7bfd1b1bbb66af48a17630db1e7e73c19b9ded5f96ad2f0a"
+        },
+        {
+          "path": "src/recording/record_episode_single.py",
+          "sha256": "c28824fe7a12e98d073d1aa3b2b59d80eda30528076c489a9877dfe8cf86185c"
+        },
+        {
+          "path": "src/inference/inference_remote.py",
+          "sha256": "70de181c67d5b066c0f2ddf6af9f3a0042dde17f9574717f199e73faac0d2a07"
+        },
+        {
+          "path": "src/inference/inference_direct.py",
+          "sha256": "aae174858f7a484d3731665c0f61b6619684f7e44a487f0de3ee509ce324f816"
+        },
+        {
+          "path": "src/inference/shared_hardware.py",
+          "sha256": "2f797e9f0fc6a909c0b8567cc46341122952d69cd6620f15e7190b6313576e2d"
+        },
+        {
+          "path": "src/policy/imitate_episodes_train.py",
+          "sha256": "90ab279be2e1f79c1aaaac7062a4d2cc990550bd4c0cb5dc05caeeb2a9f98ca2"
+        }
+      ]
+    },
+    "roarm": {
+      "url": "https://github.com/jhacksman/RoArm-M3",
+      "revision": "091f31d14f728b74f41ac3bbfff5a876b6a942e8",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "dc1bc765e5b8a0fdbb82bc2cd94b4847ecaca81abc029f738d1d86de56a22e0b"
+        },
+        {
+          "path": "deployments/2026-09-08-m3-pro/AGENTS.md",
+          "sha256": "728f7cfc12551dc2024fd8f505bd432afbb990da349c2dca22d30789a8af5623"
+        },
+        {
+          "path": "deployments/2026-09-08-m3-pro/docs/OPERATING_NOTES.md",
+          "sha256": "6a4c56f2f7cc03b5e2a2093f7d185dfba18e6c9e7e13dee2fe5d4609f6ed324b"
+        },
+        {
+          "path": "deployments/2026-09-08-m3-pro/src/RoArm-M3_safe/RoArm-M3_module.h",
+          "sha256": "eb867e311332105acf0ae6a7d5f8b3f7e7ffa767e07a4c1ff56e1a7dd9358d8c"
+        },
+        {
+          "path": "deployments/2026-09-08-m3-pro/src/RoArm-M3_safe/feedback_safety.h",
+          "sha256": "8e8e0e715f9b1e9c74d16fea80e238babda91303cb551a109d698f5a026f18f4"
+        },
+        {
+          "path": "deployments/2026-09-08-m3-pro/src/RoArm-M3_safe/uart_ctrl.h",
+          "sha256": "4baa15c8d7ddab9212d4b052fc3fecee03600a11ed4bc8dde644039d91cf2bd3"
+        },
+        {
+          "path": "deployments/2026-09-08-m3-pro/src/RoArm-M3_safe/esp_now_ctrl.h",
+          "sha256": "9d3247722b09bd3e9f2571581b6ab9c4d362c8d3c8d449bf437640495d888c8b"
+        },
+        {
+          "path": "deployments/2026-09-08-m3-pro/firmware/0.84-s1/leader-zero-voltage-feedback.json",
+          "sha256": "46d62dcf09222cf09614cca85cf609f823a1d65be1b92cc4450cc0b00e4fa75a"
+        }
+      ]
+    },
+    "waveshare_sdk": {
+      "url": "https://github.com/waveshareteam/waveshare_roarm_sdk",
+      "revision": "d9893632aa7f5a9cb283136ab024faf3143ea7db",
+      "files": [
+        {
+          "path": "doc/roarm_m3_en.md",
+          "sha256": "0c543de76794c392891e7172daeb8f1f1808962b6c1ba383c767faf734229405"
+        }
+      ]
+    }
+  },
+  "scope": "Hashes cover reference files used by this handoff, not an entire repository or a vendor-authenticated release."
+}

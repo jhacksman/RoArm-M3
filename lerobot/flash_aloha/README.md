@@ -1,12 +1,26 @@
 # Flash ALOHA on RoArm-M3 Pro
 
+This is the portable preparation folder for a later agent. Start with [HANDOFF.md](HANDOFF.md), then [IMPLEMENTATION.md](IMPLEMENTATION.md) and [VALIDATION.md](VALIDATION.md). The target is **another computer**, as corrected by Jack on November 12, 2026; its details can wait until physical integration. There are no open questions blocking this preparation.
+
+| File | Purpose |
+| --- | --- |
+| `HANDOFF.md` | Scope, current state and instructions for the next agent |
+| `IMPLEMENTATION.md` | Verified source map, proposed telemetry contract and staged integration work |
+| `VALIDATION.md` | Reproducible offline checks and pending target/hardware acceptance tests |
+| `sources.json`, `verify_sources.py` | Pinned source revisions and file checksums |
+| `protocol.py` | Pure saved-feedback decoder and numeric target formatter; no I/O |
+| `inspect_setup.py` | Candidate port enumeration and saved-packet inspection |
+| `run_offline_checks.py`, `test_*.py` | Standard-library regression suite |
+| `fixtures/position.synthetic.json` | Explicitly synthetic packet example |
+| `target.example.json` | Planning fields for the later target machine; not an executable task config |
+
 Source verified November 12, 2026:
 
 - [Original project and paper links](https://johnyao93.github.io/flash-aloha/)
 - [Flash ALOHA code, inspected revision 4172a8e](https://github.com/JohnYao93/flash-aloha/tree/4172a8ed8cadb6eeb4a59285826e83cb00a2f01c)
 - [This RoArm deployment, inspected revision 091f31d](https://github.com/jhacksman/RoArm-M3/tree/091f31d14f728b74f41ac3bbfff5a876b6a942e8/deployments/2026-09-08-m3-pro)
 
-The learning approach is a plausible fit for the existing L1→F1 and L2→F2 setup. The released controller cannot operate these arms yet. This directory contains offline inspection tools and an integration specification; it contains no robot controller, collector or policy runner. No physical operation has been verified by this work.
+The learning approach is a plausible fit for the existing L1→F1 and L2→F2 setup. The released controller cannot operate these arms yet. This directory contains offline inspection/protocol tools and an integration specification; it contains no robot controller, collector or policy runner. No physical operation has been verified by this work.
 
 ## What the source actually requires
 
@@ -22,7 +36,7 @@ The learning approach is a plausible fit for the existing L1→F1 and L2→F2 se
 
 The firmware already reads `ReadSpeed(-1)` while reading each servo's position, but `RoArmM3_infoFeedback()` does not export those speeds. The SDK's documented `feedback_get()` returns position/posture and joint radians, not velocities. Do not fill missing velocities with zeros or silently derive them from unrelated position reads. MCU sampling is sequential across servos; expose its duration and validity rather than claiming simultaneous sensor acquisition.
 
-Sources: [hardware factory](https://github.com/JohnYao93/flash-aloha/blob/4172a8ed8cadb6eeb4a59285826e83cb00a2f01c/src/hardware/arm_factory.py), [arm lifecycle](https://github.com/JohnYao93/flash-aloha/blob/4172a8ed8cadb6eeb4a59285826e83cb00a2f01c/src/hardware/arm_interface.py), [ARX backend](https://github.com/JohnYao93/flash-aloha/blob/4172a8ed8cadb6eeb4a59285826e83cb00a2f01c/src/hardware/backends/arx.py), [capture contract](https://github.com/JohnYao93/flash-aloha/blob/4172a8ed8cadb6eeb4a59285826e83cb00a2f01c/src/contracts/standard_capture.py), [RoArm telemetry](https://github.com/jhacksman/RoArm-M3/blob/091f31d14f728b74f41ac3bbfff5a876b6a942e8/deployments/2026-09-08-m3-pro/src/RoArm-M3_safe/RoArm-M3_module.h), [official M3 SDK API](https://github.com/waveshareteam/waveshare_roarm_sdk/blob/main/doc/roarm_m3_en.md).
+Sources: [hardware factory](https://github.com/JohnYao93/flash-aloha/blob/4172a8ed8cadb6eeb4a59285826e83cb00a2f01c/src/hardware/arm_factory.py), [arm lifecycle](https://github.com/JohnYao93/flash-aloha/blob/4172a8ed8cadb6eeb4a59285826e83cb00a2f01c/src/hardware/arm_interface.py), [ARX backend](https://github.com/JohnYao93/flash-aloha/blob/4172a8ed8cadb6eeb4a59285826e83cb00a2f01c/src/hardware/backends/arx.py), [capture contract](https://github.com/JohnYao93/flash-aloha/blob/4172a8ed8cadb6eeb4a59285826e83cb00a2f01c/src/contracts/standard_capture.py), [RoArm telemetry](https://github.com/jhacksman/RoArm-M3/blob/091f31d14f728b74f41ac3bbfff5a876b6a942e8/deployments/2026-09-08-m3-pro/src/RoArm-M3_safe/RoArm-M3_module.h), [official M3 SDK API](https://github.com/waveshareteam/waveshare_roarm_sdk/blob/d9893632aa7f5a9cb283136ab024faf3143ea7db/doc/roarm_m3_en.md).
 
 ## Run the offline check now
 
@@ -30,7 +44,7 @@ From this repository's root, using Python 3.10 or later:
 
 ```sh
 python3 lerobot/flash_aloha/inspect_setup.py
-python3 -m unittest discover -s lerobot/flash_aloha -p 'test_*.py' -v
+python3 lerobot/flash_aloha/run_offline_checks.py
 ```
 
 The inspector lists candidate USB serial device paths without opening ports, changing DTR/RTS, starting cameras or importing a robot SDK. Port enumeration cannot identify an arm. Match each device's USB serial and MAC to the existing [inventory](../../deployments/2026-09-08-m3-pro/arms.json) before operation.
@@ -52,7 +66,7 @@ python3 lerobot/flash_aloha/inspect_setup.py --feedback \
 
 ## Bring-up sequence
 
-1. Identify the computer that will connect to the arms and cameras, the available cameras and the training/inference computer. The first audit on Jack's Apple Silicon Mac found only Bluetooth/debug serial ports, with no RoArm USB serial device. This does not establish what is connected to another computer. Flash ALOHA's full runtime and Apple GPU support have not been tested here; do not assume the ARX installation commands work on this Mac.
+1. On the later target machine, identify the arm/camera computer, cameras and training/inference computer. Jack has explicitly excluded this development Mac as the target. Its earlier port audit says nothing about the target. The inspected trainer uses CUDA explicitly; see IMPLEMENTATION.md before selecting a non-NVIDIA training host.
 2. Connect and identify one leader/follower pair. Review the existing [operating notes](../../deployments/2026-09-08-m3-pro/docs/OPERATING_NOTES.md). Support the arms; for normal operation power the leader's servo supply, verify valid feedback, then power the follower's servo supply. USB alone does not power the servo feedback electronics. Startup can move the arm, and command 210 also issues positioning commands before torque release. Preserve the deployed guards and backups.
 3. Resolve the state and stop-mode contracts above. Add simulated lifecycle tests for stale/invalid feedback, timeout, malformed and out-of-limit targets, startup anchoring, and disconnects. Separately validate physical stop and serial reset behavior with the operator. Explicitly hand off control ownership between ESP-NOW following and policy execution so two writers cannot command the follower.
 4. Add the backend/configuration and collection path while retaining `capture_observation`, exact `recording_fields()`, shared camera timing, standard recording storage and shared image preprocessing. Preserve all recorded native streams. Use the same joint units, roles, observation/action dimensions and image profile in training and inference. Do not repurpose the ARX hand-guiding commands or launch an ARX example config on RoArms.

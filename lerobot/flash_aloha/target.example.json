@@ -1,0 +1,23 @@
+{
+  "document_type": "planning template, not an executable Flash ALOHA task configuration",
+  "target_is_current_development_mac": false,
+  "target_os": null,
+  "target_architecture": null,
+  "control_computer": null,
+  "training_computer": null,
+  "inference_computer": null,
+  "gpu_model_and_memory": null,
+  "intended_pairs": [
+    {"leader": "L1", "follower": "F1"},
+    {"leader": "L2", "follower": "F2"}
+  ],
+  "role_assignment": {"left": null, "right": null},
+  "control_frequency_hz": null,
+  "cameras": [],
+  "calibrated_joint_limits_by_arm": null,
+  "validated_stop_strategy": null,
+  "validated_control_ownership_handoff": null,
+  "first_task": "one simple soft-object transfer with one leader/follower pair",
+  "decisions_needed_for_offline_preparation": [],
+  "physical_validation_status": "pending on target machine"
+}
