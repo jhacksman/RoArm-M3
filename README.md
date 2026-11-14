@@ -1,5 +1,9 @@
 # RoArm-M3 Pro Documentation
 
+## Next: Jetson control of two arms
+
+The separate [dual-arm development wing](dual_arm/README.md) prepares a Thor or Orin Nano deployment with an offline-first plan, official CAD/ROS asset sources and verified hashes, calibration/interface requirements, and current simulation-host guidance. **Preparation only: no autonomous dual-arm controller or validated simulator scene is claimed.** The existing four-arm demonstration setup below is preserved. Start with the [bounded milestones](dual_arm/PLAN.md).
+
 ## Completed four-arm setup — September 2026
 
 L1 → F1 and L2 → F2 now run guarded firmware **0.84-s1**, with separate MAC-specific ESP-NOW pairing restored at boot. Both pairs passed user-observed powered tracking tests. The patch prevents leaders from sending motion targets when their servo supply or joint feedback is invalid.
@@ -63,8 +67,8 @@ The RoArm-M3 Pro consists of several key components:
 
 - [Open Source Program for Lower Computer](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3-S_Arduino_Demo.zip)
 - [Python Demo](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3-S_Python_Demo.zip)
-- [3D Model Files](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3-S_3D_Mode.zip)
-- [2D Dimension Diagrams](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3-S_2D_Dimensions.zip)
+- [3D Model Files](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_STEP_260310.zip)
+- [2D Dimension Diagrams](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_2Dsize.zip)
 - [Driver Board Schematic](https://files.waveshare.com/wiki/common/General_Driver_for_Robots_SCH.pdf)
 - [Initialization Download Tool](https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3-S_Init_Tool.zip)
 

@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-09-30",
+  "vendor_repository": "https://github.com/waveshareteam/roarm_ws",
+  "vendor_commit": "40dbd84b553695212fab713e8465f817ba95454d",
+  "vendor_branch": "ros2-humble",
+  "discovery_url": "https://www.waveshare.com/wiki/RoArm-M3",
+  "assets": [
+    {
+      "path": "roarm_description/meshes/roarm_m3/base_link.stl",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/meshes/roarm_m3/base_link.stl",
+      "bytes": 3284,
+      "sha256": "55cbfcc2cfb995ab11d8a6ce7c2132283721b9c69cd05b4c7b9d6404e9d8fded",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "roarm_description/meshes/roarm_m3/gripper_left_link.stl",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/meshes/roarm_m3/gripper_left_link.stl",
+      "bytes": 956384,
+      "sha256": "1dfb77228316baf6039adb311363be8f8d02c6325a050dedb5859462f6f71bc8",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "roarm_description/meshes/roarm_m3/gripper_link.stl",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/meshes/roarm_m3/gripper_link.stl",
+      "bytes": 684984,
+      "sha256": "7946a374e24a2f467a0581b4946e0ec41b1b86a92f070bc00aa9bced1bf65a56",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "roarm_description/meshes/roarm_m3/link1.stl",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/meshes/roarm_m3/link1.stl",
+      "bytes": 12784,
+      "sha256": "022fdd2df4fa57748f56337fb1b3b3cce81dd116e0f608ccab51d6f1eacb552c",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "roarm_description/meshes/roarm_m3/link2.stl",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/meshes/roarm_m3/link2.stl",
+      "bytes": 468284,
+      "sha256": "5acd32a9f662221deb58ea2ca338c5d6726cbcd7664e7dcdb93bac722820b025",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "roarm_description/meshes/roarm_m3/link3.stl",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/meshes/roarm_m3/link3.stl",
+      "bytes": 34484,
+      "sha256": "80c4e9b1084bf1c7d975398eb11e7ba4e7dc69e62ff4adefcac38a0e0f5a4069",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "roarm_description/meshes/roarm_m3/link4.stl",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/meshes/roarm_m3/link4.stl",
+      "bytes": 9284,
+      "sha256": "bb334cafafa5f5adeedb4d430b325b436eafa833fa851ea782d9c785698f8c09",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "roarm_description/meshes/roarm_m3/link5.stl",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/meshes/roarm_m3/link5.stl",
+      "bytes": 704684,
+      "sha256": "1d63f374a78c1419b21eec63fa8efeef40d0d42ca89c5de3ceb0d86476d9c7eb",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "roarm_description/package.xml",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/package.xml",
+      "bytes": 854,
+      "sha256": "5f4e90606f92fcf4427d7ad0963a5508062017aa68bde1370309d7178c5b6295",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "roarm_description/urdf/roarm_m3/materials.xacro",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/urdf/roarm_m3/materials.xacro",
+      "bytes": 182,
+      "sha256": "8aac8122cfb34520faf320fa03a02d05f70ab1eb268fec25eaf05b31a403d784",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "roarm_description/urdf/roarm_m3/roarm_m3.gazebo",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/urdf/roarm_m3/roarm_m3.gazebo",
+      "bytes": 1296,
+      "sha256": "b6189b15e5a847ce7704916027116a22722e3ac97f375b5d24dabe83d0f3a57d",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "roarm_description/urdf/roarm_m3/roarm_m3.trans",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/urdf/roarm_m3/roarm_m3.trans",
+      "bytes": 3140,
+      "sha256": "947aeb087e999df54c469fa3c371c0435439ecf0ed6666f1a275fc498074c03e",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "roarm_description/urdf/roarm_m3/roarm_m3.xacro",
+      "url": "https://raw.githubusercontent.com/waveshareteam/roarm_ws/40dbd84b553695212fab713e8465f817ba95454d/src/roarm_main/roarm_description/urdf/roarm_m3/roarm_m3.xacro",
+      "bytes": 7185,
+      "sha256": "b6333849d0e377008eee0a87a5b8cdcf44f7a73edf3d7600e95506a023a234b6",
+      "license": "MIT declared in package.xml; no package LICENSE file in inspected tree"
+    },
+    {
+      "path": "RoArm-M3_STEP_260310.zip",
+      "url": "https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_STEP_260310.zip",
+      "bytes": 5117961,
+      "sha256": "1e2111145276aac14e521f47990fc41de87e2e735623d115a39cc176c9762da2",
+      "license": "No license file in archive; local reference only, redistribution permission unresolved"
+    },
+    {
+      "path": "RoArm-M3_2Dsize.zip",
+      "url": "https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_2Dsize.zip",
+      "bytes": 271136,
+      "sha256": "edd125e39f43d8d8722b7207668c176e75aca866735829be19c98ddd1dba99d0",
+      "license": "No license file in archive; local reference only, redistribution permission unresolved"
+    }
+  ]
+}
