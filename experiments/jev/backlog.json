@@ -1,6 +1,6 @@
 {
   "updated": "2026-09-17",
-  "phase": "research_complete_implementation_not_started",
+  "phase": "offline_replay_implemented_hardware_unverified",
   "tasks": [
     {
       "id": "RJ-01",
@@ -26,9 +26,12 @@
     {
       "id": "RJ-04",
       "task": "Jev adapter and replay evaluation",
-      "status": "ready_for_offline_design",
+      "status": "partial_offline_replay_complete",
       "acceptance": "Use source-grounded API contract, validate choices and deadlines; model access/inference still untested.",
-      "owner": null
+      "owner": null,
+      "claimed_at": "2026-09-17T12:49:23.723739+00:00",
+      "completed_scope": "Immutable contracts, request builder, synthetic response validation and replay tests; live transport and physical replay pending.",
+      "last_updated": "2026-09-17T12:56:19.817722+00:00"
     },
     {
       "id": "RJ-05",
@@ -68,9 +71,11 @@
     {
       "id": "RJ-10",
       "task": "Thor platform inventory and perception replay benchmark",
-      "status": "ready_for_inventory",
+      "status": "partial_inventory_and_offline_harness_verified",
       "acceptance": "Record actual hardware/software and compatible pinned stack; compare baseline tracking with candidate neural perception on reviewed replay; measure concurrent GPU load, queue age and end-to-end latency. No motor authority.",
-      "owner": null
+      "owner": null,
+      "access_observation": "Authenticated SSH succeeded after host came online. Hardware/software inventoried; 13 tests and seven synthetic replay attempts passed on Thor.",
+      "remaining": "Perception replay, camera identification, compatible environment and GPU profiling; storage allocation needed before large installs."
     },
     {
       "id": "RJ-11",

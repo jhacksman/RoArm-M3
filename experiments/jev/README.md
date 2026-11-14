@@ -1,12 +1,14 @@
 # Jev experiments for RoArm-M3 Pro
 
-Research/design stage, September 17, 2026. No live model inference or physical robot trials have been performed for this experiment.
+Research plus offline replay implementation, September 17, 2026. No live model inference or physical robot trials have been performed for this experiment.
 
 Investigate Jev as a task-level decision component around a locally controlled robot. Proposed first task: single-arm tabletop kitting of known lightweight parts from marked nests into a tray, followed by independently observed outcomes. The experiment must compare against a deterministic baseline using the same sensors and skills.
 
+- [Run the offline decision replay](REPLAY.md) — standard library, synthetic data, no motor authority
 - [Research findings and primary sources](research/FINDINGS.md)
 - [Optical flow, sensor fusion and Doom-style steering](research/OPTICAL_FLOW_AND_SENSOR_FUSION.md)
 - [Jetson Thor plus Jev: papers and architecture](research/THOR_AND_JEV.md)
+- [Verified Thor inventory and replay validation](research/THOR_INVENTORY.md)
 - [Harness design](HARNESS.md)
 - [Build and evaluation gates](PLAN.md)
 - [Progress](PROGRESS.md)

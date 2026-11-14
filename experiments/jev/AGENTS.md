@@ -1,6 +1,6 @@
 # Jev experiment working rules
 
-Read README.md, PROGRESS.md and the relevant backlog entry. This folder currently contains research, not a motor-control application.
+Read README.md, PROGRESS.md and the relevant backlog entry. This folder contains research and a synthetic offline replay harness, not a motor-control application. Run the standard-library tests documented in REPLAY.md when changing the contract or replay runner.
 
 - Public repository: never add real keys, tokens, credentials, account-specific console exports, raw private telemetry or environment dumps. Runtime credentials belong outside version control.
 - Use stable task IDs and claim ownership before concurrent work. Separate notes from shared summaries.

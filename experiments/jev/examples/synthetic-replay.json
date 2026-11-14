@@ -1,0 +1,701 @@
+{
+  "schema_version": 1,
+  "data_kind": "synthetic",
+  "description": "Hand-authored cases; timings and probabilities illustrative, not measured.",
+  "cases": [
+    {
+      "request_id": "valid_then_duplicate",
+      "submitted": {
+        "session": "synthetic-session",
+        "arm": "synthetic-arm",
+        "epoch": "revision-1",
+        "calibration": "synthetic-calibration",
+        "captured_ms": 1000,
+        "task": "Align above marker A without contact",
+        "labels": {
+          "alignment": "target_left",
+          "tracking": "valid"
+        },
+        "facts": {
+          "tracking_valid": true,
+          "workspace_available": true,
+          "observation_available": true
+        },
+        "candidates": [
+          {
+            "id": "align-A",
+            "skill": "align_at_standoff",
+            "target": "marker-A",
+            "description": "Continue bounded non-contact alignment with marker A",
+            "requires": [
+              "tracking_valid",
+              "workspace_available"
+            ],
+            "lease_ms": 100
+          },
+          {
+            "id": "observe",
+            "skill": "observe",
+            "target": "scene",
+            "description": "Acquire another observation without requesting motion",
+            "requires": [
+              "observation_available"
+            ],
+            "lease_ms": 100
+          }
+        ]
+      },
+      "issued_ms": 1020,
+      "deadline_ms": 1200,
+      "max_age_ms": 300,
+      "attempts": [
+        {
+          "current": {
+            "session": "synthetic-session",
+            "arm": "synthetic-arm",
+            "epoch": "revision-1",
+            "calibration": "synthetic-calibration",
+            "captured_ms": 1000,
+            "task": "Align above marker A without contact",
+            "labels": {
+              "alignment": "target_left",
+              "tracking": "valid"
+            },
+            "facts": {
+              "tracking_valid": true,
+              "workspace_available": true,
+              "observation_available": true
+            },
+            "candidates": [
+              {
+                "id": "align-A",
+                "skill": "align_at_standoff",
+                "target": "marker-A",
+                "description": "Continue bounded non-contact alignment with marker A",
+                "requires": [
+                  "tracking_valid",
+                  "workspace_available"
+                ],
+                "lease_ms": 100
+              },
+              {
+                "id": "observe",
+                "skill": "observe",
+                "target": "scene",
+                "description": "Acquire another observation without requesting motion",
+                "requires": [
+                  "observation_available"
+                ],
+                "lease_ms": 100
+              }
+            ]
+          },
+          "response": {
+            "model": "synthetic-response-not-inference",
+            "answers": {
+              "next_action": {
+                "type": "choice",
+                "choice": "align-A",
+                "probabilities": {
+                  "align-A": 0.75,
+                  "observe": 0.25
+                },
+                "confidence": 0.5
+              }
+            }
+          },
+          "now_ms": 1100,
+          "expected_reason": "validated"
+        },
+        {
+          "current": {
+            "session": "synthetic-session",
+            "arm": "synthetic-arm",
+            "epoch": "revision-1",
+            "calibration": "synthetic-calibration",
+            "captured_ms": 1000,
+            "task": "Align above marker A without contact",
+            "labels": {
+              "alignment": "target_left",
+              "tracking": "valid"
+            },
+            "facts": {
+              "tracking_valid": true,
+              "workspace_available": true,
+              "observation_available": true
+            },
+            "candidates": [
+              {
+                "id": "align-A",
+                "skill": "align_at_standoff",
+                "target": "marker-A",
+                "description": "Continue bounded non-contact alignment with marker A",
+                "requires": [
+                  "tracking_valid",
+                  "workspace_available"
+                ],
+                "lease_ms": 100
+              },
+              {
+                "id": "observe",
+                "skill": "observe",
+                "target": "scene",
+                "description": "Acquire another observation without requesting motion",
+                "requires": [
+                  "observation_available"
+                ],
+                "lease_ms": 100
+              }
+            ]
+          },
+          "response": {
+            "model": "synthetic-response-not-inference",
+            "answers": {
+              "next_action": {
+                "type": "choice",
+                "choice": "align-A",
+                "probabilities": {
+                  "align-A": 0.75,
+                  "observe": 0.25
+                },
+                "confidence": 0.5
+              }
+            }
+          },
+          "now_ms": 1110,
+          "expected_reason": "duplicate_request"
+        }
+      ]
+    },
+    {
+      "request_id": "late_response",
+      "submitted": {
+        "session": "synthetic-session",
+        "arm": "synthetic-arm",
+        "epoch": "revision-1",
+        "calibration": "synthetic-calibration",
+        "captured_ms": 1000,
+        "task": "Align above marker A without contact",
+        "labels": {
+          "alignment": "target_left",
+          "tracking": "valid"
+        },
+        "facts": {
+          "tracking_valid": true,
+          "workspace_available": true,
+          "observation_available": true
+        },
+        "candidates": [
+          {
+            "id": "align-A",
+            "skill": "align_at_standoff",
+            "target": "marker-A",
+            "description": "Continue bounded non-contact alignment with marker A",
+            "requires": [
+              "tracking_valid",
+              "workspace_available"
+            ],
+            "lease_ms": 100
+          },
+          {
+            "id": "observe",
+            "skill": "observe",
+            "target": "scene",
+            "description": "Acquire another observation without requesting motion",
+            "requires": [
+              "observation_available"
+            ],
+            "lease_ms": 100
+          }
+        ]
+      },
+      "issued_ms": 1020,
+      "deadline_ms": 1200,
+      "max_age_ms": 300,
+      "attempts": [
+        {
+          "current": {
+            "session": "synthetic-session",
+            "arm": "synthetic-arm",
+            "epoch": "revision-1",
+            "calibration": "synthetic-calibration",
+            "captured_ms": 1000,
+            "task": "Align above marker A without contact",
+            "labels": {
+              "alignment": "target_left",
+              "tracking": "valid"
+            },
+            "facts": {
+              "tracking_valid": true,
+              "workspace_available": true,
+              "observation_available": true
+            },
+            "candidates": [
+              {
+                "id": "align-A",
+                "skill": "align_at_standoff",
+                "target": "marker-A",
+                "description": "Continue bounded non-contact alignment with marker A",
+                "requires": [
+                  "tracking_valid",
+                  "workspace_available"
+                ],
+                "lease_ms": 100
+              },
+              {
+                "id": "observe",
+                "skill": "observe",
+                "target": "scene",
+                "description": "Acquire another observation without requesting motion",
+                "requires": [
+                  "observation_available"
+                ],
+                "lease_ms": 100
+              }
+            ]
+          },
+          "response": {
+            "model": "synthetic-response-not-inference",
+            "answers": {
+              "next_action": {
+                "type": "choice",
+                "choice": "align-A",
+                "probabilities": {
+                  "align-A": 0.75,
+                  "observe": 0.25
+                },
+                "confidence": 0.5
+              }
+            }
+          },
+          "now_ms": 1200,
+          "expected_reason": "deadline_expired"
+        }
+      ]
+    },
+    {
+      "request_id": "scene_changed",
+      "submitted": {
+        "session": "synthetic-session",
+        "arm": "synthetic-arm",
+        "epoch": "revision-1",
+        "calibration": "synthetic-calibration",
+        "captured_ms": 1000,
+        "task": "Align above marker A without contact",
+        "labels": {
+          "alignment": "target_left",
+          "tracking": "valid"
+        },
+        "facts": {
+          "tracking_valid": true,
+          "workspace_available": true,
+          "observation_available": true
+        },
+        "candidates": [
+          {
+            "id": "align-A",
+            "skill": "align_at_standoff",
+            "target": "marker-A",
+            "description": "Continue bounded non-contact alignment with marker A",
+            "requires": [
+              "tracking_valid",
+              "workspace_available"
+            ],
+            "lease_ms": 100
+          },
+          {
+            "id": "observe",
+            "skill": "observe",
+            "target": "scene",
+            "description": "Acquire another observation without requesting motion",
+            "requires": [
+              "observation_available"
+            ],
+            "lease_ms": 100
+          }
+        ]
+      },
+      "issued_ms": 1020,
+      "deadline_ms": 1200,
+      "max_age_ms": 300,
+      "attempts": [
+        {
+          "current": {
+            "session": "synthetic-session",
+            "arm": "synthetic-arm",
+            "epoch": "revision-2",
+            "calibration": "synthetic-calibration",
+            "captured_ms": 1000,
+            "task": "Align above marker A without contact",
+            "labels": {
+              "alignment": "target_left",
+              "tracking": "valid"
+            },
+            "facts": {
+              "tracking_valid": true,
+              "workspace_available": true,
+              "observation_available": true
+            },
+            "candidates": [
+              {
+                "id": "align-A",
+                "skill": "align_at_standoff",
+                "target": "marker-A",
+                "description": "Continue bounded non-contact alignment with marker A",
+                "requires": [
+                  "tracking_valid",
+                  "workspace_available"
+                ],
+                "lease_ms": 100
+              },
+              {
+                "id": "observe",
+                "skill": "observe",
+                "target": "scene",
+                "description": "Acquire another observation without requesting motion",
+                "requires": [
+                  "observation_available"
+                ],
+                "lease_ms": 100
+              }
+            ]
+          },
+          "response": {
+            "model": "synthetic-response-not-inference",
+            "answers": {
+              "next_action": {
+                "type": "choice",
+                "choice": "align-A",
+                "probabilities": {
+                  "align-A": 0.75,
+                  "observe": 0.25
+                },
+                "confidence": 0.5
+              }
+            }
+          },
+          "now_ms": 1100,
+          "expected_reason": "epoch_changed"
+        }
+      ]
+    },
+    {
+      "request_id": "tracking_lost",
+      "submitted": {
+        "session": "synthetic-session",
+        "arm": "synthetic-arm",
+        "epoch": "revision-1",
+        "calibration": "synthetic-calibration",
+        "captured_ms": 1000,
+        "task": "Align above marker A without contact",
+        "labels": {
+          "alignment": "target_left",
+          "tracking": "valid"
+        },
+        "facts": {
+          "tracking_valid": true,
+          "workspace_available": true,
+          "observation_available": true
+        },
+        "candidates": [
+          {
+            "id": "align-A",
+            "skill": "align_at_standoff",
+            "target": "marker-A",
+            "description": "Continue bounded non-contact alignment with marker A",
+            "requires": [
+              "tracking_valid",
+              "workspace_available"
+            ],
+            "lease_ms": 100
+          },
+          {
+            "id": "observe",
+            "skill": "observe",
+            "target": "scene",
+            "description": "Acquire another observation without requesting motion",
+            "requires": [
+              "observation_available"
+            ],
+            "lease_ms": 100
+          }
+        ]
+      },
+      "issued_ms": 1020,
+      "deadline_ms": 1200,
+      "max_age_ms": 300,
+      "attempts": [
+        {
+          "current": {
+            "session": "synthetic-session",
+            "arm": "synthetic-arm",
+            "epoch": "revision-1",
+            "calibration": "synthetic-calibration",
+            "captured_ms": 1000,
+            "task": "Align above marker A without contact",
+            "labels": {
+              "alignment": "target_left",
+              "tracking": "valid"
+            },
+            "facts": {
+              "tracking_valid": false,
+              "workspace_available": true,
+              "observation_available": true
+            },
+            "candidates": [
+              {
+                "id": "align-A",
+                "skill": "align_at_standoff",
+                "target": "marker-A",
+                "description": "Continue bounded non-contact alignment with marker A",
+                "requires": [
+                  "tracking_valid",
+                  "workspace_available"
+                ],
+                "lease_ms": 100
+              },
+              {
+                "id": "observe",
+                "skill": "observe",
+                "target": "scene",
+                "description": "Acquire another observation without requesting motion",
+                "requires": [
+                  "observation_available"
+                ],
+                "lease_ms": 100
+              }
+            ]
+          },
+          "response": {
+            "model": "synthetic-response-not-inference",
+            "answers": {
+              "next_action": {
+                "type": "choice",
+                "choice": "align-A",
+                "probabilities": {
+                  "align-A": 0.75,
+                  "observe": 0.25
+                },
+                "confidence": 0.5
+              }
+            }
+          },
+          "now_ms": 1100,
+          "expected_reason": "candidate_no_longer_feasible"
+        }
+      ]
+    },
+    {
+      "request_id": "calibration_changed",
+      "submitted": {
+        "session": "synthetic-session",
+        "arm": "synthetic-arm",
+        "epoch": "revision-1",
+        "calibration": "synthetic-calibration",
+        "captured_ms": 1000,
+        "task": "Align above marker A without contact",
+        "labels": {
+          "alignment": "target_left",
+          "tracking": "valid"
+        },
+        "facts": {
+          "tracking_valid": true,
+          "workspace_available": true,
+          "observation_available": true
+        },
+        "candidates": [
+          {
+            "id": "align-A",
+            "skill": "align_at_standoff",
+            "target": "marker-A",
+            "description": "Continue bounded non-contact alignment with marker A",
+            "requires": [
+              "tracking_valid",
+              "workspace_available"
+            ],
+            "lease_ms": 100
+          },
+          {
+            "id": "observe",
+            "skill": "observe",
+            "target": "scene",
+            "description": "Acquire another observation without requesting motion",
+            "requires": [
+              "observation_available"
+            ],
+            "lease_ms": 100
+          }
+        ]
+      },
+      "issued_ms": 1020,
+      "deadline_ms": 1200,
+      "max_age_ms": 300,
+      "attempts": [
+        {
+          "current": {
+            "session": "synthetic-session",
+            "arm": "synthetic-arm",
+            "epoch": "revision-1",
+            "calibration": "new-calibration",
+            "captured_ms": 1000,
+            "task": "Align above marker A without contact",
+            "labels": {
+              "alignment": "target_left",
+              "tracking": "valid"
+            },
+            "facts": {
+              "tracking_valid": true,
+              "workspace_available": true,
+              "observation_available": true
+            },
+            "candidates": [
+              {
+                "id": "align-A",
+                "skill": "align_at_standoff",
+                "target": "marker-A",
+                "description": "Continue bounded non-contact alignment with marker A",
+                "requires": [
+                  "tracking_valid",
+                  "workspace_available"
+                ],
+                "lease_ms": 100
+              },
+              {
+                "id": "observe",
+                "skill": "observe",
+                "target": "scene",
+                "description": "Acquire another observation without requesting motion",
+                "requires": [
+                  "observation_available"
+                ],
+                "lease_ms": 100
+              }
+            ]
+          },
+          "response": {
+            "model": "synthetic-response-not-inference",
+            "answers": {
+              "next_action": {
+                "type": "choice",
+                "choice": "align-A",
+                "probabilities": {
+                  "align-A": 0.75,
+                  "observe": 0.25
+                },
+                "confidence": 0.5
+              }
+            }
+          },
+          "now_ms": 1100,
+          "expected_reason": "calibration_changed"
+        }
+      ]
+    },
+    {
+      "request_id": "malformed_model_response",
+      "submitted": {
+        "session": "synthetic-session",
+        "arm": "synthetic-arm",
+        "epoch": "revision-1",
+        "calibration": "synthetic-calibration",
+        "captured_ms": 1000,
+        "task": "Align above marker A without contact",
+        "labels": {
+          "alignment": "target_left",
+          "tracking": "valid"
+        },
+        "facts": {
+          "tracking_valid": true,
+          "workspace_available": true,
+          "observation_available": true
+        },
+        "candidates": [
+          {
+            "id": "align-A",
+            "skill": "align_at_standoff",
+            "target": "marker-A",
+            "description": "Continue bounded non-contact alignment with marker A",
+            "requires": [
+              "tracking_valid",
+              "workspace_available"
+            ],
+            "lease_ms": 100
+          },
+          {
+            "id": "observe",
+            "skill": "observe",
+            "target": "scene",
+            "description": "Acquire another observation without requesting motion",
+            "requires": [
+              "observation_available"
+            ],
+            "lease_ms": 100
+          }
+        ]
+      },
+      "issued_ms": 1020,
+      "deadline_ms": 1200,
+      "max_age_ms": 300,
+      "attempts": [
+        {
+          "current": {
+            "session": "synthetic-session",
+            "arm": "synthetic-arm",
+            "epoch": "revision-1",
+            "calibration": "synthetic-calibration",
+            "captured_ms": 1000,
+            "task": "Align above marker A without contact",
+            "labels": {
+              "alignment": "target_left",
+              "tracking": "valid"
+            },
+            "facts": {
+              "tracking_valid": true,
+              "workspace_available": true,
+              "observation_available": true
+            },
+            "candidates": [
+              {
+                "id": "align-A",
+                "skill": "align_at_standoff",
+                "target": "marker-A",
+                "description": "Continue bounded non-contact alignment with marker A",
+                "requires": [
+                  "tracking_valid",
+                  "workspace_available"
+                ],
+                "lease_ms": 100
+              },
+              {
+                "id": "observe",
+                "skill": "observe",
+                "target": "scene",
+                "description": "Acquire another observation without requesting motion",
+                "requires": [
+                  "observation_available"
+                ],
+                "lease_ms": 100
+              }
+            ]
+          },
+          "response": {
+            "model": "synthetic-response-not-inference",
+            "answers": {
+              "next_action": {
+                "type": "choice",
+                "choice": "align-A",
+                "probabilities": {
+                  "align-A": 0.75,
+                  "observe": 0.1
+                },
+                "confidence": 0.5
+              }
+            }
+          },
+          "now_ms": 1100,
+          "expected_reason": "invalid_distribution_sum"
+        }
+      ]
+    }
+  ]
+}
